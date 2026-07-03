@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./gate.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F4F3EE;font-family:'Noto Sans TC','PingFang TC',sans-serif;color:#22242A;}</style>
+</helmet>
+
+<div style="padding:48px 56px 80px;min-width:2400px">
+
+  <!-- ===== FILE HEADER ===== -->
+  <div style="margin-bottom:10px;display:flex;align-items:center;gap:12px">
+    <div style="width:34px;height:34px;border-radius:9px;background:#5B4B9E;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px">1</div>
+    <div>
+      <div style="font-size:26px;font-weight:900">合作平台跨境專區 參考設計 — Partner Storefront Reference</div>
+      <div style="font-size:12px;color:#6E6A5E;font-family:ui-monospace,monospace">FILE 1/6 · reference designs the partners implement · mobile-web width · UI inventory grouped by functional area</div>
+    </div>
+  </div>
+  <div style="display:flex;gap:8px;margin-bottom:30px;font-size:11px;font-weight:700;flex-wrap:wrap">
+    <span style="background:#5B4B9E;color:#fff;border-radius:999px;padding:4px 12px">1 合作平台前台</span>
+    <a href="hosted-payment-and-consumer-pages.dc.html" style="color:#55524A;text-decoration:none;border:1px solid #DDD9CE;border-radius:999px;padding:4px 12px;background:#fff">2 託管付款頁</a>
+    <a href="ops-console.dc.html" style="color:#55524A;text-decoration:none;border:1px solid #DDD9CE;border-radius:999px;padding:4px 12px;background:#fff">3 營運後台</a>
+    <a href="supplier-portal.dc.html" style="color:#55524A;text-decoration:none;border:1px solid #DDD9CE;border-radius:999px;padding:4px 12px;background:#fff">4 供應商入口</a>
+    <a href="warehouse-apps.dc.html" style="color:#55524A;text-decoration:none;border:1px solid #DDD9CE;border-radius:999px;padding:4px 12px;background:#fff">5 倉庫作業</a>
+    <a href="partner-developer-sandbox.dc.html" style="color:#55524A;text-decoration:none;border:1px solid #DDD9CE;border-radius:999px;padding:4px 12px;background:#fff">6 開發者沙盒</a>
+  </div>
+
+  <!-- ===== MAIN FLOW LANE ===== -->
+  <div data-screen-label="MAIN FLOW" style="background:#E7F0F3;border:1px solid #CBDEE4;border-radius:18px;padding:22px 24px;margin-bottom:44px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+      <span style="background:#0F6E84;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">MAIN FLOW</span>
+      <span style="font-size:14px;font-weight:900">主流程頁面（依 11 步主旅程編號）</span>
+      <span style="font-size:10.5px;color:#5A7A85;font-family:ui-monospace,monospace">pages that appear in the master end-to-end journey, in order</span>
+    </div>
+    <div style="display:flex;gap:26px;align-items:flex-start">
+
+      <!-- MF 1 landing -->
+      <div style="width:264px;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="width:20px;height:20px;border-radius:50%;background:#0F6E84;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">1</span><span style="font-size:12px;font-weight:700">跨境專區首頁</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="MF1 專區首頁" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;box-shadow:0 6px 18px rgba(32,33,36,0.07);overflow:hidden">
+          
+          <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid #EFEDE6"><div style="width:20px;height:20px;border-radius:6px;background:#5B4B9E;color:#fff;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900">購</div><span style="font-size:11px;font-weight:900">跨境專區</span><span style="margin-left:auto;font-size:9.5px;color:#8A8578">⌕ · 🛒</span></div>
+          <div style="margin:10px 12px;background:#0F6E84;color:#fff;border-radius:10px;padding:14px 14px"><div style="font-size:13px;font-weight:900">日本直送・中古逸品</div><div style="font-size:9.5px;opacity:0.85;margin-top:3px">關稅預收透明 · 7–14 天到貨 · 實名清關</div></div>
+          <div style="display:flex;gap:6px;padding:0 12px;font-size:9.5px;font-weight:700;color:#55524A;flex-wrap:wrap"><span style="background:#F1EFE8;border-radius:999px;padding:3px 10px">隨身聽</span><span style="background:#F1EFE8;border-radius:999px;padding:3px 10px">底片相機</span><span style="background:#F1EFE8;border-radius:999px;padding:3px 10px">模型公仔</span><span style="background:#F1EFE8;border-radius:999px;padding:3px 10px">職人雜貨</span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px 14px">
+            <div style="border:1px solid #EFEDE6;border-radius:9px;overflow:hidden"><img src="https://images.unsplash.com/photo-1611001716885-b3402558a62b?q=60&amp;w=200&amp;auto=format&amp;fit=crop" alt="商品" style="width:100%;height:64px;object-fit:cover;display:block"><div style="padding:6px 8px"><span style="background:#0F6E84;color:#fff;font-size:8px;font-weight:700;border-radius:4px;padding:1px 5px">跨境</span><div style="font-size:9.5px;font-weight:700;margin-top:3px">SONY 隨身聽 中古A</div><div style="font-size:10.5px;font-weight:900;color:#B4483E">NT$3,280</div></div></div>
+            <div style="border:1px solid #EFEDE6;border-radius:9px;overflow:hidden"><img src="https://images.unsplash.com/photo-1745827222048-c64f377909a4?q=60&amp;w=200&amp;auto=format&amp;fit=crop" alt="商品" style="width:100%;height:64px;object-fit:cover;display:block"><div style="padding:6px 8px"><span style="background:#0F6E84;color:#fff;font-size:8px;font-weight:700;border-radius:4px;padding:1px 5px">跨境</span><div style="font-size:9.5px;font-weight:700;margin-top:3px">AIWA 卡帶機 中古B</div><div style="font-size:10.5px;font-weight:900;color:#B4483E">NT$1,980</div></div></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">跨境專區首頁與策展選品；建立信任框架（關稅透明、到貨區間）。</div>
+      </div>
+
+      <!-- MF 2 product page -->
+      <div style="width:264px;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="width:20px;height:20px;border-radius:50%;background:#0F6E84;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">2</span><span style="font-size:12px;font-weight:700">商品頁</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="MF2 商品頁" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;box-shadow:0 6px 18px rgba(32,33,36,0.07);overflow:hidden">
+          
+          <img src="https://images.unsplash.com/photo-1611001716885-b3402558a62b?q=60&amp;w=400&amp;auto=format&amp;fit=crop" alt="商品照" style="width:100%;height:120px;object-fit:cover;display:block">
+          <div style="padding:10px 12px">
+            <div style="display:flex;gap:5px"><span style="background:#0F6E84;color:#fff;font-size:8.5px;font-weight:700;border-radius:4px;padding:2px 6px">跨境商品</span><span style="background:#FDF0D5;color:#8A5A0B;font-size:8.5px;font-weight:700;border-radius:4px;padding:2px 6px">成色：中古A</span></div>
+            <div style="font-size:11.5px;font-weight:700;margin-top:6px;line-height:1.4">SONY 隨身聽 WM-EX921（日本二手・附原盒）</div>
+            <div style="font-size:16px;font-weight:900;color:#B4483E;margin-top:4px">NT$3,280 <span style="font-size:8.5px;color:#8A8578;font-weight:400">已含國際運費估算，關稅結帳預收</span></div>
+            <div style="font-size:9.5px;color:#55524A;margin-top:4px">預計送達 12/18–12/26（7–14 天）</div>
+            <div style="margin-top:7px;background:#F6F5F0;border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px;font-size:9px;line-height:1.55;color:#55524A">本商品由境外公司 <b>SHOPMORE (HK)</b> 銷售，<b>不開立統一發票</b>，提供購買證明。</div>
+            <div style="margin-top:9px;background:#0F6E84;color:#fff;border-radius:8px;padding:8px 0;text-align:center;font-size:11px;font-weight:900">加入跨境購物車</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">跨境標章、成色等級、台幣售價、到貨區間、境外賣家揭露與含稅費說明。</div>
+      </div>
+
+      <!-- MF 3 cart -->
+      <div style="width:264px;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="width:20px;height:20px;border-radius:50%;background:#B45309;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">3</span><span style="font-size:12px;font-weight:700">跨境購物車 ★</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="MF3 購物車" style="position:relative;background:#fff;border:1px solid #EAD9AC;border-radius:14px;box-shadow:0 6px 18px rgba(180,83,9,0.09);overflow:hidden">
+          
+          <div style="display:flex;padding:10px 12px 0;gap:2px;font-size:10px">
+            <div style="padding:5px 12px;color:#8A8578">一般 (3)</div>
+            <div style="padding:5px 12px;font-weight:900;color:#0F6E84;border-bottom:2px solid #0F6E84">跨境 (1)</div>
+          </div>
+          <div style="margin:8px 12px 0;background:#FDF6E8;border:1px solid #EAD9AC;border-radius:7px;padding:6px 9px;font-size:9px;color:#8A5A0B;font-weight:700">跨境商品須單獨結帳，無法與國內商品合併。</div>
+          <div style="display:flex;gap:9px;align-items:center;padding:10px 12px;border-bottom:1px solid #EFEDE6">
+            <img src="https://images.unsplash.com/photo-1611001716885-b3402558a62b?q=60&amp;w=120&amp;auto=format&amp;fit=crop" alt="縮圖" style="width:42px;height:42px;border-radius:7px;object-fit:cover">
+            <div style="flex:1"><div style="font-size:10px;font-weight:700">SONY 隨身聽 WM-EX921</div><div style="font-size:8.5px;color:#8A8578">中古A · SHOPMORE (HK)</div></div>
+            <div style="font-size:11px;font-weight:900;color:#B4483E">NT$3,280</div>
+          </div>
+          <div style="margin:10px 12px;background:#FDF0D5;border:1px solid #EAD9AC;border-radius:9px;padding:9px 11px">
+            <div style="display:flex;justify-content:space-between"><span style="font-size:10px;font-weight:900;color:#8A5A0B">我的免稅額度 ★</span><span style="font-size:10px;font-weight:900;color:#8A5A0B">2 / 6 次</span></div>
+            <div style="margin-top:6px;height:7px;border-radius:999px;background:#F3E4BD;overflow:hidden"><div style="width:33%;height:100%;background:#B45309"></div></div>
+            <div style="font-size:8.5px;color:#8A5A0B;margin-top:5px;line-height:1.5">2026 下半年已使用 2 次，剩餘 4 次。本單超過 NT$2,000 免稅門檻，將預收關稅。</div>
+          </div>
+          <div style="display:flex;gap:8px;padding:0 12px 12px;align-items:center"><span style="font-size:9.5px">小計 <b style="font-size:12px">NT$3,280</b></span><div style="flex:1;background:#0F6E84;color:#fff;border-radius:8px;padding:8px 0;text-align:center;font-size:10.5px;font-weight:900">前往跨境結帳</div></div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">獨立跨境購物車，含半年度免稅額度儀表（已用 2/6）。</div>
+      </div>
+
+      <!-- MF 4 checkout -->
+      <div style="width:264px;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="width:20px;height:20px;border-radius:50%;background:#0F6E84;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">4</span><span style="font-size:12px;font-weight:700">結帳</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="MF4 結帳" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;box-shadow:0 6px 18px rgba(32,33,36,0.07);overflow:hidden">
+          
+          <div style="padding:12px 12px 0">
+            <div style="font-size:9.5px;font-weight:900;color:#55524A;margin-bottom:6px">配送方式</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+              <div style="border:1px solid #DDD9CE;border-radius:8px;padding:7px 9px;font-size:9.5px"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;border:1.5px solid #C9C5B8;margin-right:5px;vertical-align:-1px"></span><b>宅配到府</b></div>
+              <div style="border:2px solid #0F6E84;background:#F0F6F8;border-radius:8px;padding:7px 9px;font-size:9.5px;color:#0F6E84"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;border:3.5px solid #0F6E84;margin-right:5px;vertical-align:-1px"></span><b>7-11 取貨</b></div>
+            </div>
+            <div style="font-size:9.5px;font-weight:900;color:#55524A;margin:10px 0 5px">收件人（實名）</div>
+            <div style="display:grid;gap:5px;font-size:9.5px">
+              <div style="border:1px solid #DDD9CE;border-radius:7px;padding:6px 9px;display:flex;justify-content:space-between"><span style="color:#8A8578">姓名</span><b>王曉明</b></div>
+              <div style="border:1px solid #DDD9CE;border-radius:7px;padding:6px 9px;display:flex;justify-content:space-between"><span style="color:#8A8578">身分證字號</span><b>A123456789</b></div>
+              <div style="border:1px solid #DDD9CE;border-radius:7px;padding:6px 9px;display:flex;justify-content:space-between"><span style="color:#8A8578">手機</span><b>0912-345-678</b></div>
+            </div>
+            <div style="margin-top:6px;background:#EFF3FA;border:1px solid #CBD8EE;border-radius:7px;padding:6px 9px;font-size:8.5px;color:#1D3A6E;line-height:1.5"><b>EZ Way 提醒</b>：收件人須與「易利委」實名認證一致，清關前需於 App 確認委任。</div>
+            <div style="margin-top:9px;border-top:1px dashed #E2DFD4;padding-top:8px;display:grid;gap:4px;font-size:9.5px">
+              <div style="display:flex;justify-content:space-between"><span style="color:#8A8578">商品金額</span><b>NT$3,280</b></div>
+              <div style="display:flex;justify-content:space-between"><span style="color:#8A8578">國際運費</span><b>NT$250</b></div>
+              <div style="display:flex;justify-content:space-between;color:#8A5A0B"><span>預收關稅（多退少補）</span><b>NT$180</b></div>
+              <div style="display:flex;justify-content:space-between;font-size:11.5px;font-weight:900"><span>應付總額</span><span style="color:#B4483E">NT$3,710</span></div>
+            </div>
+          </div>
+          <div style="padding:10px 12px 12px"><div style="background:#0F6E84;color:#fff;border-radius:8px;padding:8px 0;text-align:center;font-size:10.5px;font-weight:900">前往付款（SHOPMORE 安全付款頁）</div></div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">宅配／7-11 選擇、實名收件人欄位與 EZ Way 提示、含預收關稅的金額明細。</div>
+      </div>
+
+      <!-- MF 5 order complete -->
+      <div style="width:264px;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="width:20px;height:20px;border-radius:50%;background:#0F6E84;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">5</span><span style="font-size:12px;font-weight:700">訂單完成</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="MF5 訂單完成" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;box-shadow:0 6px 18px rgba(32,33,36,0.07);overflow:hidden">
+          
+          <div style="padding:18px 14px;text-align:center">
+            <div style="width:38px;height:38px;border-radius:50%;background:#E6F3EA;color:#2E7D4F;font-size:17px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto">✓</div>
+            <div style="font-size:12.5px;font-weight:900;margin-top:8px">付款成功，訂單已成立</div>
+            <div style="font-size:9.5px;color:#8A8578;margin-top:3px;font-family:ui-monospace,monospace">SM-2512-08841</div>
+            <div style="margin-top:10px;background:#F6F5F0;border-radius:9px;padding:9px 11px;text-align:left;display:grid;gap:4px;font-size:9.5px">
+              <div style="display:flex;justify-content:space-between"><span style="color:#8A8578">已付金額</span><b>NT$3,710（含預收關稅 180）</b></div>
+              <div style="display:flex;justify-content:space-between"><span style="color:#8A8578">預計送達</span><b>12/18 – 12/26</b></div>
+              <div style="display:flex;justify-content:space-between"><span style="color:#8A8578">取貨方式</span><b>7-ELEVEN 光復門市</b></div>
+            </div>
+            <div style="font-size:8.5px;color:#8A8578;margin-top:8px;line-height:1.55">可於「我的訂單」追蹤日本採購與清關進度。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">付款完成返回頁；重述預收關稅與預計到貨。</div>
+      </div>
+
+      <!-- MF 8 EZ Way banner -->
+      <div style="width:264px;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="width:20px;height:20px;border-radius:50%;background:#B45309;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">8</span><span style="font-size:12px;font-weight:700">EZ Way 行動横幅 ★</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="MF8 EZWay横幅" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;box-shadow:0 6px 18px rgba(32,33,36,0.07);overflow:hidden">
+          
+          <div style="padding:10px 12px;border-bottom:1px solid #EFEDE6;font-size:11px;font-weight:900">我的訂單</div>
+          <div style="margin:10px 12px;background:#FDF6E8;border:1.5px solid #E5B968;border-radius:10px;padding:10px 11px">
+            <div style="display:flex;align-items:center;gap:7px"><span style="width:18px;height:18px;border-radius:50%;background:#B45309;color:#fff;font-size:10px;font-weight:900;display:inline-flex;align-items:center;justify-content:center">!</span><span style="font-size:10.5px;font-weight:900;color:#8A5A0B">請完成 EZ Way 實名認證</span></div>
+            <div style="font-size:9px;color:#8A5A0B;margin-top:5px;line-height:1.55">您的跨境包裹已完成日本倉驗貨。完成「易利委」實名認證後才能安排國際出貨與清關。</div>
+            <div style="margin-top:8px;display:flex;gap:6px"><div style="flex:1;background:#B45309;color:#fff;border-radius:7px;padding:6px 0;text-align:center;font-size:9.5px;font-weight:900">前往 EZ Way 認證</div><div style="border:1px solid #E5B968;border-radius:7px;padding:6px 10px;font-size:9.5px;color:#8A5A0B">教學</div></div>
+          </div>
+          <div style="margin:0 12px 12px;border:1px solid #EFEDE6;border-radius:9px;padding:8px 10px;display:flex;gap:8px;align-items:center">
+            <img src="https://images.unsplash.com/photo-1611001716885-b3402558a62b?q=60&amp;w=120&amp;auto=format&amp;fit=crop" alt="縮圖" style="width:36px;height:36px;border-radius:6px;object-fit:cover">
+            <div style="flex:1"><div style="font-size:9.5px;font-weight:700">SM-2512-08841</div><div style="font-size:8.5px;color:#8A8578">SONY 隨身聽 ×1</div></div>
+            <span style="background:#FDF0D5;color:#8A5A0B;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px">待實名認證</span>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">★ 阻斷式行動橫幅 — 完成 EZ Way 實名認證前暫停出貨。</div>
+      </div>
+
+      <!-- MF 11 order detail -->
+      <div style="width:264px;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="width:20px;height:20px;border-radius:50%;background:#0F6E84;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">11</span><span style="font-size:12px;font-weight:700">訂單詳情・完整歷程</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="MF11 訂單詳情" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;box-shadow:0 6px 18px rgba(32,33,36,0.07);overflow:hidden">
+          
+          <div style="padding:9px 12px;border-bottom:1px solid #EFEDE6;display:flex;align-items:center;gap:7px"><span style="font-size:11px;font-weight:900">SM-2512-08841</span><span style="margin-left:auto;background:#E6F3EA;color:#2E7D4F;font-size:8.5px;font-weight:700;border-radius:999px;padding:2px 8px">已完成</span></div>
+          <div style="padding:10px 14px">
+            <div style="display:grid">
+              <div style="display:flex;gap:8px"><div style="display:flex;flex-direction:column;align-items:center"><div style="width:12px;height:12px;border-radius:50%;background:#2E7D4F;color:#fff;font-size:7px;display:flex;align-items:center;justify-content:center">✓</div><div style="width:2px;flex:1;background:#CFE5D6"></div></div><div style="padding-bottom:7px"><div style="font-size:9.5px;font-weight:700">下單成功 <span style="color:#8A8578;font-weight:400">12/09</span></div></div></div>
+              <div style="display:flex;gap:8px"><div style="display:flex;flex-direction:column;align-items:center"><div style="width:12px;height:12px;border-radius:50%;background:#2E7D4F;color:#fff;font-size:7px;display:flex;align-items:center;justify-content:center">✓</div><div style="width:2px;flex:1;background:#CFE5D6"></div></div><div style="padding-bottom:7px"><div style="font-size:9.5px;font-weight:700">日本採購完成 <span style="color:#8A8578;font-weight:400">12/10</span></div></div></div>
+              <div style="display:flex;gap:8px"><div style="display:flex;flex-direction:column;align-items:center"><div style="width:12px;height:12px;border-radius:50%;background:#2E7D4F;color:#fff;font-size:7px;display:flex;align-items:center;justify-content:center">✓</div><div style="width:2px;flex:1;background:#CFE5D6"></div></div><div style="padding-bottom:7px"><div style="font-size:9.5px;font-weight:700">日本倉入庫・驗貨合格 <span style="color:#8A8578;font-weight:400">12/12</span></div></div></div>
+              <div style="display:flex;gap:8px"><div style="display:flex;flex-direction:column;align-items:center"><div style="width:12px;height:12px;border-radius:50%;background:#2E7D4F;color:#fff;font-size:7px;display:flex;align-items:center;justify-content:center">✓</div><div style="width:2px;flex:1;background:#CFE5D6"></div></div><div style="padding-bottom:7px"><div style="font-size:9.5px;font-weight:700">國際運送・清關完成 <span style="color:#8A8578;font-weight:400">12/16</span></div></div></div>
+              <div style="display:flex;gap:8px"><div style="display:flex;flex-direction:column;align-items:center"><div style="width:12px;height:12px;border-radius:50%;background:#B45309;color:#fff;font-size:7px;display:flex;align-items:center;justify-content:center">$</div><div style="width:2px;flex:1;background:#EAD9AC"></div></div><div style="padding-bottom:7px"><div style="font-size:9.5px;font-weight:700;color:#8A5A0B">關稅退款 NT$30 ★ <span style="color:#8A8578;font-weight:400">12/17</span></div></div></div>
+              <div style="display:flex;gap:8px"><div style="width:12px;height:12px;border-radius:50%;background:#2E7D4F;color:#fff;font-size:7px;display:flex;align-items:center;justify-content:center">✓</div><div><div style="font-size:9.5px;font-weight:700">7-ELEVEN 已取貨 <span style="color:#8A8578;font-weight:400">12/19</span></div></div></div>
+            </div>
+            <div style="margin-top:10px;border:1px solid #0F6E84;color:#0F6E84;border-radius:8px;padding:7px 0;text-align:center;font-size:10px;font-weight:700">下載購買證明 (PDF) ↓</div>
+            <div style="font-size:8.5px;color:#8A8578;text-align:center;margin-top:6px;line-height:1.5">由 SHOPMORE (HK) 銷售，不開立統一發票。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">完整里程碑歷程含關稅退款列＋購買證明下載（取代統一發票）。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROUP: Browse & search ===== -->
+  <div style="margin-bottom:40px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#5B4B9E;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">B</span><span style="font-size:16px;font-weight:900">瀏覽與搜尋 Browse &amp; Search</span></div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">B1</span><span style="font-size:12px;font-weight:700">分類列表</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="B1 分類列表" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;overflow:hidden">
+          
+          <div style="padding:9px 12px;border-bottom:1px solid #EFEDE6;font-size:11px;font-weight:900">隨身聽・卡帶機 <span style="font-size:9px;color:#8A8578;font-weight:400">(142)</span></div>
+          <div style="display:flex;gap:5px;padding:8px 12px;font-size:8.5px;color:#55524A"><span style="border:1px solid #DDD9CE;border-radius:999px;padding:2px 8px">成色 ▾</span><span style="border:1px solid #DDD9CE;border-radius:999px;padding:2px 8px">價格 ▾</span><span style="border:1px solid #DDD9CE;border-radius:999px;padding:2px 8px">到貨天數 ▾</span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:4px 12px 12px">
+            <div style="border:1px solid #EFEDE6;border-radius:9px;overflow:hidden"><img src="https://images.unsplash.com/photo-1515010137531-66995c7f40e6?q=60&amp;w=200&amp;auto=format&amp;fit=crop" alt="商品" style="width:100%;height:60px;object-fit:cover;display:block"><div style="padding:6px 8px"><span style="background:#0F6E84;color:#fff;font-size:8px;border-radius:4px;padding:1px 5px;font-weight:700">跨境</span> <span style="background:#FDF0D5;color:#8A5A0B;font-size:8px;border-radius:4px;padding:1px 5px;font-weight:700">中古A</span><div style="font-size:10px;font-weight:900;color:#B4483E;margin-top:3px">NT$3,280</div></div></div>
+            <div style="border:1px solid #EFEDE6;border-radius:9px;overflow:hidden"><img src="https://images.unsplash.com/photo-1617360322184-3f0b93b4294b?q=60&amp;w=200&amp;auto=format&amp;fit=crop" alt="商品" style="width:100%;height:60px;object-fit:cover;display:block"><div style="padding:6px 8px"><span style="background:#0F6E84;color:#fff;font-size:8px;border-radius:4px;padding:1px 5px;font-weight:700">跨境</span> <span style="background:#FDF0D5;color:#8A5A0B;font-size:8px;border-radius:4px;padding:1px 5px;font-weight:700">中古B</span><div style="font-size:10px;font-weight:900;color:#B4483E;margin-top:3px">NT$2,150</div></div></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">分類列表；每張卡片皆帶跨境標章與成色等級。</div>
+      </div>
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">B2</span><span style="font-size:12px;font-weight:700">搜尋結果</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="B2 搜尋結果" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;overflow:hidden">
+          
+          <div style="padding:9px 12px"><div style="background:#F1EFE8;border-radius:8px;padding:6px 10px;font-size:10px;color:#55524A">⌕ walkman <span style="float:right;color:#C9C5B8">✕</span></div></div>
+          <div style="padding:0 12px 4px;font-size:8.5px;color:#8A8578">跨境專區 38 件結果 · 依關聯排序</div>
+          <div style="display:grid;gap:7px;padding:6px 12px 12px">
+            <div style="display:flex;gap:8px;border:1px solid #EFEDE6;border-radius:9px;padding:7px"><img src="https://images.unsplash.com/photo-1611001716885-b3402558a62b?q=60&amp;w=120&amp;auto=format&amp;fit=crop" alt="縮圖" style="width:40px;height:40px;border-radius:6px;object-fit:cover"><div style="flex:1"><div style="font-size:9.5px;font-weight:700">SONY WM-EX921 隨身聽</div><div style="font-size:8px"><span style="background:#0F6E84;color:#fff;border-radius:3px;padding:0 4px">跨境</span> 中古A · 7–14 天</div><div style="font-size:10px;font-weight:900;color:#B4483E">NT$3,280</div></div></div>
+            <div style="display:flex;gap:8px;border:1px solid #EFEDE6;border-radius:9px;padding:7px"><img src="https://images.unsplash.com/photo-1745827222048-c64f377909a4?q=60&amp;w=120&amp;auto=format&amp;fit=crop" alt="縮圖" style="width:40px;height:40px;border-radius:6px;object-fit:cover"><div style="flex:1"><div style="font-size:9.5px;font-weight:700">AIWA HS-PX370 卡帶機</div><div style="font-size:8px"><span style="background:#0F6E84;color:#fff;border-radius:3px;padding:0 4px">跨境</span> 中古B · 7–14 天</div><div style="font-size:10px;font-weight:900;color:#B4483E">NT$1,980</div></div></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">搜尋限定跨境專區；結果直接顯示成色與到貨天數。</div>
+      </div>
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">B3</span><span style="font-size:12px;font-weight:700">一点物・已售出狀態</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="B3 已售出" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;overflow:hidden">
+          
+          <div style="position:relative">
+            <img src="https://images.unsplash.com/photo-1611001716885-b3402558a62b?q=60&amp;w=400&amp;auto=format&amp;fit=crop" alt="商品照" style="width:100%;height:100px;object-fit:cover;display:block;filter:grayscale(1);opacity:0.6">
+            <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#22242A;color:#fff;font-size:11px;font-weight:900;border-radius:999px;padding:5px 16px">已售出</span>
+          </div>
+          <div style="padding:10px 12px">
+            <div style="font-size:11px;font-weight:700;color:#8A8578;text-decoration:line-through">NT$3,280</div>
+            <div style="margin-top:6px;background:#F6F5F0;border-radius:8px;padding:7px 9px;font-size:9px;color:#55524A;line-height:1.55">此為<b>一点物（獨一無二的二手品）</b>，已由其他買家購入，無法補貨。</div>
+            <div style="font-size:9.5px;font-weight:900;margin-top:8px">為您推薦相似商品</div>
+            <div style="display:flex;gap:7px;margin-top:6px"><img src="https://images.unsplash.com/photo-1745827222048-c64f377909a4?q=60&amp;w=120&amp;auto=format&amp;fit=crop" alt="相似" style="width:52px;height:52px;border-radius:7px;object-fit:cover"><img src="https://images.unsplash.com/photo-1515010137531-66995c7f40e6?q=60&amp;w=120&amp;auto=format&amp;fit=crop" alt="相似" style="width:52px;height:52px;border-radius:7px;object-fit:cover"><img src="https://images.unsplash.com/photo-1617360322184-3f0b93b4294b?q=60&amp;w=120&amp;auto=format&amp;fit=crop" alt="相似" style="width:52px;height:52px;border-radius:7px;object-fit:cover"></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">一点物於瀏覽中售出 — 說明無法補貨，導向相似商品。</div>
+      </div>
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">B4</span><span style="font-size:12px;font-weight:700">價格已更新狀態</span><span style="margin-left:auto;background:#8A8578;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">P2</span></div>
+        <div data-screen-label="B4 價格更新" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;overflow:hidden">
+          
+          <img src="https://images.unsplash.com/photo-1617360322184-3f0b93b4294b?q=60&amp;w=400&amp;auto=format&amp;fit=crop" alt="商品照" style="width:100%;height:90px;object-fit:cover;display:block">
+          <div style="padding:10px 12px">
+            <div style="background:#EFF3FA;border:1px solid #CBD8EE;border-radius:8px;padding:7px 9px;font-size:9px;color:#1D3A6E;line-height:1.5"><b>價格已更新</b>：因日本來源價格／匯率變動，本商品價格已於 10 分鐘前調整。</div>
+            <div style="margin-top:8px;font-size:10px;color:#8A8578">原價 <span style="text-decoration:line-through">NT$2,290</span></div>
+            <div style="font-size:16px;font-weight:900;color:#B4483E">NT$2,150 <span style="font-size:8.5px;color:#2E7D4F;font-weight:700">▼ 6.1%</span></div>
+            <div style="margin-top:8px;background:#0F6E84;color:#fff;border-radius:8px;padding:8px 0;text-align:center;font-size:10.5px;font-weight:900">以新價格加入購物車</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">誠實揭露來源價／匯率變動；使用者以新價格重新確認。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROUP: Order management ===== -->
+  <div style="margin-bottom:40px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#5B4B9E;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">O</span><span style="font-size:16px;font-weight:900">訂單管理 Order Management</span></div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">O1</span><span style="font-size:12px;font-weight:700">訂單列表</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="O1 訂單列表" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;overflow:hidden">
+          
+          <div style="padding:9px 12px;border-bottom:1px solid #EFEDE6;font-size:11px;font-weight:900">我的跨境訂單</div>
+          <div style="display:grid;gap:7px;padding:10px 12px 12px">
+            <div style="border:1px solid #EFEDE6;border-radius:9px;padding:8px 10px;display:flex;align-items:center;gap:8px"><div style="flex:1"><div style="font-size:9.5px;font-weight:700">SM-2512-08841</div><div style="font-size:8.5px;color:#8A8578">SONY 隨身聽 ×1</div></div><span style="background:#E3EEF1;color:#0F6E84;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px">國際運送中</span></div>
+            <div style="border:1px solid #EFEDE6;border-radius:9px;padding:8px 10px;display:flex;align-items:center;gap:8px"><div style="flex:1"><div style="font-size:9.5px;font-weight:700">SM-2512-08702</div><div style="font-size:8.5px;color:#8A8578">底片相機 ×1</div></div><span style="background:#FDF0D5;color:#8A5A0B;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px">日本採購中</span></div>
+            <div style="border:1px solid #EFEDE6;border-radius:9px;padding:8px 10px;display:flex;align-items:center;gap:8px"><div style="flex:1"><div style="font-size:9.5px;font-weight:700">SM-2511-97114</div><div style="font-size:8.5px;color:#8A8578">模型 ×2</div></div><span style="background:#E6F3EA;color:#2E7D4F;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px">已完成</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">訂單列表，使用六個系統共用的狀態標籤語彙。</div>
+      </div>
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">O2</span><span style="font-size:12px;font-weight:700">取消申請（依階段）</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="O2 取消申請" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;overflow:hidden">
+          
+          <div style="padding:9px 12px;border-bottom:1px solid #EFEDE6;font-size:11px;font-weight:900">申請取消訂單</div>
+          <div style="display:grid;gap:8px;padding:10px 12px 12px">
+            <div style="border:1px solid #CFE5D6;background:#F4FAF6;border-radius:9px;padding:8px 10px"><div style="display:flex;justify-content:space-between;font-size:9.5px"><b>底片相機 ×1</b><span style="color:#2E7D4F;font-weight:900;font-size:8.5px">可取消</span></div><div style="font-size:8.5px;color:#55524A;margin-top:3px">尚未於日本採購，可全額退款（含預收關稅）。</div></div>
+            <div style="border:1px solid #EFEDE6;background:#F6F5F0;border-radius:9px;padding:8px 10px"><div style="display:flex;justify-content:space-between;font-size:9.5px"><b style="color:#8A8578">SONY 隨身聽 ×1</b><span style="color:#B4483E;font-weight:900;font-size:8.5px">不可取消</span></div><div style="font-size:8.5px;color:#8A8578;margin-top:3px">已完成日本採購（一点物），無法取消。可於到貨後 7 天內申請退貨。</div></div>
+            <div style="background:#B4483E;color:#fff;border-radius:8px;padding:8px 0;text-align:center;font-size:10.5px;font-weight:900">確認取消可取消項目</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">依階段取消：未採購可取消，已採購不可取消。</div>
+      </div>
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">O3</span><span style="font-size:12px;font-weight:700">部分取消通知</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="O3 部分取消" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;overflow:hidden">
+          
+          <div style="padding:9px 12px;border-bottom:1px solid #EFEDE6;font-size:11px;font-weight:900">訂單 SM-2512-08702</div>
+          <div style="margin:10px 12px;background:#FDF6E8;border:1px solid #EAD9AC;border-radius:9px;padding:8px 10px;font-size:9px;color:#8A5A0B;line-height:1.55"><b>部分商品無法採購</b>：您訂購的 3 件商品中，1 件在採購前已於日本售出，該項目已自動取消並退款。</div>
+          <div style="display:grid;gap:6px;padding:0 12px 10px;font-size:9.5px">
+            <div style="display:flex;justify-content:space-between;border:1px solid #EFEDE6;border-radius:8px;padding:7px 9px"><span>底片相機</span><span style="color:#2E7D4F;font-weight:700">已採購 ✓</span></div>
+            <div style="display:flex;justify-content:space-between;border:1px solid #EFEDE6;border-radius:8px;padding:7px 9px"><span>鏡頭蓋組</span><span style="color:#2E7D4F;font-weight:700">已採購 ✓</span></div>
+            <div style="display:flex;justify-content:space-between;border:1px solid #F3D9D6;background:#FBF3F2;border-radius:8px;padding:7px 9px"><span style="color:#8A8578;text-decoration:line-through">相機背帶</span><span style="color:#B4483E;font-weight:700">已取消・退款 NT$420</span></div>
+          </div>
+          <div style="margin:0 12px 12px;font-size:8.5px;color:#8A8578;line-height:1.5">退款（含該項預收關稅比例）將於 3–5 個工作天退回原信用卡。</div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">部分取消：3 件中 1 件於上游售出 → 自動取消並按比例退款。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROUP: Post-sale ===== -->
+  <div style="margin-bottom:40px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#5B4B9E;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">P</span><span style="font-size:16px;font-weight:900">售後 Post-Sale</span></div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">P1</span><span style="font-size:12px;font-weight:700">退貨申請精靈</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="P1 退貨精靈" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;overflow:hidden">
+          
+          <div style="padding:9px 12px;border-bottom:1px solid #EFEDE6;display:flex;align-items:center;gap:8px"><span style="font-size:11px;font-weight:900">退貨申請</span><span style="margin-left:auto;font-size:8.5px;color:#8A8578;font-family:ui-monospace,monospace">步驟 1 / 3</span></div>
+          <div style="padding:10px 12px 12px">
+            <div style="background:#EFF3FA;border:1px solid #CBD8EE;border-radius:8px;padding:7px 9px;font-size:9px;color:#1D3A6E;line-height:1.55">到貨後 <b>7 天猶豫期</b>內可申請退貨。<b>例外</b>：貼身衣物、已拆封軟體／遊戲、客製化商品不適用。</div>
+            <div style="font-size:9.5px;font-weight:900;margin:10px 0 5px">退貨原因</div>
+            <div style="display:grid;gap:5px;font-size:9.5px">
+              <div style="border:2px solid #0F6E84;background:#F0F6F8;border-radius:8px;padding:7px 9px;color:#0F6E84;font-weight:700">與刊登成色不符</div>
+              <div style="border:1px solid #DDD9CE;border-radius:8px;padding:7px 9px">運送途中損壞</div>
+              <div style="border:1px solid #DDD9CE;border-radius:8px;padding:7px 9px">不需要了（7 天猶豫期）</div>
+            </div>
+            <div style="margin-top:10px;background:#0F6E84;color:#fff;border-radius:8px;padding:8px 0;text-align:center;font-size:10.5px;font-weight:900">下一步：上傳照片</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">退貨精靈第 1 步：揭露 7 天猶豫期與例外類別。</div>
+      </div>
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">P2</span><span style="font-size:12px;font-weight:700">退貨進度</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="P2 退貨進度" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;overflow:hidden">
+          
+          <div style="padding:9px 12px;border-bottom:1px solid #EFEDE6;display:flex;gap:8px;align-items:center"><span style="font-size:11px;font-weight:900">退貨單 RT-2612-0031</span><span style="margin-left:auto;background:#E3EEF1;color:#0F6E84;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px">審核通過</span></div>
+          <div style="padding:12px 14px">
+            <div style="display:flex;gap:8px"><div style="display:flex;flex-direction:column;align-items:center"><div style="width:12px;height:12px;border-radius:50%;background:#2E7D4F;color:#fff;font-size:7px;display:flex;align-items:center;justify-content:center">✓</div><div style="width:2px;flex:1;background:#CFE5D6"></div></div><div style="padding-bottom:8px;font-size:9.5px"><b>申請送出</b> <span style="color:#8A8578">12/20</span></div></div>
+            <div style="display:flex;gap:8px"><div style="display:flex;flex-direction:column;align-items:center"><div style="width:12px;height:12px;border-radius:50%;background:#2E7D4F;color:#fff;font-size:7px;display:flex;align-items:center;justify-content:center">✓</div><div style="width:2px;flex:1;background:#CFE5D6"></div></div><div style="padding-bottom:8px;font-size:9.5px"><b>審核通過（照片核對成色）</b> <span style="color:#8A8578">12/21</span></div></div>
+            <div style="display:flex;gap:8px"><div style="display:flex;flex-direction:column;align-items:center"><div style="width:12px;height:12px;border-radius:50%;border:2.5px solid #0F6E84;background:#fff"></div><div style="width:2px;flex:1;background:#E2DFD4"></div></div><div style="padding-bottom:8px;font-size:9.5px"><b style="color:#0F6E84">請寄回：台灣退貨據點</b><div style="font-size:8.5px;color:#8A8578">桃園市龜山區文化一路 100 號（無需寄回日本）</div></div></div>
+            <div style="display:flex;gap:8px"><div style="width:12px;height:12px;border-radius:50%;border:2px solid #E2DFD4;background:#fff"></div><div style="font-size:9.5px;color:#B0AB9E">退款</div></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">退貨進度：照片審核後寄回台灣退貨據點 — 不寄回日本。</div>
+      </div>
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">P3</span><span style="font-size:12px;font-weight:700">退款進度</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="P3 退款進度" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;overflow:hidden">
+          
+          <div style="padding:9px 12px;border-bottom:1px solid #EFEDE6;font-size:11px;font-weight:900">退款明細 SM-2512-08841</div>
+          <div style="display:grid;gap:6px;padding:10px 12px;font-size:9.5px">
+            <div style="display:flex;justify-content:space-between;border:1px solid #EFEDE6;border-radius:8px;padding:7px 9px"><span>商品金額</span><span><b>NT$3,280</b> <span style="color:#2E7D4F;font-size:8.5px;font-weight:700">已退款</span></span></div>
+            <div style="display:flex;justify-content:space-between;border:1px solid #EFEDE6;border-radius:8px;padding:7px 9px"><span>國際運費</span><span><b>NT$250</b> <span style="color:#B45309;font-size:8.5px;font-weight:700">處理中</span></span></div>
+            <div style="display:flex;justify-content:space-between;border:1px solid #EFEDE6;border-radius:8px;padding:7px 9px"><span>已收關稅</span><span><b>NT$150</b> <span style="color:#8A8578;font-size:8.5px;font-weight:700">不退（已完稅）</span></span></div>
+          </div>
+          <div style="margin:0 12px 12px;font-size:8.5px;color:#8A8578;line-height:1.5">各項目退款路徑相同（原信用卡），到帳時間 3–5 個工作天。</div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">退款進度按項目拆解（商品／國際運費／關稅），各自獨立狀態。</div>
+      </div>
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">P4</span><span style="font-size:12px;font-weight:700">客服聯絡表單</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="P4 客服表單" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;overflow:hidden">
+          
+          <div style="padding:9px 12px;border-bottom:1px solid #EFEDE6;font-size:11px;font-weight:900">聯絡客服</div>
+          <div style="padding:10px 12px 12px;display:grid;gap:6px;font-size:9.5px">
+            <div style="border:1px solid #DDD9CE;border-radius:8px;padding:7px 9px;display:flex;justify-content:space-between"><span style="color:#8A8578">問題類別</span><b>包裹進度查詢 ▾</b></div>
+            <div style="border:1px solid #DDD9CE;border-radius:8px;padding:7px 9px;display:flex;justify-content:space-between"><span style="color:#8A8578">相關訂單</span><b>SM-2512-08841 ▾</b></div>
+            <div style="border:1px solid #DDD9CE;border-radius:8px;padding:7px 9px;height:52px;color:#B0AB9E">請描述您的問題…</div>
+            <div style="background:#0F6E84;color:#fff;border-radius:8px;padding:8px 0;text-align:center;font-size:10.5px;font-weight:900">送出並建立案件</div>
+            <div style="font-size:8.5px;color:#8A8578;line-height:1.5">送出後將建立客服案件編號，可於「案件進度」追蹤；跨境訂單由 SHOPMORE 客服團隊處理。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">客服表單建立結構化案件（進入營運後台案件佇列）。</div>
+      </div>
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">P5</span><span style="font-size:12px;font-weight:700">案件進度對話串</span><span style="margin-left:auto;background:#8A8578;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">P2</span></div>
+        <div data-screen-label="P5 案件對話" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;overflow:hidden">
+          
+          <div style="padding:9px 12px;border-bottom:1px solid #EFEDE6;display:flex;gap:8px;align-items:center"><span style="font-size:11px;font-weight:900">案件 CS-26-04412</span><span style="margin-left:auto;background:#FDF0D5;color:#8A5A0B;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px">處理中</span></div>
+          <div style="padding:10px 12px 12px;display:grid;gap:7px">
+            <div style="justify-self:end;max-width:85%;background:#0F6E84;color:#fff;border-radius:10px 10px 3px 10px;padding:7px 10px;font-size:9.5px">我的包裹清關後三天還沒到店？</div>
+            <div style="justify-self:start;max-width:85%;background:#F1EFE8;border-radius:10px 10px 10px 3px;padding:7px 10px;font-size:9.5px">您好，包裹已於今日交寄 7-11 物流，預計明日到店，屆時會發送取貨簡訊。</div>
+            <div style="justify-self:start;font-size:8px;color:#8A8578;font-family:ui-monospace,monospace">SHOPMORE 客服 · 12/18 10:22</div>
+            <div style="border:1px solid #DDD9CE;border-radius:999px;padding:6px 12px;font-size:9px;color:#B0AB9E">輸入訊息…</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">案件對話串對應後台案件詳情；消費者可見狀態與回覆。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROUP: Legal ===== -->
+  <div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#5B4B9E;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">L</span><span style="font-size:16px;font-weight:900">法定揭露 Legal / Disclosure</span></div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">L1</span><span style="font-size:12px;font-weight:700">跨境購物條款頁</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="L1 條款頁" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;overflow:hidden">
+          
+          <div style="padding:9px 12px;border-bottom:1px solid #EFEDE6;font-size:11px;font-weight:900">跨境購物約定條款</div>
+          <div style="padding:10px 12px 12px;display:grid;gap:8px;font-size:9px;line-height:1.6;color:#55524A">
+            <div><b style="color:#22242A;font-size:9.5px">一、賣方身分</b><br>本專區商品之出賣人為境外公司 SHOPMORE (HK) Limited（香港），非本平台。</div>
+            <div><b style="color:#22242A;font-size:9.5px">二、統一發票</b><br>境外公司非中華民國營業人，依法不開立統一發票；交易憑證以「購買證明」為準。</div>
+            <div><b style="color:#22242A;font-size:9.5px">三、稅費</b><br>進口稅費於結帳時預收，實際稅額以海關核定為準，多退少補。</div>
+            <div><b style="color:#22242A;font-size:9.5px">四、申訴管道</b><br>客服信箱 support@shopmore.hk · 台灣免付費 0800-XXX-XXX · 消費爭議可向消保官申訴。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">跨境條款：境外賣家身分、不開立發票說明、申訴管道。</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;顯示註解&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { annoDisplay: (this.props['顯示註解'] ?? true) ? 'block' : 'none' };
+  }
+}
+</script>
+</body>
+</html>

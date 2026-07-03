@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./gate.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F4F3EE;font-family:'Noto Sans TC','PingFang TC',sans-serif;color:#22242A;}</style>
+</helmet>
+
+<div style="padding:48px 56px 80px;min-width:2700px">
+
+  <!-- ===== FILE HEADER ===== -->
+  <div style="margin-bottom:10px;display:flex;align-items:center;gap:12px">
+    <div style="width:34px;height:34px;border-radius:9px;background:#2E7D4F;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px">4</div>
+    <div>
+      <div style="font-size:26px;font-weight:900">契約供應商入口（日本）— Supplier Portal</div>
+      <div style="font-size:12px;color:#6E6A5E;font-family:ui-monospace,monospace">FILE 4/6 · self-service for contracted JP suppliers/brands · desktop width · JP UI with EN toggle</div>
+    </div>
+  </div>
+  <div style="display:flex;gap:8px;margin-bottom:30px;font-size:11px;font-weight:700;flex-wrap:wrap">
+    <a href="partner-storefront-reference.dc.html" style="color:#55524A;text-decoration:none;border:1px solid #DDD9CE;border-radius:999px;padding:4px 12px;background:#fff">1 合作平台前台</a>
+    <a href="hosted-payment-and-consumer-pages.dc.html" style="color:#55524A;text-decoration:none;border:1px solid #DDD9CE;border-radius:999px;padding:4px 12px;background:#fff">2 託管付款頁</a>
+    <a href="ops-console.dc.html" style="color:#55524A;text-decoration:none;border:1px solid #DDD9CE;border-radius:999px;padding:4px 12px;background:#fff">3 營運後台</a>
+    <span style="background:#2E7D4F;color:#fff;border-radius:999px;padding:4px 12px">4 供應商入口</span>
+    <a href="warehouse-apps.dc.html" style="color:#55524A;text-decoration:none;border:1px solid #DDD9CE;border-radius:999px;padding:4px 12px;background:#fff">5 倉庫作業</a>
+    <a href="partner-developer-sandbox.dc.html" style="color:#55524A;text-decoration:none;border:1px solid #DDD9CE;border-radius:999px;padding:4px 12px;background:#fff">6 開發者沙盒</a>
+  </div>
+
+  <!-- ===== MAIN FLOW LANE ===== -->
+  <div data-screen-label="MAIN FLOW" style="background:#E7F0F3;border:1px solid #CBDEE4;border-radius:18px;padding:22px 24px;margin-bottom:44px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+      <span style="background:#0F6E84;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">MAIN FLOW</span>
+      <span style="font-size:14px;font-weight:900">主流程頁面（步驟 5：供應商接單出貨）</span>
+    </div>
+    <div style="display:flex;gap:26px;align-items:flex-start">
+
+      <!-- MF 5 PO list -->
+      <div style="width:480px;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="min-width:22px;height:20px;border-radius:10px;background:#0F6E84;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;padding:0 5px">5</span><span style="font-size:12px;font-weight:700">新採購單通知列表</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="MF5 PO列表" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          
+          <div style="display:flex;align-items:center;gap:6px;background:#2E7D4F;padding:6px 10px"><span style="font-size:10px;color:#fff;font-weight:900">SHOPMORE サプライヤーポータル</span><span style="margin-left:auto;background:rgba(255,255,255,0.2);color:#fff;font-size:8px;font-weight:900;border-radius:4px;padding:2px 7px;font-family:ui-monospace,monospace">日本語 | EN</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:flex;gap:5px;font-size:8.5px;font-weight:700;font-family:ui-monospace,monospace"><span style="background:#FBF3F2;color:#B4483E;border-radius:4px;padding:2px 8px">新規 3</span><span style="background:#FDF0D5;color:#8A5A0B;border-radius:4px;padding:2px 8px">出荷期限接近 1</span><span style="background:#E3EEF1;color:#0F6E84;border-radius:4px;padding:2px 8px">出荷済み 42</span></div>
+            <div style="display:grid;grid-template-columns:110px 1fr 110px 90px;gap:6px;padding:6px 0;font-size:8.5px;font-weight:900;color:#55524A;border-bottom:1px solid #EFEDE6;margin-top:6px"><span>発注番号</span><span>商品</span><span>出荷期限</span><span>状態</span></div>
+            <div style="display:grid;grid-template-columns:110px 1fr 110px 90px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;align-items:center;background:#FBF3F2"><span style="font-family:ui-monospace,monospace;font-weight:700">PO-26-1204</span><span>フィルムカメラ ×1</span><span style="color:#B4483E;font-weight:900;font-family:ui-monospace,monospace">明日 12/13</span><span style="background:#B4483E;color:#fff;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px;font-family:ui-monospace,monospace">NEW</span></div>
+            <div style="display:grid;grid-template-columns:110px 1fr 110px 90px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;align-items:center"><span style="font-family:ui-monospace,monospace;font-weight:700">PO-26-1201</span><span>模型フィギュア ×2</span><span style="font-family:ui-monospace,monospace">12/15</span><span style="background:#B4483E;color:#fff;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px;font-family:ui-monospace,monospace">NEW</span></div>
+            <div style="display:grid;grid-template-columns:110px 1fr 110px 90px;gap:6px;padding:7px 0;align-items:center"><span style="font-family:ui-monospace,monospace;font-weight:700">PO-26-1198</span><span>腕時計 ×1</span><span style="font-family:ui-monospace,monospace">12/14</span><span style="background:#E6F3EA;color:#2E7D4F;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px;font-family:ui-monospace,monospace">出荷済</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">新採購單通知列表，依出貨期限緊急度排序（日文介面，可切換英文）。</div>
+      </div>
+
+      <!-- MF 5b PO detail -->
+      <div style="width:480px;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="min-width:22px;height:20px;border-radius:10px;background:#0F6E84;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;padding:0 5px">5b</span><span style="font-size:12px;font-weight:700">採購單詳情</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="MF5b PO詳情" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          
+          <div style="display:flex;align-items:center;gap:6px;background:#2E7D4F;padding:6px 10px"><span style="font-size:10px;color:#fff;font-weight:900">発注書 PO-26-1204</span><span style="margin-left:auto;background:rgba(255,255,255,0.2);color:#fff;font-size:8px;font-weight:900;border-radius:4px;padding:2px 7px;font-family:ui-monospace,monospace">日本語 | EN</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:8px 10px;display:grid;gap:4px">
+              <div style="display:flex;justify-content:space-between"><span style="color:#8A8578">商品</span><b>Canon AE-1 フィルムカメラ（整備済）×1</b></div>
+              <div style="display:flex;justify-content:space-between"><span style="color:#8A8578">仕入価格</span><b>¥18,500（税込）</b></div>
+              <div style="display:flex;justify-content:space-between"><span style="color:#8A8578">出荷期限</span><b style="color:#B4483E">12/13（リードタイム SLA：受注後 2 営業日）</b></div>
+            </div>
+            <div style="margin-top:7px;border:1px solid #CBDEE4;background:#F0F6F8;border-radius:8px;padding:8px 10px">
+              <div style="font-size:8.5px;font-weight:900;color:#0F6E84">出荷先（SHOPMORE 受入拠点）</div>
+              <div style="margin-top:3px;line-height:1.6">〒273-0012 千葉県船橋市浜町2-1-1<br>SHOPMORE JP 受入センター 3F 受付<br><span style="font-family:ui-monospace,monospace;font-size:8.5px;color:#8A8578">必記載：PO-26-1204（ASN 照合用）</span></div>
+            </div>
+            <div style="margin-top:8px;display:flex;gap:6px"><span style="background:#2E7D4F;color:#fff;font-size:9px;font-weight:900;border-radius:6px;padding:5px 14px">受注を確定</span><span style="border:1px solid #DDD9CE;font-size:9px;border-radius:6px;padding:5px 14px;color:#B4483E;font-weight:700">在庫なし・辞退</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">採購單詳情：品項、收貨點地址（含 ASN 參照）、依前置 SLA 計算的出貨期限。</div>
+      </div>
+
+      <!-- MF 5c ship confirm -->
+      <div style="width:480px;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="min-width:22px;height:20px;border-radius:10px;background:#0F6E84;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;padding:0 5px">5c</span><span style="font-size:12px;font-weight:700">出貨確認表單</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="MF5c 出貨確認" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          
+          <div style="display:flex;align-items:center;gap:6px;background:#2E7D4F;padding:6px 10px"><span style="font-size:10px;color:#fff;font-weight:900">出荷確認 PO-26-1204</span><span style="margin-left:auto;background:rgba(255,255,255,0.2);color:#fff;font-size:8px;font-weight:900;border-radius:4px;padding:2px 7px;font-family:ui-monospace,monospace">日本語 | EN</span></div>
+          <div style="padding:10px 12px;font-size:9.5px;display:grid;gap:6px">
+            <div style="border:1px solid #DDD9CE;border-radius:8px;padding:7px 10px;display:flex;justify-content:space-between"><span style="color:#8A8578">配送業者</span><b>ヤマト運輸 ▾</b></div>
+            <div style="border:2px solid #2E7D4F;border-radius:8px;padding:7px 10px"><div style="font-size:8px;color:#2E7D4F;font-weight:700">追跡番号（必須）</div><div style="font-size:12px;font-weight:900;font-family:ui-monospace,monospace;letter-spacing:1px">4415-2201-8874</div></div>
+            <div style="border:1px solid #DDD9CE;border-radius:8px;padding:7px 10px;display:flex;justify-content:space-between"><span style="color:#8A8578">出荷日</span><b>2026/12/12</b></div>
+            <div style="background:#2E7D4F;color:#fff;border-radius:8px;padding:8px 0;text-align:center;font-size:10.5px;font-weight:900">出荷を確定 → ASN 自動生成</div>
+            <div style="font-size:8.5px;color:#8A8578">確定後、SHOPMORE 受入倉庫に ASN が発行され、追跡番号で照合されます。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">出貨確認表單：物流商＋追蹤單號 → 自動產生日本倉掃描比對用的 ASN。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROUP: Catalog ===== -->
+  <div style="margin-bottom:40px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#2E7D4F;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">C</span><span style="font-size:16px;font-weight:900">商品目錄 Catalog</span></div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#2E7D4F;font-family:ui-monospace,monospace">C1</span><span style="font-size:12px;font-weight:700">商品列表・平台別上架狀態</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="C1 商品列表" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          
+          <div style="display:flex;align-items:center;gap:6px;background:#2E7D4F;padding:6px 10px"><span style="font-size:10px;color:#fff;font-weight:900">商品一覧</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:1fr 90px 90px 90px;gap:6px;padding:6px 0;font-size:8.5px;font-weight:900;color:#55524A;border-bottom:1px solid #EFEDE6"><span>商品</span><span>平台A</span><span>平台B</span><span>在庫</span></div>
+            <div style="display:grid;grid-template-columns:1fr 90px 90px 90px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;align-items:center"><span>Canon AE-1（整備済）</span><span style="color:#2E7D4F;font-weight:900;font-size:8.5px;font-family:ui-monospace,monospace">掲載中</span><span style="color:#2E7D4F;font-weight:900;font-size:8.5px;font-family:ui-monospace,monospace">掲載中</span><span style="font-family:ui-monospace,monospace">4</span></div>
+            <div style="display:grid;grid-template-columns:1fr 90px 90px 90px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;align-items:center"><span>SEIKO 5 自動巻</span><span style="color:#2E7D4F;font-weight:900;font-size:8.5px;font-family:ui-monospace,monospace">掲載中</span><span style="color:#B45309;font-weight:900;font-size:8.5px;font-family:ui-monospace,monospace">審査中</span><span style="font-family:ui-monospace,monospace">11</span></div>
+            <div style="display:grid;grid-template-columns:1fr 90px 90px 90px;gap:6px;padding:7px 0;align-items:center;background:#FBF3F2"><span>模型キット X-24</span><span style="color:#B4483E;font-weight:900;font-size:8.5px;font-family:ui-monospace,monospace">却下</span><span style="color:#8A8578;font-size:8.5px;font-family:ui-monospace,monospace">未申請</span><span style="font-family:ui-monospace,monospace">0</span></div>
+            <div style="margin-top:6px;font-size:8.5px;color:#8A8578">却下理由：コンプライアンス（武器形状ルール）→ 詳細を見る</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">商品列表含各平台上架狀態與合規駁回。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#2E7D4F;font-family:ui-monospace,monospace">C2</span><span style="font-size:12px;font-weight:700">商品編輯器</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="C2 商品編輯" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          
+          <div style="display:flex;align-items:center;gap:6px;background:#2E7D4F;padding:6px 10px"><span style="font-size:10px;color:#fff;font-weight:900">商品編集 · Canon AE-1</span></div>
+          <div style="padding:10px 12px;display:flex;gap:10px">
+            <img src="https://images.unsplash.com/photo-1617360322184-3f0b93b4294b?q=60&amp;w=200&amp;auto=format&amp;fit=crop" alt="商品" style="width:96px;height:96px;border-radius:8px;object-fit:cover">
+            <div style="flex:1;display:grid;gap:5px;font-size:9.5px">
+              <div style="border:1px solid #DDD9CE;border-radius:7px;padding:6px 9px;display:flex;justify-content:space-between"><span style="color:#8A8578">商品名（JA）</span><b>Canon AE-1 フィルムカメラ 整備済</b></div>
+              <div style="border:1px solid #DDD9CE;border-radius:7px;padding:6px 9px;display:flex;justify-content:space-between"><span style="color:#8A8578">状態グレード</span><b>中古A ▾</b></div>
+              <div style="border:1px solid #DDD9CE;border-radius:7px;padding:6px 9px;display:flex;justify-content:space-between"><span style="color:#8A8578">卸価格（税込）</span><b>¥18,500</b></div>
+              <div style="font-size:8.5px;color:#8A8578">繁體中文の商品名・説明は SHOPMORE 側で翻訳（HITL 審核）されます。</div>
+            </div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">商品編輯器；繁中文案由下游翻譯人工審核佇列產生。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#2E7D4F;font-family:ui-monospace,monospace">C3</span><span style="font-size:12px;font-weight:700">CSV／饋送上傳・驗證報告</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="C3 CSV上傳" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          
+          <div style="display:flex;align-items:center;gap:6px;background:#2E7D4F;padding:6px 10px"><span style="font-size:10px;color:#fff;font-weight:900">一括アップロード</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="border:1px dashed #C9C5B8;border-radius:8px;padding:10px;text-align:center;font-size:9px;color:#8A8578">products_2026-12.csv（1,204 行）アップロード完了</div>
+            <div style="margin-top:7px;display:flex;gap:6px;font-size:8.5px;font-weight:700;font-family:ui-monospace,monospace"><span style="background:#E6F3EA;color:#2E7D4F;border-radius:4px;padding:2px 8px">有効 1,180</span><span style="background:#FBF3F2;color:#B4483E;border-radius:4px;padding:2px 8px">エラー 24</span></div>
+            <div style="margin-top:6px;border:1px solid #E2DFD4;border-radius:8px;padding:7px 10px;font-family:ui-monospace,monospace;font-size:8.5px;line-height:1.8;color:#55524A">
+              <div><span style="color:#B4483E">行 88</span> price_jpy 空欄（必須）</div>
+              <div><span style="color:#B4483E">行 214</span> condition_grade "中古S" は無効（A/B/C）</div>
+              <div><span style="color:#B4483E">行 519</span> jan_code 桁数不正</div>
+            </div>
+            <div style="margin-top:7px;display:flex;gap:6px"><span style="background:#2E7D4F;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:3px 12px">有効行のみ取込</span><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#55524A">エラー CSV を下載</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">CSV／饋送上傳：逐列驗證錯誤報告＋部分匯入。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#2E7D4F;font-family:ui-monospace,monospace">C4</span><span style="font-size:12px;font-weight:700">庫存・價格批次更新</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="C4 批次更新" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          
+          <div style="display:flex;align-items:center;gap:6px;background:#2E7D4F;padding:6px 10px"><span style="font-size:10px;color:#fff;font-weight:900">在庫・価格 一括更新</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:1fr 90px 90px 110px;gap:6px;padding:6px 0;font-size:8.5px;font-weight:900;color:#55524A;border-bottom:1px solid #EFEDE6"><span>商品</span><span>在庫</span><span>新在庫</span><span>新価格</span></div>
+            <div style="display:grid;grid-template-columns:1fr 90px 90px 110px;gap:6px;padding:6px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace;align-items:center"><span>Canon AE-1</span><span>4</span><span style="border:1px solid #DDD9CE;border-radius:5px;padding:2px 8px;text-align:center;font-weight:900">3</span><span style="border:1px solid #DDD9CE;border-radius:5px;padding:2px 8px;text-align:center">¥18,500</span></div>
+            <div style="display:grid;grid-template-columns:1fr 90px 90px 110px;gap:6px;padding:6px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace;align-items:center"><span>SEIKO 5</span><span>11</span><span style="border:1px solid #DDD9CE;border-radius:5px;padding:2px 8px;text-align:center">11</span><span style="border:2px solid #2E7D4F;border-radius:5px;padding:2px 8px;text-align:center;font-weight:900">¥12,800</span></div>
+            <div style="margin-top:7px;display:flex;gap:6px;align-items:center"><span style="background:#2E7D4F;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:3px 12px">2 件を更新</span><span style="font-size:8.5px;color:#8A8578">価格変更は SHOPMORE 側再計算後、約 15 分で各平台に反映。</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">庫存與價格批次編輯；台幣重定價由 SHOPMORE 端處理。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#2E7D4F;font-family:ui-monospace,monospace">C5</span><span style="font-size:12px;font-weight:700">接單生產・前置天數設定</span><span style="margin-left:auto;background:#8A8578;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">P2</span></div>
+        <div data-screen-label="C5 前置天數" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          
+          <div style="display:flex;align-items:center;gap:6px;background:#2E7D4F;padding:6px 10px"><span style="font-size:10px;color:#fff;font-weight:900">受注生産・リードタイム設定</span></div>
+          <div style="padding:10px 12px;display:grid;gap:6px;font-size:9.5px">
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 10px;display:flex;justify-content:space-between;align-items:center"><span><b>通常在庫品</b> 出荷 SLA</span><b style="font-family:ui-monospace,monospace">2 営業日</b></div>
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 10px;display:flex;justify-content:space-between;align-items:center"><span><b>受注生産（刻印・カスタム）</b></span><b style="font-family:ui-monospace,monospace">10 営業日</b></div>
+            <div style="font-size:8.5px;color:#8A8578">前置天數會直接反映在消費者商品頁的「預計送達」區間與取消政策（受注生産不可取消）。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">接單生產前置天數設定，反映至消費者 ETA 與取消政策。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROUP: Business ===== -->
+  <div style="margin-bottom:40px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#B45309;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">B</span><span style="font-size:16px;font-weight:900">商務 Business</span></div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#B45309;font-family:ui-monospace,monospace">B1</span><span style="font-size:12px;font-weight:700">結算對帳單</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="B1 結算" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          
+          <div style="display:flex;align-items:center;gap:6px;background:#2E7D4F;padding:6px 10px"><span style="font-size:10px;color:#fff;font-weight:900">精算明細 2026-11 月分</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;gap:4px;font-family:ui-monospace,monospace;font-size:9px">
+              <div style="display:flex;justify-content:space-between"><span>出荷確定 68 件</span><b>¥1,184,300</b></div>
+              <div style="display:flex;justify-content:space-between;color:#B4483E"><span>返品・品質控除 2 件</span><b>−¥31,200</b></div>
+              <div style="display:flex;justify-content:space-between;border-top:1px dashed #E2DFD4;padding-top:4px"><span>お支払額（12/25 振込）</span><b style="font-size:11px">¥1,153,100</b></div>
+            </div>
+            <div style="margin-top:7px;display:flex;gap:6px"><span style="background:#B45309;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:3px 12px">明細 CSV</span><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#55524A">請求書 PDF</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">月結算對帳單：含扣款項目與撥款日期。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#B45309;font-family:ui-monospace,monospace">B2</span><span style="font-size:12px;font-weight:700">付款歷史</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="B2 付款歷史" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          
+          <div style="display:flex;align-items:center;gap:6px;background:#2E7D4F;padding:6px 10px"><span style="font-size:10px;color:#fff;font-weight:900">お支払履歴</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:110px 1fr 110px 90px;gap:6px;padding:6px 0;font-size:8.5px;font-weight:900;color:#55524A;border-bottom:1px solid #EFEDE6"><span>振込日</span><span>対象月</span><span>金額</span><span>状態</span></div>
+            <div style="display:grid;grid-template-columns:110px 1fr 110px 90px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace"><span>11/25</span><span>2026-10</span><span>¥982,400</span><span style="color:#2E7D4F;font-weight:900">完了 ✓</span></div>
+            <div style="display:grid;grid-template-columns:110px 1fr 110px 90px;gap:6px;padding:7px 0;font-family:ui-monospace,monospace"><span>12/25</span><span>2026-11</span><span>¥1,153,100</span><span style="color:#B45309;font-weight:900">予定</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">付款歷史：已完成與排定撥款。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#B45309;font-family:ui-monospace,monospace">B3</span><span style="font-size:12px;font-weight:700">績效計分卡（出貨 SLA）</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="B3 計分卡" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          
+          <div style="display:flex;align-items:center;gap:6px;background:#2E7D4F;padding:6px 10px"><span style="font-size:10px;color:#fff;font-weight:900">パフォーマンス スコアカード</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px">
+              <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px"><div style="font-size:8.5px;color:#8A8578">期限内出荷率</div><div style="font-size:14px;font-weight:900;color:#2E7D4F">98.2%</div><div style="font-size:8px;color:#8A8578">目標 95%</div></div>
+              <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px"><div style="font-size:8.5px;color:#8A8578">QC 不合格率</div><div style="font-size:14px;font-weight:900">0.8%</div><div style="font-size:8px;color:#8A8578">目標 &lt;2%</div></div>
+              <div style="border:1px solid #EAD9AC;background:#FDF6E8;border-radius:8px;padding:7px 9px"><div style="font-size:8.5px;color:#8A5A0B">在庫切れ辞退率</div><div style="font-size:14px;font-weight:900;color:#B45309">3.1% ⚠</div><div style="font-size:8px;color:#8A5A0B">目標 &lt;2%</div></div>
+            </div>
+            <div style="margin-top:7px;font-size:8.5px;color:#8A8578">スコアは掲載優先度と発注配分に影響します。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">績效計分卡（出貨 SLA、QC 不合格率、缺貨辭退率），影響發注配分。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROUP: Account ===== -->
+  <div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#22242A;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">A</span><span style="font-size:16px;font-weight:900">帳戶 Account</span></div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#22242A;font-family:ui-monospace,monospace">A1</span><span style="font-size:12px;font-weight:700">入駐清單</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="A1 入駐" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          
+          <div style="display:flex;align-items:center;gap:6px;background:#2E7D4F;padding:6px 10px"><span style="font-size:10px;color:#fff;font-weight:900">オンボーディング（4/6 完了）</span></div>
+          <div style="padding:10px 12px;display:grid;gap:5px;font-size:9.5px">
+            <div style="display:flex;justify-content:space-between;border:1px solid #E2DFD4;border-radius:7px;padding:6px 9px"><span>会社情報・反社チェック</span><span style="color:#2E7D4F;font-weight:900;font-size:8.5px">完了 ✓</span></div>
+            <div style="display:flex;justify-content:space-between;border:1px solid #E2DFD4;border-radius:7px;padding:6px 9px"><span>銀行口座確認（少額振込）</span><span style="color:#2E7D4F;font-weight:900;font-size:8.5px">完了 ✓</span></div>
+            <div style="display:flex;justify-content:space-between;border:2px solid #2E7D4F;background:#F4FAF6;border-radius:7px;padding:6px 9px"><span><b>テスト発注 → 出荷確認</b></span><span style="color:#B45309;font-weight:900;font-size:8.5px">進行中</span></div>
+            <div style="display:flex;justify-content:space-between;border:1px solid #E2DFD4;border-radius:7px;padding:6px 9px;color:#8A8578"><span>初回カタログ審査</span><span style="font-size:8.5px">未着手</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">入駐清單：合規審查、銀行帳戶驗證、測試採購單。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#22242A;font-family:ui-monospace,monospace">A2</span><span style="font-size:12px;font-weight:700">公司資料</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="A2 公司資料" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          
+          <div style="display:flex;align-items:center;gap:6px;background:#2E7D4F;padding:6px 10px"><span style="font-size:10px;color:#fff;font-weight:900">会社プロフィール</span></div>
+          <div style="padding:10px 12px;display:grid;gap:5px;font-size:9.5px">
+            <div style="border:1px solid #DDD9CE;border-radius:7px;padding:6px 9px;display:flex;justify-content:space-between"><span style="color:#8A8578">会社名</span><b>株式会社レトロ商会</b></div>
+            <div style="border:1px solid #DDD9CE;border-radius:7px;padding:6px 9px;display:flex;justify-content:space-between"><span style="color:#8A8578">古物商許可</span><b>東京都公安委員会 第30122…号 ✓</b></div>
+            <div style="border:1px solid #DDD9CE;border-radius:7px;padding:6px 9px;display:flex;justify-content:space-between"><span style="color:#8A8578">出荷元住所</span><b>東京都台東区…</b></div>
+            <div style="border:1px solid #DDD9CE;border-radius:7px;padding:6px 9px;display:flex;justify-content:space-between"><span style="color:#8A8578">振込口座</span><b>みずほ ***4102</b></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">公司資料含古物商許可 — 販售二手品必備。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#22242A;font-family:ui-monospace,monospace">A3</span><span style="font-size:12px;font-weight:700">使用者／權限管理</span><span style="margin-left:auto;background:#8A8578;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">P2</span></div>
+        <div data-screen-label="A3 權限" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          
+          <div style="display:flex;align-items:center;gap:6px;background:#2E7D4F;padding:6px 10px"><span style="font-size:10px;color:#fff;font-weight:900">ユーザー管理</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:1fr 130px 90px;gap:6px;padding:6px 0;font-size:8.5px;font-weight:900;color:#55524A;border-bottom:1px solid #EFEDE6"><span>ユーザー</span><span>ロール</span><span>状態</span></div>
+            <div style="display:grid;grid-template-columns:1fr 130px 90px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace"><span>sato@retro-shokai.jp</span><span>管理者</span><span style="color:#2E7D4F;font-weight:900">有効</span></div>
+            <div style="display:grid;grid-template-columns:1fr 130px 90px;gap:6px;padding:7px 0;font-family:ui-monospace,monospace"><span>kato@retro-shokai.jp</span><span>出荷担当（財務不可）</span><span style="color:#2E7D4F;font-weight:900">有効</span></div>
+            <div style="margin-top:6px;font-size:8.5px;color:#8A8578">財務（精算・口座）へのアクセスは管理者ロールのみ。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">使用者／權限管理，財務權限獨立角色。</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;顯示註解&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { annoDisplay: (this.props['顯示註解'] ?? true) ? 'block' : 'none' };
+  }
+}
+</script>
+</body>
+</html>

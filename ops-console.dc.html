@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./gate.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F4F3EE;font-family:'Noto Sans TC','PingFang TC',sans-serif;color:#22242A;}</style>
+</helmet>
+
+<div style="padding:48px 56px 80px;min-width:3300px">
+
+  <!-- ===== FILE HEADER ===== -->
+  <div style="margin-bottom:10px;display:flex;align-items:center;gap:12px">
+    <div style="width:34px;height:34px;border-radius:9px;background:#22242A;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px">3</div>
+    <div>
+      <div style="font-size:26px;font-weight:900">SHOPMORE 營運後台（內部）— Ops Console</div>
+      <div style="font-size:12px;color:#6E6A5E;font-family:ui-monospace,monospace">FILE 3/6 · internal admin for the overseas ops team · desktop width · exception-driven ops model · largest inventory</div>
+    </div>
+  </div>
+  <div style="display:flex;gap:8px;margin-bottom:30px;font-size:11px;font-weight:700;flex-wrap:wrap">
+    <a href="partner-storefront-reference.dc.html" style="color:#55524A;text-decoration:none;border:1px solid #DDD9CE;border-radius:999px;padding:4px 12px;background:#fff">1 合作平台前台</a>
+    <a href="hosted-payment-and-consumer-pages.dc.html" style="color:#55524A;text-decoration:none;border:1px solid #DDD9CE;border-radius:999px;padding:4px 12px;background:#fff">2 託管付款頁</a>
+    <span style="background:#22242A;color:#fff;border-radius:999px;padding:4px 12px">3 營運後台</span>
+    <a href="supplier-portal.dc.html" style="color:#55524A;text-decoration:none;border:1px solid #DDD9CE;border-radius:999px;padding:4px 12px;background:#fff">4 供應商入口</a>
+    <a href="warehouse-apps.dc.html" style="color:#55524A;text-decoration:none;border:1px solid #DDD9CE;border-radius:999px;padding:4px 12px;background:#fff">5 倉庫作業</a>
+    <a href="partner-developer-sandbox.dc.html" style="color:#55524A;text-decoration:none;border:1px solid #DDD9CE;border-radius:999px;padding:4px 12px;background:#fff">6 開發者沙盒</a>
+  </div>
+
+  <!-- ===== MAIN FLOW LANE ===== -->
+  <div data-screen-label="MAIN FLOW" style="background:#E7F0F3;border:1px solid #CBDEE4;border-radius:18px;padding:22px 24px;margin-bottom:44px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+      <span style="background:#0F6E84;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">MAIN FLOW</span>
+      <span style="font-size:14px;font-weight:900">主流程頁面（步驟 5 採購 · 9 關稅對帳 · 11 結案）</span>
+    </div>
+    <div style="display:flex;gap:26px;align-items:flex-start">
+
+      <!-- MF 5a order list -->
+      <div style="width:480px;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="min-width:22px;height:20px;border-radius:10px;background:#0F6E84;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;padding:0 5px">5a</span><span style="font-size:12px;font-weight:700">訂單列表</span></div>
+        <div data-screen-label="MF5a 訂單列表" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / orders</span></div>
+          <div style="display:flex;gap:5px;padding:9px 12px;font-size:8.5px;font-weight:700;font-family:ui-monospace,monospace;flex-wrap:wrap"><span style="background:#22242A;color:#fff;border-radius:4px;padding:2px 8px">ALL 1,204</span><span style="background:#FDF0D5;color:#8A5A0B;border-radius:4px;padding:2px 8px">PROCURING 86</span><span style="background:#E3EEF1;color:#0F6E84;border-radius:4px;padding:2px 8px">IN_TRANSIT 312</span><span style="background:#FBF3F2;color:#B4483E;border-radius:4px;padding:2px 8px">EXCEPTION 14</span></div>
+          <div style="border-top:1px solid #EFEDE6;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:110px 1fr 90px 90px;gap:6px;padding:6px 12px;background:#F6F5F0;font-size:8.5px;font-weight:900;color:#55524A"><span>訂單</span><span>商品／來源</span><span>平台</span><span>狀態</span></div>
+            <div style="display:grid;grid-template-columns:110px 1fr 90px 90px;gap:6px;padding:7px 12px;border-top:1px solid #EFEDE6;align-items:center"><span style="font-family:ui-monospace,monospace;font-weight:700">SM-2512-08841</span><span>隨身聽 · Mercari 代購</span><span>合作平台A</span><span><span style="background:#2E7D4F;color:#fff;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px;font-family:ui-monospace,monospace">PURCHASED</span></span></div>
+            <div style="display:grid;grid-template-columns:110px 1fr 90px 90px;gap:6px;padding:7px 12px;border-top:1px solid #EFEDE6;align-items:center"><span style="font-family:ui-monospace,monospace;font-weight:700">SM-2512-08853</span><span>底片相機 · 駿河屋 代購</span><span>合作平台B</span><span><span style="background:#FDF0D5;color:#8A5A0B;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px;font-family:ui-monospace,monospace">PROCURING</span></span></div>
+            <div style="display:grid;grid-template-columns:110px 1fr 90px 90px;gap:6px;padding:7px 12px;border-top:1px solid #EFEDE6;align-items:center"><span style="font-family:ui-monospace,monospace;font-weight:700">SM-2512-08860</span><span>模型 ×2 · 契約供應商</span><span>合作平台A</span><span><span style="background:#FBF3F2;color:#B4483E;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px;font-family:ui-monospace,monospace">EXCEPTION</span></span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">訂單列表使用共用狀態標籤；例外列直接連入例外工作台。</div>
+      </div>
+
+      <!-- MF 5b order detail -->
+      <div style="width:480px;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="min-width:22px;height:20px;border-radius:10px;background:#0F6E84;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;padding:0 5px">5b</span><span style="font-size:12px;font-weight:700">訂單詳情</span></div>
+        <div data-screen-label="MF5b 訂單詳情" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / orders / SM-2512-08841</span></div>
+          <div style="padding:10px 12px">
+            <div style="display:flex;align-items:center;gap:7px"><span style="font-size:11px;font-weight:900;font-family:ui-monospace,monospace">SM-2512-08841</span><span style="background:#2E7D4F;color:#fff;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px;font-family:ui-monospace,monospace">PURCHASED</span></div>
+            <div style="display:flex;gap:4px;margin-top:7px;font-size:8px;font-weight:700;font-family:ui-monospace,monospace;flex-wrap:wrap"><span style="background:#E3EEF1;color:#0F6E84;border-radius:3px;padding:2px 5px">PAID</span><span style="color:#C9C5B8">→</span><span style="background:#2E7D4F;color:#fff;border-radius:3px;padding:2px 5px">PURCHASED</span><span style="color:#C9C5B8">→</span><span style="background:#F1EFE8;color:#B0AB9E;border-radius:3px;padding:2px 5px">JP_INBOUND</span><span style="color:#C9C5B8">→</span><span style="background:#F1EFE8;color:#B0AB9E;border-radius:3px;padding:2px 5px">LINEHAUL</span><span style="color:#C9C5B8">→</span><span style="background:#F1EFE8;color:#B0AB9E;border-radius:3px;padding:2px 5px">CLEARED</span><span style="color:#C9C5B8">→</span><span style="background:#F1EFE8;color:#B0AB9E;border-radius:3px;padding:2px 5px">DELIVERED</span></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:9px">
+              <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px"><div style="font-size:8.5px;font-weight:900;color:#55524A">採購段 Procurement legs</div><div style="font-size:9px;margin-top:4px;display:flex;justify-content:space-between"><span>Leg 1 · Mercari 代購</span><span style="color:#2E7D4F;font-weight:900;font-size:8px;font-family:ui-monospace,monospace">PURCHASED</span></div></div>
+              <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px"><div style="font-size:8.5px;font-weight:900;color:#55524A">金流 Auth / Capture</div><div style="font-size:9px;margin-top:4px">授權 12/09 → 請款 <b style="color:#2E7D4F">NT$3,710 ✓</b></div></div>
+              <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px"><div style="font-size:8.5px;font-weight:900;color:#55524A">通關 Customs</div><div style="font-size:9px;margin-top:4px">EZ Way <span style="color:#B45309;font-weight:700">待認證</span> · 預收稅 NT$180</div></div>
+              <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px"><div style="font-size:8.5px;font-weight:900;color:#55524A">快照 Snapshots</div><div style="font-size:9px;margin-top:4px;color:#0F6E84;font-weight:700">刊登快照 #m9482 · 價格快照 v3 ↗</div></div>
+            </div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">單一訂單視圖：生命週期標籤＋採購段、金流、通關與關聯快照。</div>
+      </div>
+
+      <!-- MF 5c leg detail -->
+      <div style="width:480px;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="min-width:22px;height:20px;border-radius:10px;background:#0F6E84;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;padding:0 5px">5c</span><span style="font-size:12px;font-weight:700">採購段詳情・價格漂移檢查</span></div>
+        <div data-screen-label="MF5c 採購段" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / legs / PB-77213</span></div>
+          <div style="padding:10px 12px">
+            <div style="display:flex;align-items:center;gap:7px"><span style="font-size:11px;font-weight:900;font-family:ui-monospace,monospace">PB-77213</span><span style="font-size:9px;color:#8A8578">Mercari #m9482 · 代購夥伴 JP-Proxy Co.</span></div>
+            <div style="display:flex;gap:4px;margin-top:7px;font-size:8px;font-weight:700;font-family:ui-monospace,monospace"><span style="background:#E3EEF1;color:#0F6E84;border-radius:3px;padding:2px 6px">ORDERED</span><span style="color:#C9C5B8">→</span><span style="background:#E3EEF1;color:#0F6E84;border-radius:3px;padding:2px 6px">PURCHASING</span><span style="color:#C9C5B8">→</span><span style="background:#2E7D4F;color:#fff;border-radius:3px;padding:2px 6px">PURCHASED</span></div>
+            <div style="margin-top:9px;border:1px solid #CFE5D6;background:#F4FAF6;border-radius:8px;padding:8px 10px">
+              <div style="font-size:9px;font-weight:900;color:#2E7D4F">價格漂移檢查 PASS ✓</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:5px;font-size:9px"><span>快照價 <b>¥14,800</b></span><span>實際成交 <b>¥14,800</b></span><span>漂移 <b style="color:#2E7D4F">0%</b>（閾值 ±5%）</span></div>
+            </div>
+            <div style="margin-top:7px;display:grid;gap:4px;font-size:9.5px">
+              <div style="display:flex;justify-content:space-between"><span style="color:#8A8578">日本國內運</span><b style="font-family:ui-monospace,monospace">Yamato 4310-8899-2210</b></div>
+              <div style="display:flex;justify-content:space-between"><span style="color:#8A8578">收貨點</span><b>SHOPMORE 日本倉（千葉）· ASN 已建立</b></div>
+            </div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">採購段詳情：PURCHASING→PURCHASED，並自動對刊登快照做價格漂移檢查。</div>
+      </div>
+
+      <!-- MF 9 duty recon -->
+      <div style="width:480px;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="min-width:22px;height:20px;border-radius:10px;background:#B45309;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;padding:0 5px">9</span><span style="font-size:12px;font-weight:700">關稅對帳・自動退款 ★</span></div>
+        <div data-screen-label="MF9 關稅對帳" style="position:relative;background:#fff;border:1px solid #EAD9AC;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / duty-reconciliation</span></div>
+          <div style="padding:10px 12px">
+            <div style="font-size:10px;color:#8A8578;font-family:ui-monospace,monospace">SM-2512-08841 · 報單 X2-26TP-44102 · 報關行回傳 12/16 15:20</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-top:8px">
+              <div style="background:#F6F5F0;border-radius:8px;padding:8px 10px"><div style="font-size:8.5px;color:#8A8578">預收關稅</div><div style="font-size:14px;font-weight:900">NT$180</div></div>
+              <div style="background:#F6F5F0;border-radius:8px;padding:8px 10px"><div style="font-size:8.5px;color:#8A8578">報關行實際</div><div style="font-size:14px;font-weight:900">NT$150</div></div>
+              <div style="background:#FDF0D5;border:1px solid #EAD9AC;border-radius:8px;padding:8px 10px"><div style="font-size:8.5px;color:#8A5A0B">應退差額</div><div style="font-size:14px;font-weight:900;color:#B45309">NT$30</div></div>
+            </div>
+            <div style="margin-top:8px;border:1px solid #E2DFD4;border-radius:8px;font-size:9.5px;overflow:hidden">
+              <div style="display:flex;justify-content:space-between;padding:6px 10px;border-top:none"><span>自動退款 → 原信用卡</span><span style="color:#B45309;font-weight:900;font-family:ui-monospace,monospace;font-size:8.5px">QUEUED</span></div>
+              <div style="display:flex;justify-content:space-between;padding:6px 10px;border-top:1px solid #EFEDE6"><span>購買證明改版 v1 → v2（附折讓單）</span><span style="color:#8A8578;font-family:ui-monospace,monospace;font-size:8.5px">PENDING</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">★ 預收 NT$180 對比報關行實際 NT$150 → NT$30 自動排入退款，低於閾值免人工審核。</div>
+      </div>
+
+      <!-- MF 11 delivered -->
+      <div style="width:480px;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="min-width:22px;height:20px;border-radius:10px;background:#0F6E84;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;padding:0 5px">11</span><span style="font-size:12px;font-weight:700">結案訂單・帳目關閉</span></div>
+        <div data-screen-label="MF11 結案" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / orders / SM-2512-08841</span></div>
+          <div style="padding:10px 12px">
+            <div style="display:flex;align-items:center;gap:7px"><span style="font-size:11px;font-weight:900;font-family:ui-monospace,monospace">SM-2512-08841</span><span style="background:#2E7D4F;color:#fff;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px;font-family:ui-monospace,monospace">DELIVERED</span><span style="margin-left:auto;font-size:8.5px;color:#8A8578;font-family:ui-monospace,monospace">closed 12/19</span></div>
+            <div style="margin-top:8px;border:1px solid #E2DFD4;border-radius:8px;overflow:hidden;font-size:9.5px">
+              <div style="display:grid;grid-template-columns:1fr 80px 80px;gap:6px;padding:6px 10px;background:#F6F5F0;font-size:8.5px;font-weight:900;color:#55524A"><span>帳目 Ledger line</span><span>金額</span><span>狀態</span></div>
+              <div style="display:grid;grid-template-columns:1fr 80px 80px;gap:6px;padding:6px 10px;border-top:1px solid #EFEDE6"><span>商品+運費請款</span><span>NT$3,530</span><span style="color:#2E7D4F;font-weight:900;font-size:8.5px;font-family:ui-monospace,monospace">SETTLED</span></div>
+              <div style="display:grid;grid-template-columns:1fr 80px 80px;gap:6px;padding:6px 10px;border-top:1px solid #EFEDE6"><span>關稅代收（escrow）</span><span>NT$180</span><span style="color:#2E7D4F;font-weight:900;font-size:8.5px;font-family:ui-monospace,monospace">CLOSED</span></div>
+              <div style="display:grid;grid-template-columns:1fr 80px 80px;gap:6px;padding:6px 10px;border-top:1px solid #EFEDE6"><span>關稅繳納（海關）</span><span>−NT$150</span><span style="color:#2E7D4F;font-weight:900;font-size:8.5px;font-family:ui-monospace,monospace">CLOSED</span></div>
+              <div style="display:grid;grid-template-columns:1fr 80px 80px;gap:6px;padding:6px 10px;border-top:1px solid #EFEDE6"><span>關稅退款（消費者）</span><span>−NT$30</span><span style="color:#2E7D4F;font-weight:900;font-size:8.5px;font-family:ui-monospace,monospace">REFUNDED</span></div>
+            </div>
+            <div style="margin-top:7px;font-size:8.5px;color:#8A8578">全部帳目平衡 ✓ · 訂單封存，僅供唯讀查詢與稽核。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">已送達訂單，所有帳目關閉且平衡；封存為唯讀。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROUP: Dashboards ===== -->
+  <div style="margin-bottom:40px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#22242A;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">D</span><span style="font-size:16px;font-weight:900">儀表板 Dashboards</span></div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#22242A;font-family:ui-monospace,monospace">D1</span><span style="font-size:12px;font-weight:700">業務事件警示板・平台心跳</span></div>
+        <div data-screen-label="D1 警示板" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / alerts</span></div>
+          <div style="padding:10px 12px">
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px">
+              <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px;font-size:9px"><b>合作平台A</b><div style="margin-top:3px;color:#2E7D4F;font-weight:900;font-size:8.5px;font-family:ui-monospace,monospace">HEARTBEAT OK · 12s</div></div>
+              <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px;font-size:9px"><b>合作平台B</b><div style="margin-top:3px;color:#2E7D4F;font-weight:900;font-size:8.5px;font-family:ui-monospace,monospace">HEARTBEAT OK · 8s</div></div>
+              <div style="border:1px solid #F3D9D6;background:#FBF3F2;border-radius:8px;padding:7px 9px;font-size:9px"><b>合作平台C</b><div style="margin-top:3px;color:#B4483E;font-weight:900;font-size:8.5px;font-family:ui-monospace,monospace">STALE · 42min ⚠</div></div>
+            </div>
+            <div style="margin-top:8px;display:grid;gap:5px;font-size:9.5px">
+              <div style="display:flex;gap:8px;align-items:center;border:1px solid #F3D9D6;background:#FBF3F2;border-radius:8px;padding:6px 10px"><span style="background:#B4483E;color:#fff;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px;font-family:ui-monospace,monospace">SEV2</span><span style="flex:1">平台C 訂單接收停滯 42 分鐘（預期 ≤5 分）</span><span style="color:#8A8578;font-size:8.5px">未認領</span></div>
+              <div style="display:flex;gap:8px;align-items:center;border:1px solid #EAD9AC;background:#FDF6E8;border-radius:8px;padding:6px 10px"><span style="background:#B45309;color:#fff;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px;font-family:ui-monospace,monospace">SEV3</span><span style="flex:1">代購夥伴回覆逾時率 8%（閾值 5%）</span><span style="color:#8A8578;font-size:8.5px">已認領 · 林</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">業務事件警示板：各平台心跳＋分級、可認領的警示。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#22242A;font-family:ui-monospace,monospace">D2</span><span style="font-size:12px;font-weight:700">KPI 儀表板</span></div>
+        <div data-screen-label="D2 KPI" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / kpi · 本週</span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:7px;padding:10px 12px">
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:8px 10px"><div style="font-size:8.5px;color:#8A8578">取消率</div><div style="font-size:15px;font-weight:900">2.1%</div><div style="font-size:8px;color:#2E7D4F;font-weight:700">▼ 0.3pt · 目標 &lt;3%</div></div>
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:8px 10px"><div style="font-size:8.5px;color:#8A8578">清關滯留 &gt;48h</div><div style="font-size:15px;font-weight:900;color:#B45309">17 件</div><div style="font-size:8px;color:#B4483E;font-weight:700">▲ 5 · 需關注</div></div>
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:8px 10px"><div style="font-size:8.5px;color:#8A8578">採購成功率</div><div style="font-size:15px;font-weight:900">96.4%</div><div style="font-size:8px;color:#2E7D4F;font-weight:700">▲ 0.8pt</div></div>
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:8px 10px"><div style="font-size:8.5px;color:#8A8578">爭議款比率</div><div style="font-size:15px;font-weight:900">0.4%</div><div style="font-size:8px;color:#2E7D4F;font-weight:700">目標 &lt;0.9%</div></div>
+          </div>
+          <div style="margin:0 12px 12px;border:1px solid #E2DFD4;border-radius:8px;padding:8px 10px;font-size:8.5px;color:#8A8578">趨勢圖（近 12 週）：<span style="font-family:ui-monospace,monospace;color:#0F6E84">▁▂▂▃▂▄▃▅▄▆▅▇</span> 清關滯留件數</div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">KPI 儀表板：取消率、清關滯留、採購成功率、爭議款比率對照目標。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#22242A;font-family:ui-monospace,monospace">D3</span><span style="font-size:12px;font-weight:700">值班 Runbook 啟動器</span></div>
+        <div data-screen-label="D3 Runbook" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#8A8578;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">P2</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / runbooks</span></div>
+          <div style="padding:10px 12px;display:grid;gap:6px;font-size:9.5px">
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 10px;display:flex;justify-content:space-between;align-items:center"><span><b>RB-01</b> 平台訂單接收停滯</span><span style="background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 10px">啟動</span></div>
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 10px;display:flex;justify-content:space-between;align-items:center"><span><b>RB-04</b> 代購夥伴 API 全面逾時</span><span style="background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 10px">啟動</span></div>
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 10px;display:flex;justify-content:space-between;align-items:center"><span><b>RB-07</b> 海關系統停機（X2 無回應）</span><span style="background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 10px">啟動</span></div>
+            <div style="font-size:8.5px;color:#8A8578">啟動後：建立事件、指派值班、逐步檢核清單、預設對外溝通稿。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">值班 Runbook 啟動器：一鍵建立事件、檢核清單與對外溝通稿。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROUP: Exception workbench ===== -->
+  <div style="margin-bottom:40px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#B4483E;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">X</span><span style="font-size:16px;font-weight:900">例外工作台 Exception Workbench</span></div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#B4483E;font-family:ui-monospace,monospace">X1</span><span style="font-size:12px;font-weight:700">類型化佇列・SLA 計時</span></div>
+        <div data-screen-label="X1 例外佇列" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / exceptions</span></div>
+          <div style="display:flex;gap:5px;padding:9px 12px;font-size:8.5px;font-weight:700;font-family:ui-monospace,monospace;flex-wrap:wrap"><span style="background:#FBF3F2;color:#B4483E;border-radius:4px;padding:2px 8px">SOLD_OUT 6</span><span style="background:#FDF0D5;color:#8A5A0B;border-radius:4px;padding:2px 8px">PRICE_DRIFT 3</span><span style="background:#FDF0D5;color:#8A5A0B;border-radius:4px;padding:2px 8px">PROXY_TIMEOUT 2</span><span style="background:#E3EEF1;color:#0F6E84;border-radius:4px;padding:2px 8px">INBOUND_MISMATCH 2</span><span style="background:#ECE8F6;color:#5B4B9E;border-radius:4px;padding:2px 8px">CUSTOMS_HOLD 1</span></div>
+          <div style="border-top:1px solid #EFEDE6;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:110px 1fr 100px 70px;gap:6px;padding:6px 12px;background:#F6F5F0;font-size:8.5px;font-weight:900;color:#55524A"><span>訂單</span><span>例外</span><span>SLA 剩餘</span><span></span></div>
+            <div style="display:grid;grid-template-columns:110px 1fr 100px 70px;gap:6px;padding:7px 12px;border-top:1px solid #EFEDE6;align-items:center"><span style="font-family:ui-monospace,monospace;font-weight:700">SM-…-08860</span><span>SOLD_OUT · 採購前售出</span><span style="color:#B4483E;font-weight:900;font-family:ui-monospace,monospace">00:41 ⏱</span><span style="color:#0F6E84;font-weight:700">處理 →</span></div>
+            <div style="display:grid;grid-template-columns:110px 1fr 100px 70px;gap:6px;padding:7px 12px;border-top:1px solid #EFEDE6;align-items:center"><span style="font-family:ui-monospace,monospace;font-weight:700">SM-…-08877</span><span>PRICE_DRIFT · +7.2%（閾值 5%）</span><span style="color:#B45309;font-weight:900;font-family:ui-monospace,monospace">02:15 ⏱</span><span style="color:#0F6E84;font-weight:700">處理 →</span></div>
+            <div style="display:grid;grid-template-columns:110px 1fr 100px 70px;gap:6px;padding:7px 12px;border-top:1px solid #EFEDE6;align-items:center"><span style="font-family:ui-monospace,monospace;font-weight:700">SM-…-08891</span><span>CUSTOMS_HOLD · 文件補件</span><span style="color:#2E7D4F;font-weight:900;font-family:ui-monospace,monospace">18:40 ⏱</span><span style="color:#0F6E84;font-weight:700">處理 →</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">類型化例外佇列與各類 SLA 倒數 — 例外驅動營運模式的核心。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#B4483E;font-family:ui-monospace,monospace">X2</span><span style="font-size:12px;font-weight:700">例外詳情・安全動作</span></div>
+        <div data-screen-label="X2 例外詳情" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / exceptions / EX-4471</span></div>
+          <div style="padding:10px 12px">
+            <div style="display:flex;align-items:center;gap:7px"><span style="background:#FBF3F2;color:#B4483E;font-size:8.5px;font-weight:900;border-radius:4px;padding:2px 8px;font-family:ui-monospace,monospace">SOLD_OUT</span><span style="font-size:10px;font-weight:700">SM-2512-08860 · 模型（一点物）採購前已售出</span></div>
+            <div style="margin-top:7px;background:#F6F5F0;border-radius:8px;padding:7px 10px;font-size:9px;color:#55524A;line-height:1.55">代購夥伴回報：Mercari 刊登 #k7714 已於 12/10 08:12 售出。訂單含 3 項，其餘 2 項已採購。</div>
+            <div style="margin-top:8px;font-size:9px;font-weight:900;color:#55524A">安全動作（依政策白名單）</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:5px;font-size:9px;font-weight:700;text-align:center">
+              <div style="border:2px solid #0F6E84;background:#F0F6F8;color:#0F6E84;border-radius:8px;padding:7px 5px">部分取消＋自動退款</div>
+              <div style="border:1px solid #DDD9CE;border-radius:8px;padding:7px 5px;color:#55524A">改採替代來源</div>
+              <div style="border:1px solid #DDD9CE;border-radius:8px;padding:7px 5px;color:#55524A">吸收成本補貨</div>
+            </div>
+            <div style="margin-top:7px;font-size:8.5px;color:#8A8578">執行即寫入稽核軌跡；超過 NT$2,000 之吸收需送核准收件匣。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">例外詳情與白名單安全動作（自動退款／改採替代來源／吸收成本）＋稽核紀錄。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#B4483E;font-family:ui-monospace,monospace">X3</span><span style="font-size:12px;font-weight:700">Maker-Checker 核准收件匣</span></div>
+        <div data-screen-label="X3 核准收件匣" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / approvals</span></div>
+          <div style="padding:10px 12px;display:grid;gap:6px;font-size:9.5px">
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:8px 10px">
+              <div style="display:flex;justify-content:space-between"><b>吸收成本 NT$2,400 · SM-…-08812</b><span style="color:#8A8578;font-size:8.5px">申請人：陳（ops）</span></div>
+              <div style="font-size:8.5px;color:#8A8578;margin-top:3px">理由：QC 損傷判定爭議，客戶留存补偿。超過 NT$2,000 閾值。</div>
+              <div style="display:flex;gap:6px;margin-top:6px"><span style="background:#2E7D4F;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:3px 12px">核准</span><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#B4483E;font-weight:700">駁回</span></div>
+            </div>
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:8px 10px">
+              <div style="display:flex;justify-content:space-between"><b>手動退款 NT$3,710 · SM-…-08799</b><span style="color:#8A8578;font-size:8.5px">申請人：林（cs）</span></div>
+              <div style="font-size:8.5px;color:#8A8578;margin-top:3px">理由：重複扣款疑義（孤兒金流 #or-112 關聯）。</div>
+              <div style="display:flex;gap:6px;margin-top:6px"><span style="background:#2E7D4F;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:3px 12px">核准</span><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#B4483E;font-weight:700">駁回</span></div>
+            </div>
+            <div style="font-size:8.5px;color:#8A8578">申請人不可自行核准；核准人須具 finance-approver 角色。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">Maker-Checker 核准收件匣：超過金額閾值的動作須由不同角色核准。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#B4483E;font-family:ui-monospace,monospace">X4</span><span style="font-size:12px;font-weight:700">不可竄改稽核日誌</span></div>
+        <div data-screen-label="X4 稽核日誌" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / audit · SM-2512-08860</span></div>
+          <div style="padding:10px 12px;font-family:ui-monospace,monospace;font-size:8.5px;line-height:1.9;color:#55524A">
+            <div><span style="color:#8A8578">12/10 09:02</span> <b style="color:#22242A">system</b> exception.created type=SOLD_OUT ex=EX-4471</div>
+            <div><span style="color:#8A8578">12/10 09:14</span> <b style="color:#22242A">chen@ops</b> exception.claimed ex=EX-4471</div>
+            <div><span style="color:#8A8578">12/10 09:18</span> <b style="color:#22242A">chen@ops</b> action.partial_cancel item=3 refund=NT$420 policy=SAFE-02</div>
+            <div><span style="color:#8A8578">12/10 09:18</span> <b style="color:#22242A">system</b> refund.queued psp=lianlian ref=rf-8817</div>
+            <div><span style="color:#8A8578">12/10 09:20</span> <b style="color:#22242A">system</b> partner.webhook order.updated → 平台A 200 OK</div>
+            <div style="color:#8A8578;margin-top:4px">■ append-only · hash-chained · 匯出 CSV</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">不可竄改（僅附加、雜湊串鏈）稽核軌跡，記錄所有狀態變更與操作。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROUP: Integration health ===== -->
+  <div style="margin-bottom:40px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#0F6E84;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">I</span><span style="font-size:16px;font-weight:900">整合健康 Integration Health</span></div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#0F6E84;font-family:ui-monospace,monospace">I1</span><span style="font-size:12px;font-weight:700">DLQ 主控台・重播</span></div>
+        <div data-screen-label="I1 DLQ" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / dlq</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:1fr 120px 90px 70px;gap:6px;padding:6px 0;font-size:8.5px;font-weight:900;color:#55524A;border-bottom:1px solid #EFEDE6"><span>訊息</span><span>失敗原因</span><span>重試</span><span></span></div>
+            <div style="display:grid;grid-template-columns:1fr 120px 90px 70px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;align-items:center"><span style="font-family:ui-monospace,monospace">order.created #a8842</span><span style="color:#B4483E">schema v2 欄位缺漏</span><span style="font-family:ui-monospace,monospace">3/5</span><span style="color:#0F6E84;font-weight:700">重播 ▶</span></div>
+            <div style="display:grid;grid-template-columns:1fr 120px 90px 70px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;align-items:center"><span style="font-family:ui-monospace,monospace">payment.captured #p1121</span><span style="color:#B4483E">下游 timeout</span><span style="font-family:ui-monospace,monospace">5/5 ⚠</span><span style="color:#0F6E84;font-weight:700">重播 ▶</span></div>
+            <div style="display:flex;gap:6px;margin-top:8px"><span style="background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:3px 12px">批次重播（同類 12 筆）</span><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#55524A">檢視 payload</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">DLQ 主控台：單筆與批次重播，可檢視 payload。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#0F6E84;font-family:ui-monospace,monospace">I2</span><span style="font-size:12px;font-weight:700">每小時對數核對</span></div>
+        <div data-screen-label="I2 對數" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / recon / hourly</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:80px 1fr 1fr 1fr 70px;gap:6px;padding:6px 0;font-size:8.5px;font-weight:900;color:#55524A;border-bottom:1px solid #EFEDE6"><span>時段</span><span>orders</span><span>captures</span><span>legs</span><span>結果</span></div>
+            <div style="display:grid;grid-template-columns:80px 1fr 1fr 1fr 70px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace"><span>13:00</span><span>142</span><span>142</span><span>147</span><span style="color:#2E7D4F;font-weight:900">MATCH ✓</span></div>
+            <div style="display:grid;grid-template-columns:80px 1fr 1fr 1fr 70px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace;background:#FBF3F2"><span>12:00</span><span>156</span><span style="color:#B4483E;font-weight:900">154</span><span>161</span><span style="color:#B4483E;font-weight:900">DIFF 2 ⚠</span></div>
+            <div style="margin-top:7px;font-size:8.5px;color:#8A8578">差異 2 筆已自動開立例外（orphan-payment 檢查）→ I3 佇列。legs 可大於 orders（多來源拆單）。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">每小時恆等式核對：orders＝captures＝legs（依規則）；不符自動開立例外。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#0F6E84;font-family:ui-monospace,monospace">I3</span><span style="font-size:12px;font-weight:700">孤兒金流佇列</span></div>
+        <div data-screen-label="I3 孤兒金流" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / orphan-payments</span></div>
+          <div style="padding:10px 12px;display:grid;gap:6px;font-size:9.5px">
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:8px 10px">
+              <div style="display:flex;justify-content:space-between"><b style="font-family:ui-monospace,monospace">or-112 · NT$3,710 · 12/09 13:42</b><span style="background:#FDF0D5;color:#8A5A0B;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px;font-family:ui-monospace,monospace">UNMATCHED 22h</span></div>
+              <div style="font-size:8.5px;color:#8A8578;margin-top:3px">PSP 收款成功但無對應訂單（平台 callback 遺失疑義）。候選訂單：SM-2512-08841（金額/時間相符 92%）。</div>
+              <div style="display:flex;gap:6px;margin-top:6px"><span style="background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:3px 12px">關聯候選訂單</span><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#B4483E;font-weight:700">48h 後自動退款</span></div>
+            </div>
+            <div style="font-size:8.5px;color:#8A8578">政策：無法關聯之孤兒收款 48 小時內自動原路退回。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">孤兒金流佇列：關聯候選訂單或 48 小時自動退款 — 金錢不得無主滯留。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROUP: Catalog ops ===== -->
+  <div style="margin-bottom:40px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#5B4B9E;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">C</span><span style="font-size:16px;font-weight:900">商品目錄營運 Catalog Ops</span></div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">C1</span><span style="font-size:12px;font-weight:700">選品工作台</span></div>
+        <div data-screen-label="C1 選品" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / curation</span></div>
+          <div style="padding:10px 12px">
+            <div style="display:flex;gap:6px"><div style="flex:1;background:#F1EFE8;border-radius:7px;padding:6px 10px;font-size:9.5px;color:#55524A">⌕ ウォークマン（CJK 跨語搜尋：随身听 / 隨身聽 / walkman）</div><span style="background:#0F6E84;color:#fff;font-size:9px;font-weight:900;border-radius:7px;padding:6px 12px">搜尋</span></div>
+            <div style="display:flex;gap:7px;margin-top:8px">
+              <div style="flex:1;border:1px solid #EFEDE6;border-radius:8px;padding:6px"><img src="https://images.unsplash.com/photo-1611001716885-b3402558a62b?q=60&amp;w=160&amp;auto=format&amp;fit=crop" alt="候選" style="width:100%;height:52px;border-radius:6px;object-fit:cover"><div style="font-size:8.5px;margin-top:3px">Mercari ¥14,800 · 中古A</div><div style="font-size:8px;color:#2E7D4F;font-weight:700">預估毛利 23% ✓</div></div>
+              <div style="flex:1;border:1px solid #EFEDE6;border-radius:8px;padding:6px"><img src="https://images.unsplash.com/photo-1745827222048-c64f377909a4?q=60&amp;w=160&amp;auto=format&amp;fit=crop" alt="候選" style="width:100%;height:52px;border-radius:6px;object-fit:cover"><div style="font-size:8.5px;margin-top:3px">駿河屋 ¥9,200 · 中古B</div><div style="font-size:8px;color:#B45309;font-weight:700">毛利 11% ⚠ 低於樓地板</div></div>
+              <div style="flex:1;border:1px solid #EFEDE6;border-radius:8px;padding:6px"><img src="https://images.unsplash.com/photo-1515010137531-66995c7f40e6?q=60&amp;w=160&amp;auto=format&amp;fit=crop" alt="候選" style="width:100%;height:52px;border-radius:6px;object-fit:cover"><div style="font-size:8.5px;margin-top:3px">Rakuten ¥16,300 · 新品</div><div style="font-size:8px;color:#2E7D4F;font-weight:700">毛利 19% ✓</div></div>
+            </div>
+            <div style="display:flex;gap:6px;margin-top:8px"><span style="background:#5B4B9E;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:3px 12px">加入選品組合「昭和音響」(24)</span><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#55524A">推送平台A 跨境專區</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">選品工作台：中日文跨語源搜尋＋含毛利護欄的選品組合建立。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">C2</span><span style="font-size:12px;font-weight:700">刊登詳情・快照歷史</span></div>
+        <div data-screen-label="C2 刊登詳情" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / listings / L-88041</span></div>
+          <div style="padding:10px 12px;display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px;font-size:9px">
+              <div style="font-weight:900;color:#55524A;font-size:8.5px">Offer（我方售價）</div>
+              <div style="margin-top:3px">NT$3,280 · 中古A · 平台A+B 上架中</div>
+              <div style="color:#8A8578;margin-top:2px">來源：Mercari #m9482（代購）</div>
+            </div>
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px;font-size:9px">
+              <div style="font-weight:900;color:#55524A;font-size:8.5px">Source listing（來源刊登）</div>
+              <div style="margin-top:3px">¥14,800 · 出品者 ★4.9 · 即購入可</div>
+              <div style="color:#2E7D4F;margin-top:2px;font-weight:700">15 分前重新驗證 ✓ 仍在售</div>
+            </div>
+            <div style="grid-column:1 / -1;border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px;font-size:8.5px;font-family:ui-monospace,monospace;color:#55524A">
+              <div style="font-weight:900;font-family:'Noto Sans TC',sans-serif;font-size:8.5px;color:#55524A">快照歷史 Snapshot history</div>
+              <div style="margin-top:3px">v3 12/09 13:41 下單快照（價格+成色+圖8張）← 綁定訂單 SM-…-08841</div>
+              <div>v2 12/08 22:10 價格變動 ¥15,200 → ¥14,800</div>
+              <div>v1 12/06 09:33 首次抓取</div>
+            </div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">刊登詳情：我方售價＋即時來源刊登＋綁定訂單的不可變快照歷史。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">C3</span><span style="font-size:12px;font-weight:700">爬蟲隔離區審核</span></div>
+        <div data-screen-label="C3 隔離區" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / scraper-quarantine</span></div>
+          <div style="padding:10px 12px;display:grid;gap:6px;font-size:9.5px">
+            <div style="border:1px solid #EAD9AC;background:#FDF6E8;border-radius:8px;padding:7px 10px"><div style="display:flex;justify-content:space-between"><b>批次 #sq-2214 · 38 筆</b><span style="color:#8A5A0B;font-size:8.5px;font-weight:900">欄位異常率 34%</span></div><div style="font-size:8.5px;color:#8A5A0B;margin-top:2px">來源版型疑似改版：價格欄解析為 ¥0 · 圖片 404。已自動下架關聯 offer 12 筆。</div></div>
+            <div style="display:flex;gap:6px"><span style="background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:3px 12px">檢視樣本 diff</span><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#55524A">修復後重新解析</span><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#B4483E;font-weight:700">整批丟棄</span></div>
+            <div style="font-size:8.5px;color:#8A8578">隔離規則：欄位異常率 &gt;10% 之抓取批次不得進入目錄，需人工放行。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">爬蟲隔離區：解析異常批次不得進入目錄，須人工審核放行。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">C4</span><span style="font-size:12px;font-weight:700">翻譯人工審核佇列</span></div>
+        <div data-screen-label="C4 翻譯HITL" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / translation-hitl</span></div>
+          <div style="padding:10px 12px">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;font-size:9px">
+              <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px"><div style="font-size:8px;color:#8A8578">日文原文</div>完動品！SONY ウォークマン。医療レベルの除菌清掃済み</div>
+              <div style="border:1px solid #F3D9D6;background:#FBF3F2;border-radius:8px;padding:7px 9px"><div style="font-size:8px;color:#B4483E">機翻 zh-TW（含禁用宣稱）</div>完全可動！SONY 隨身聽。<mark style="background:#F6C9C4;border-radius:3px;padding:0 2px">醫療級除菌</mark>清潔完成</div>
+            </div>
+            <div style="margin-top:6px;background:#FBF3F2;border:1px solid #F3D9D6;border-radius:7px;padding:6px 9px;font-size:8.5px;color:#B4483E;font-weight:700">⚑ 禁用宣稱偵測：「醫療級」（藥事法風險）→ 需改寫</div>
+            <div style="margin-top:6px;border:1px solid #CFE5D6;background:#F4FAF6;border-radius:7px;padding:6px 9px;font-size:9px">建議改寫：完全可動！SONY 隨身聽，已完成專業除菌清潔。</div>
+            <div style="display:flex;gap:6px;margin-top:7px"><span style="background:#2E7D4F;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:3px 12px">採用改寫並發布</span><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#55524A">手動編輯</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">翻譯人工審核佇列：禁用宣稱偵測（如醫療宣稱）＋建議改寫。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">C5</span><span style="font-size:12px;font-weight:700">合規審查・規則編輯器</span></div>
+        <div data-screen-label="C5 合規審查" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / compliance</span></div>
+          <div style="padding:10px 12px">
+            <div style="display:flex;gap:5px;font-size:8.5px;font-weight:700;font-family:ui-monospace,monospace"><span style="background:#FBF3F2;color:#B4483E;border-radius:4px;padding:2px 8px">BLOCKED 41</span><span style="background:#FDF0D5;color:#8A5A0B;border-radius:4px;padding:2px 8px">PERMIT_REQ 17</span><span style="background:#E3EEF1;color:#0F6E84;border-radius:4px;padding:2px 8px">REVIEW 9</span></div>
+            <div style="margin-top:7px;border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px;font-size:9px">
+              <div style="font-weight:900;font-size:8.5px;color:#55524A">規則 R-114（default-deny 例外白名單）</div>
+              <div style="font-family:ui-monospace,monospace;font-size:8.5px;color:#55524A;margin-top:3px">IF category=食品 AND NOT 常溫密封 → BLOCK（輸入許可）</div>
+              <div style="margin-top:4px;color:#2E7D4F;font-weight:700;font-size:8.5px">語料回測：12,480 筆 · 誤擋 0.6% · 漏放 0.0% ✓</div>
+            </div>
+            <div style="margin-top:6px;display:flex;gap:6px;align-items:center;font-size:8.5px"><span style="background:#5B4B9E;color:#fff;font-weight:900;border-radius:5px;padding:3px 12px">發布規則 v15</span><span style="border:1px solid #DDD9CE;border-radius:5px;padding:3px 12px;color:#55524A">全目錄重掃</span><span style="color:#8A8578;font-family:ui-monospace,monospace">re-screen job：72% ▓▓▓▓▓▓▓░░░ 剩 14min</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">合規審查：禁運／須許可佇列、含語料回測的規則編輯器、全目錄重掃作業。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">C6</span><span style="font-size:12px;font-weight:700">圖片權利／下架流程</span></div>
+        <div data-screen-label="C6 圖權下架" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#8A8578;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">P2</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / takedowns</span></div>
+          <div style="padding:10px 12px;display:grid;gap:6px;font-size:9.5px">
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 10px"><div style="display:flex;justify-content:space-between"><b>TD-081 · 權利人來函（品牌 K 公司）</b><span style="background:#FBF3F2;color:#B4483E;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px;font-family:ui-monospace,monospace">24h SLA</span></div><div style="font-size:8.5px;color:#8A8578;margin-top:3px">主張刊登圖 3 張為官網盜圖 → 影響 offer 2 筆（平台A/B）。</div><div style="display:flex;gap:6px;margin-top:5px"><span style="background:#B4483E;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:3px 12px">立即全平台下架</span><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#55524A">替換自攝圖後復架</span></div></div>
+            <div style="font-size:8.5px;color:#8A8578">處置紀錄回寫稽核日誌並通知平台方。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">圖片權利／下架流程：含 SLA 與跨平台同步下架。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROUP: Pricing ===== -->
+  <div style="margin-bottom:40px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#B45309;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">PR</span><span style="font-size:16px;font-weight:900">定價 Pricing</span></div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#B45309;font-family:ui-monospace,monospace">PR1</span><span style="font-size:12px;font-weight:700">定價規則編輯器</span></div>
+        <div data-screen-label="PR1 規則編輯" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / pricing / rules</span></div>
+          <div style="padding:10px 12px;font-size:9px">
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:8px 10px;font-family:ui-monospace,monospace;color:#55524A;line-height:1.8">
+              TWD售價 = (來源價¥ × FX<sub>JPY→TWD</sub> × 1.03緩衝)<br>&nbsp;&nbsp;+ 國內運¥均攤 + 國際運費表(重量級距)<br>&nbsp;&nbsp;+ 代購費 8% + 平台佣金 12% + 毛利目標 15%<br>樓地板：毛利 ≥ 12% · 尾數規則：99 進位
+            </div>
+            <div style="display:flex;gap:6px;margin-top:7px"><span style="background:#B45309;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:3px 12px">儲存草稿 v8</span><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#55524A">執行模擬 →</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">定價規則編輯器：匯率緩衝、運費級距、費用、毛利樓地板與尾數規則。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#B45309;font-family:ui-monospace,monospace">PR2</span><span style="font-size:12px;font-weight:700">模擬預覽</span></div>
+        <div data-screen-label="PR2 模擬" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / pricing / simulate · v8 vs v7</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:1fr 90px 90px 90px;gap:6px;padding:6px 0;font-size:8.5px;font-weight:900;color:#55524A;border-bottom:1px solid #EFEDE6"><span>SKU（抽樣 2,400）</span><span>現價</span><span>新價</span><span>毛利</span></div>
+            <div style="display:grid;grid-template-columns:1fr 90px 90px 90px;gap:6px;padding:6px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace"><span>隨身聽 L-88041</span><span>3,280</span><span>3,199</span><span style="color:#2E7D4F;font-weight:900">18.2% ✓</span></div>
+            <div style="display:grid;grid-template-columns:1fr 90px 90px 90px;gap:6px;padding:6px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace;background:#FBF3F2"><span>底片相機 L-87310</span><span>4,590</span><span>4,290</span><span style="color:#B4483E;font-weight:900">9.8% ⚠ 低於樓地板</span></div>
+            <div style="margin-top:7px;font-size:8.5px;color:#8A8578">違反樓地板 SKU：<b style="color:#B4483E">37 筆</b>（1.5%）→ 需排除或改規則後才能發布。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">模擬預覽：標示違反毛利樓地板的 SKU 並阻擋發布。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#B45309;font-family:ui-monospace,monospace">PR3</span><span style="font-size:12px;font-weight:700">金絲雀發布</span></div>
+        <div data-screen-label="PR3 金絲雀" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#8A8578;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">P2</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / pricing / rollout · v8</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:flex;align-items:center;gap:8px"><span style="font-family:ui-monospace,monospace;font-size:8.5px;color:#8A8578">canary 5% → 25% → 100%</span><span style="background:#E3EEF1;color:#0F6E84;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px;font-family:ui-monospace,monospace">STAGE 2/3 · 25%</span></div>
+            <div style="margin-top:6px;height:8px;border-radius:999px;background:#F1EFE8;overflow:hidden"><div style="width:25%;height:100%;background:#B45309"></div></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px;font-size:9px">
+              <div style="border:1px solid #E2DFD4;border-radius:7px;padding:6px 8px">轉換率 <b style="color:#2E7D4F">+0.4pt ✓</b></div>
+              <div style="border:1px solid #E2DFD4;border-radius:7px;padding:6px 8px">毛利 <b style="color:#2E7D4F">17.8% ✓</b></div>
+              <div style="border:1px solid #E2DFD4;border-radius:7px;padding:6px 8px">取消率 <b style="color:#2E7D4F">持平 ✓</b></div>
+            </div>
+            <div style="display:flex;gap:6px;margin-top:8px"><span style="background:#2E7D4F;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:3px 12px">推進至 100%</span><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#B4483E;font-weight:700">回滾至 v7</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">定價規則金絲雀發布：護欄指標＋一鍵回滾。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#B45309;font-family:ui-monospace,monospace">PR4</span><span style="font-size:12px;font-weight:700">平台別停售開關</span></div>
+        <div data-screen-label="PR4 開關" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / kill-switch</span></div>
+          <div style="padding:10px 12px;display:grid;gap:6px;font-size:9.5px">
+            <div style="display:flex;justify-content:space-between;align-items:center;border:1px solid #E2DFD4;border-radius:8px;padding:7px 10px"><span><b>合作平台A</b> · 上架 8,204 SKU</span><span style="width:34px;height:18px;border-radius:999px;background:#2E7D4F;position:relative"><span style="position:absolute;right:2px;top:2px;width:14px;height:14px;border-radius:50%;background:#fff"></span></span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;border:1px solid #E2DFD4;border-radius:8px;padding:7px 10px"><span><b>合作平台B</b> · 上架 5,911 SKU</span><span style="width:34px;height:18px;border-radius:999px;background:#2E7D4F;position:relative"><span style="position:absolute;right:2px;top:2px;width:14px;height:14px;border-radius:50%;background:#fff"></span></span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;border:1px solid #F3D9D6;background:#FBF3F2;border-radius:8px;padding:7px 10px"><span><b>合作平台C</b> · <span style="color:#B4483E;font-weight:900">全數暫停販售</span>（FX 異常事故 #inc-77）</span><span style="width:34px;height:18px;border-radius:999px;background:#C9C5B8;position:relative"><span style="position:absolute;left:2px;top:2px;width:14px;height:14px;border-radius:50%;background:#fff"></span></span></div>
+            <div style="font-size:8.5px;color:#8A8578">切換需二次確認＋事故單號；恢復後自動重驗價格再上架。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">平台別停售開關：即時下架並綁定事故單；恢復時自動重驗。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#B45309;font-family:ui-monospace,monospace">PR5</span><span style="font-size:12px;font-weight:700">匯率儀表板・漂移警示</span></div>
+        <div data-screen-label="PR5 FX" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / fx</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px">
+              <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px"><div style="font-size:8.5px;color:#8A8578">定價匯率（鎖定）</div><div style="font-size:13px;font-weight:900;font-family:ui-monospace,monospace">0.2140</div></div>
+              <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px"><div style="font-size:8.5px;color:#8A8578">即期 JPY→TWD</div><div style="font-size:13px;font-weight:900;font-family:ui-monospace,monospace">0.2178</div></div>
+              <div style="border:1px solid #EAD9AC;background:#FDF6E8;border-radius:8px;padding:7px 9px"><div style="font-size:8.5px;color:#8A5A0B">漂移</div><div style="font-size:13px;font-weight:900;color:#B45309">+1.78% ⚠</div></div>
+            </div>
+            <div style="margin-top:7px;font-size:8.5px;color:#8A8578;font-family:ui-monospace,monospace">7 日走勢 ▂▃▃▄▅▆▇ · 警戒閾值 ±2.0%（觸發即建議重跑定價 v8）</div>
+            <div style="margin-top:6px;display:flex;gap:6px"><span style="background:#B45309;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:3px 12px">以新匯率重跑定價模擬</span><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#55524A">調整緩衝 1.03 → 1.04</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">匯率儀表板：定價鎖定匯率對照即期，漂移警示回饋定價流程。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROUP: Partner management ===== -->
+  <div style="margin-bottom:40px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#5B4B9E;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">PM</span><span style="font-size:16px;font-weight:900">合作平台管理 Partner Management</span></div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">PM1</span><span style="font-size:12px;font-weight:700">租戶設定編輯器・版本差異</span></div>
+        <div data-screen-label="PM1 租戶設定" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / tenants / 平台A · config v12 → v13</span></div>
+          <div style="padding:10px 12px;font-size:9px">
+            <div style="border:1px solid #E2DFD4;border-radius:8px;overflow:hidden;font-family:ui-monospace,monospace;font-size:8.5px;line-height:1.9">
+              <div style="padding:5px 10px;background:#F6F5F0;font-weight:900;font-family:'Noto Sans TC',sans-serif">diff v12 → v13（草稿）</div>
+              <div style="padding:2px 10px;background:#FBF3F2;color:#B4483E">− duty_mode: "estimate_refund"</div>
+              <div style="padding:2px 10px;background:#F4FAF6;color:#2E7D4F">+ duty_mode: "exact_prepay"（改用精算預收）</div>
+              <div style="padding:2px 10px;background:#F4FAF6;color:#2E7D4F">+ order_value_cap: NT$25,000（原 20,000）</div>
+              <div style="padding:2px 10px;color:#8A8578">&nbsp;&nbsp;content_rules: no_adult, no_weapon_shape（不變）</div>
+            </div>
+            <div style="display:flex;gap:6px;margin-top:7px"><span style="background:#5B4B9E;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:3px 12px">部署至 Sandbox</span><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#55524A">Sandbox → Prod 晉升</span><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#B4483E;font-weight:700">回滾至 v12</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">租戶設定（關稅模式、上限、內容規則）：版本差異、回滾、沙盒→正式晉升。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">PM2</span><span style="font-size:12px;font-weight:700">商品饋送狀態</span></div>
+        <div data-screen-label="PM2 饋送" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / feeds</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:90px 1fr 110px 110px;gap:6px;padding:6px 0;font-size:8.5px;font-weight:900;color:#55524A;border-bottom:1px solid #EFEDE6"><span>平台</span><span>最近一次全量/增量</span><span>新鮮度</span><span>拒收筆數</span></div>
+            <div style="display:grid;grid-template-columns:90px 1fr 110px 110px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace"><span>平台A</span><span>Δ 12:40 · 全量 04:00</span><span style="color:#2E7D4F;font-weight:900">6 min ✓</span><span>0</span></div>
+            <div style="display:grid;grid-template-columns:90px 1fr 110px 110px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace"><span>平台B</span><span>Δ 12:31 · 全量 04:10</span><span style="color:#2E7D4F;font-weight:900">15 min ✓</span><span style="color:#B45309;font-weight:900">12 ⚠</span></div>
+            <div style="display:grid;grid-template-columns:90px 1fr 110px 110px;gap:6px;padding:7px 0;font-family:ui-monospace,monospace;background:#FBF3F2"><span>平台C</span><span>Δ 10:02 · 全量 04:05</span><span style="color:#B4483E;font-weight:900">164 min ✕</span><span>—</span></div>
+            <div style="margin-top:7px;font-size:8.5px;color:#8A8578">拒收原因 top1：圖片 URL 逾期（12 筆）→ 重新簽發後自動重送。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">各平台饋送狀態：全量／增量、新鮮度 SLA、逐筆拒收。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">PM3</span><span style="font-size:12px;font-weight:700">事件日誌瀏覽器</span></div>
+        <div data-screen-label="PM3 事件日誌" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / events?order=SM-2512-08841</span></div>
+          <div style="padding:10px 12px;font-family:ui-monospace,monospace;font-size:8.5px;line-height:1.9;color:#55524A">
+            <div><span style="color:#8A8578">12/09 13:41</span> order.created <span style="color:#0F6E84">consumer_action=none</span></div>
+            <div><span style="color:#8A8578">12/09 13:42</span> payment.captured</div>
+            <div><span style="color:#8A8578">12/10 09:35</span> leg.purchased reason=OK</div>
+            <div><span style="color:#8A8578">12/13 09:00</span> customs.pending_realname <span style="color:#B45309">consumer_action=ezway_confirm</span></div>
+            <div><span style="color:#8A8578">12/16 15:20</span> customs.cleared reason=X2_OK</div>
+            <div><span style="color:#8A8578">12/17 09:00</span> duty.refund_issued amount=30</div>
+            <div style="margin-top:4px;color:#8A8578">■ 篩選：事件類型 / reason code / consumer_action · 匯出</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">事件日誌瀏覽器 — 與平台經 webhook 收到的為同一份正典事件流。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">PM4</span><span style="font-size:12px;font-weight:700">Webhook 投遞監控</span></div>
+        <div data-screen-label="PM4 Webhook" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / webhooks</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:90px 1fr 90px 90px;gap:6px;padding:6px 0;font-size:8.5px;font-weight:900;color:#55524A;border-bottom:1px solid #EFEDE6"><span>平台</span><span>24h 投遞</span><span>成功率</span><span>重試中</span></div>
+            <div style="display:grid;grid-template-columns:90px 1fr 90px 90px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace"><span>平台A</span><span>18,204</span><span style="color:#2E7D4F;font-weight:900">99.98%</span><span>2</span></div>
+            <div style="display:grid;grid-template-columns:90px 1fr 90px 90px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace;background:#FDF6E8"><span>平台B</span><span>11,882</span><span style="color:#B45309;font-weight:900">97.1% ⚠</span><span>214</span></div>
+            <div style="margin-top:7px;border:1px solid #E2DFD4;border-radius:7px;padding:6px 9px;font-size:8.5px;color:#55524A;font-family:ui-monospace,monospace">平台B 5xx 峰值 12:10–12:25 · backoff 4/6 · <span style="color:#0F6E84;font-weight:700">手動觸發重送</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">Webhook 投遞監控：成功率、重試積壓、手動重送。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">PM5</span><span style="font-size:12px;font-weight:700">認證／沙盒進度</span></div>
+        <div data-screen-label="PM5 認證進度" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / certification · 新平台 D（洽談中）</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:flex;align-items:center;gap:8px"><span style="font-size:8.5px;color:#8A8578;font-family:ui-monospace,monospace">通過 14 / 22 必測行為</span><div style="flex:1;height:8px;border-radius:999px;background:#F1EFE8;overflow:hidden"><div style="width:64%;height:100%;background:#5B4B9E"></div></div><span style="font-size:8.5px;font-weight:900;font-family:ui-monospace,monospace">64%</span></div>
+            <div style="margin-top:8px;display:grid;gap:5px;font-size:9px">
+              <div style="display:flex;justify-content:space-between;border:1px solid #E2DFD4;border-radius:7px;padding:6px 9px"><span>訂單取消（採購後）webhook 處理</span><span style="color:#2E7D4F;font-weight:900;font-size:8.5px;font-family:ui-monospace,monospace">PASS ✓</span></div>
+              <div style="display:flex;justify-content:space-between;border:1px solid #F3D9D6;background:#FBF3F2;border-radius:7px;padding:6px 9px"><span>EZ Way 待認證狀態顯示</span><span style="color:#B4483E;font-weight:900;font-size:8.5px;font-family:ui-monospace,monospace">FAIL ✕</span></div>
+              <div style="display:flex;justify-content:space-between;border:1px solid #E2DFD4;border-radius:7px;padding:6px 9px"><span>關稅退款顯示於訂單歷程</span><span style="color:#8A8578;font-weight:900;font-size:8.5px;font-family:ui-monospace,monospace">未測</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">平台認證進度的營運視圖（對應檔案 6 清單）— 上線關卡。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#5B4B9E;font-family:ui-monospace,monospace">PM6</span><span style="font-size:12px;font-weight:700">平台 SLA 報表</span></div>
+        <div data-screen-label="PM6 SLA報表" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#8A8578;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">P2</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / partner-sla · 2026-06 月報</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:1fr 90px 90px 90px;gap:6px;padding:6px 0;font-size:8.5px;font-weight:900;color:#55524A;border-bottom:1px solid #EFEDE6"><span>指標（對平台承諾）</span><span>目標</span><span>實際</span><span>達成</span></div>
+            <div style="display:grid;grid-template-columns:1fr 90px 90px 90px;gap:6px;padding:6px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace"><span>訂單 ack ≤ 5s</span><span>99.9%</span><span>99.97%</span><span style="color:#2E7D4F;font-weight:900">✓</span></div>
+            <div style="display:grid;grid-template-columns:1fr 90px 90px 90px;gap:6px;padding:6px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace"><span>7–14 天到貨承諾</span><span>95%</span><span>96.8%</span><span style="color:#2E7D4F;font-weight:900">✓</span></div>
+            <div style="display:grid;grid-template-columns:1fr 90px 90px 90px;gap:6px;padding:6px 0;font-family:ui-monospace,monospace"><span>客訴 48h 首應</span><span>98%</span><span style="color:#B4483E;font-weight:900">96.2%</span><span style="color:#B4483E;font-weight:900">✕</span></div>
+            <div style="margin-top:7px;display:flex;gap:6px"><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#55524A">匯出 PDF 報告（對外版）</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">每月對平台 SLA 報表，可匯出對外版本。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROUP: Logistics ===== -->
+  <div style="margin-bottom:40px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#2E7D4F;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">LG</span><span style="font-size:16px;font-weight:900">物流 Logistics</span></div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#2E7D4F;font-family:ui-monospace,monospace">LG1</span><span style="font-size:12px;font-weight:700">併櫃批次規劃・等待窗</span></div>
+        <div data-screen-label="LG1 批次規劃" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / batches / planner</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:8px 10px"><div style="display:flex;justify-content:space-between"><b style="font-family:ui-monospace,monospace">BATCH TPE-1215</b><span style="background:#FDF0D5;color:#8A5A0B;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px;font-family:ui-monospace,monospace">FILLING 68%</span></div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:5px;font-size:9px"><span>包裹 214 / 315</span><span>重量 182 / 268 kg</span><span>等待窗剩 <b style="color:#B45309">1.5 天</b></span></div>
+              <div style="margin-top:5px;font-size:8.5px;color:#8A8578">出貨 12/15（週二）· 若 12/14 前未滿 80% → 建議併入 TPE-1218</div>
+            </div>
+            <div style="margin-top:7px;border:1px solid #E2DFD4;border-radius:8px;padding:7px 10px;font-size:8.5px;color:#55524A"><b style="font-size:9px">日本假日行事曆</b> · 12/29–1/3 年末年始（Yamato 停收）→ 12/26 批次自動提前收單</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">併櫃規劃：裝載率、等待窗權衡、日本假日行事曆自動調整截單。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#2E7D4F;font-family:ui-monospace,monospace">LG2</span><span style="font-size:12px;font-weight:700">配載單檢視器</span></div>
+        <div data-screen-label="LG2 配載單" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / batches / TPE-1215 / manifest</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="font-size:8.5px;color:#8A8578;font-family:ui-monospace,monospace">MAWB-297-4410 · 214 HAWB · 申報總值 ¥2,841,200</div>
+            <div style="display:grid;grid-template-columns:130px 1fr 80px 90px;gap:6px;padding:6px 0;font-size:8.5px;font-weight:900;color:#55524A;border-bottom:1px solid #EFEDE6;margin-top:5px"><span>HAWB</span><span>收件人（實名）</span><span>重量</span><span>EZ Way</span></div>
+            <div style="display:grid;grid-template-columns:130px 1fr 80px 90px;gap:6px;padding:6px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace"><span>TW26-00318</span><span>王曉明 A12***789</span><span>0.62kg</span><span style="color:#2E7D4F;font-weight:900">已認證 ✓</span></div>
+            <div style="display:grid;grid-template-columns:130px 1fr 80px 90px;gap:6px;padding:6px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace"><span>TW26-00319</span><span>李佳穎 B22***431</span><span>1.14kg</span><span style="color:#2E7D4F;font-weight:900">已認證 ✓</span></div>
+            <div style="display:grid;grid-template-columns:130px 1fr 80px 90px;gap:6px;padding:6px 0;font-family:ui-monospace,monospace;background:#FDF6E8"><span>TW26-00320</span><span>張大偉 C11***902</span><span>0.88kg</span><span style="color:#B45309;font-weight:900">未認證 ⚠</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">配載單檢視：分提單、遮罩收件人、逐件 EZ Way 就緒狀態。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#2E7D4F;font-family:ui-monospace,monospace">LG3</span><span style="font-size:12px;font-weight:700">EZ Way 關卡佇列 ★</span></div>
+        <div data-screen-label="LG3 EZWay佇列" style="position:relative;background:#fff;border:1px solid #EAD9AC;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / ezway-gate</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:1fr 110px 130px 80px;gap:6px;padding:6px 0;font-size:8.5px;font-weight:900;color:#55524A;border-bottom:1px solid #EFEDE6"><span>收件人 / 訂單</span><span>等待天數</span><span>催辦歷史</span><span></span></div>
+            <div style="display:grid;grid-template-columns:1fr 110px 130px 80px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;align-items:center"><span>張大偉 · SM-…-08850</span><span style="color:#B45309;font-weight:900;font-family:ui-monospace,monospace">D+3 ⚠</span><span style="font-size:8.5px;font-family:ui-monospace,monospace">推播×2 · 簡訊×1</span><span style="color:#0F6E84;font-weight:700;font-size:8.5px">再催辦</span></div>
+            <div style="display:grid;grid-template-columns:1fr 110px 130px 80px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;align-items:center"><span>陳美玲 · SM-…-08871</span><span style="color:#B4483E;font-weight:900;font-family:ui-monospace,monospace">D+6 ✕</span><span style="font-size:8.5px;font-family:ui-monospace,monospace">推播×3 · 簡訊×2 · 電話×1</span><span style="color:#B4483E;font-weight:700;font-size:8.5px">啟動取消</span></div>
+            <div style="margin-top:7px;font-size:8.5px;color:#8A8578">政策：D+7 未認證 → 自動取消退款（扣已發生費用）；批次不因單件卡關（逐件放行）。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">★ EZ Way 關卡佇列：未認證收件人與催辦歷史＋D+7 自動取消政策。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#2E7D4F;font-family:ui-monospace,monospace">LG4</span><span style="font-size:12px;font-weight:700">清關儀表板</span></div>
+        <div data-screen-label="LG4 清關" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / customs</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:7px">
+              <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px"><div style="font-size:8.5px;color:#8A8578">申報中</div><div style="font-size:14px;font-weight:900">128</div></div>
+              <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px"><div style="font-size:8.5px;color:#8A8578">今日放行</div><div style="font-size:14px;font-weight:900;color:#2E7D4F">201</div></div>
+              <div style="border:1px solid #EAD9AC;background:#FDF6E8;border-radius:8px;padding:7px 9px"><div style="font-size:8.5px;color:#8A5A0B">查驗中 C3</div><div style="font-size:14px;font-weight:900;color:#B45309">6</div></div>
+              <div style="border:1px solid #F3D9D6;background:#FBF3F2;border-radius:8px;padding:7px 9px"><div style="font-size:8.5px;color:#B4483E">滯留 &gt;48h</div><div style="font-size:14px;font-weight:900;color:#B4483E">17</div></div>
+            </div>
+            <div style="margin-top:7px;border:1px solid #E2DFD4;border-radius:8px;padding:7px 10px;font-size:8.5px;color:#55524A">滯留 top 原因：稅則歸列疑義（8）· 收件人半年 6 次額度用罄（5）· 文件補件（4）→ 逐件連結例外工作台</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">清關儀表板：申報／放行／查驗／滯留，可下鑽滯留原因。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#2E7D4F;font-family:ui-monospace,monospace">LG5</span><span style="font-size:12px;font-weight:700">末端處置佇列</span></div>
+        <div data-screen-label="LG5 處置" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / disposition</span></div>
+          <div style="padding:10px 12px;display:grid;gap:6px;font-size:9.5px">
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 10px"><div style="display:flex;justify-content:space-between"><b>SM-…-08711 · 7-11 逾期未取（RTO）</b><span style="background:#FDF0D5;color:#8A5A0B;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px;font-family:ui-monospace,monospace">回倉 12/26</span></div><div style="display:flex;gap:6px;margin-top:5px;font-size:8.5px;font-weight:700"><span style="border:2px solid #0F6E84;color:#0F6E84;border-radius:5px;padding:2px 10px">退款結案（扣費）</span><span style="border:1px solid #DDD9CE;color:#55524A;border-radius:5px;padding:2px 10px">轉入清算庫存</span></div></div>
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 10px"><div style="display:flex;justify-content:space-between"><b>SM-…-08633 · 收件人拒收</b><span style="background:#FBF3F2;color:#B4483E;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px;font-family:ui-monospace,monospace">REFUSED</span></div><div style="display:flex;gap:6px;margin-top:5px;font-size:8.5px;font-weight:700"><span style="border:1px solid #DDD9CE;color:#55524A;border-radius:5px;padding:2px 10px">清算（拍賣）</span><span style="border:1px solid #DDD9CE;color:#B4483E;border-radius:5px;padding:2px 10px">銷毀（留存證明）</span></div></div>
+            <div style="font-size:8.5px;color:#8A8578">跨境退回日本不符成本 → 一律台灣終端處置；動作均需照片存證。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">末端處置佇列：拒收／逾期／退回包裹的終端處理（不回運日本）。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#2E7D4F;font-family:ui-monospace,monospace">LG6</span><span style="font-size:12px;font-weight:700">統一追蹤事件瀏覽器</span></div>
+        <div data-screen-label="LG6 追蹤事件" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / tracking?q=SM-2512-08841</span></div>
+          <div style="padding:10px 12px;font-family:ui-monospace,monospace;font-size:8.5px;line-height:1.9;color:#55524A">
+            <div><span style="color:#8A8578">12/10 09:35</span> <b>YAMATO</b> 荷物受付（船橋）raw=発送済み</div>
+            <div><span style="color:#8A8578">12/12 10:18</span> <b>JP-WMS</b> inbound.qc_pass photos=4</div>
+            <div><span style="color:#8A8578">12/15 21:04</span> <b>LINEHAUL</b> departed NRT flight=CI107</div>
+            <div><span style="color:#8A8578">12/16 15:20</span> <b>BROKER</b> customs.cleared X2</div>
+            <div><span style="color:#8A8578">12/17 11:00</span> <b>TW-XDOCK</b> sorted lane=711</div>
+            <div><span style="color:#8A8578">12/18 17:55</span> <b>7-11</b> arrived store=光復門市</div>
+            <div style="margin-top:4px;color:#8A8578">■ 6 個載具來源正規化為單一事件流（原始 payload 可展開）</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">統一追蹤瀏覽器：各載具來源正規化為每筆訂單單一事件流。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROUP: Finance ===== -->
+  <div style="margin-bottom:40px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#B45309;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">F</span><span style="font-size:16px;font-weight:900">財務 Finance</span></div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#B45309;font-family:ui-monospace,monospace">F1</span><span style="font-size:12px;font-weight:700">關稅代收帳本・帳齡 ★</span></div>
+        <div data-screen-label="F1 關稅帳本" style="position:relative;background:#fff;border:1px solid #EAD9AC;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / finance / duty-escrow</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px">
+              <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px"><div style="font-size:8.5px;color:#8A8578">代收中（escrow 餘額）</div><div style="font-size:14px;font-weight:900">NT$412,380</div></div>
+              <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px"><div style="font-size:8.5px;color:#8A8578">本月已繳海關</div><div style="font-size:14px;font-weight:900">NT$1.28M</div></div>
+              <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 9px"><div style="font-size:8.5px;color:#8A8578">本月已退消費者</div><div style="font-size:14px;font-weight:900;color:#B45309">NT$86,420</div></div>
+            </div>
+            <div style="margin-top:7px;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px;font-size:8.5px;text-align:center">
+              <div style="background:#F4FAF6;border-radius:7px;padding:5px">0–7天<br><b>NT$281k</b></div>
+              <div style="background:#FDF6E8;border-radius:7px;padding:5px">8–14天<br><b>NT$96k</b></div>
+              <div style="background:#FDF0D5;border-radius:7px;padding:5px">15–30天<br><b>NT$29k</b></div>
+              <div style="background:#FBF3F2;border-radius:7px;padding:5px;color:#B4483E">&gt;30天 ⚠<br><b>NT$6.4k</b></div>
+            </div>
+            <div style="margin-top:6px;font-size:8.5px;color:#8A8578">&gt;30 天未結 12 筆 → 逐筆連結例外（多為清關滯留）。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">★ 關稅代收帳本與帳齡分桶 — 預收關稅是受託款項，絕非營收。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#B45309;font-family:ui-monospace,monospace">F2</span><span style="font-size:12px;font-weight:700">PSP 清算三方對帳</span></div>
+        <div data-screen-label="F2 三方對帳" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / finance / psp-recon · 12/16 批</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:1fr 110px 110px 110px;gap:6px;padding:6px 0;font-size:8.5px;font-weight:900;color:#55524A;border-bottom:1px solid #EFEDE6"><span></span><span>內部帳</span><span>PSP 清算檔</span><span>銀行入帳</span></div>
+            <div style="display:grid;grid-template-columns:1fr 110px 110px 110px;gap:6px;padding:6px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace"><span>筆數</span><span>1,842</span><span>1,842</span><span>—</span></div>
+            <div style="display:grid;grid-template-columns:1fr 110px 110px 110px;gap:6px;padding:6px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace"><span>總額 TWD</span><span>6,214,300</span><span style="color:#B4483E;font-weight:900">6,213,100</span><span>6,213,100</span></div>
+            <div style="margin-top:6px;background:#FBF3F2;border:1px solid #F3D9D6;border-radius:7px;padding:6px 9px;font-size:8.5px;color:#B4483E"><b>差異 NT$1,200</b>：PSP 手續費調整 2 筆未入內部帳 → 建立調整分錄（需核准）</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">三方對帳：內部帳、PSP 清算檔、銀行入帳互相核對。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#B45309;font-family:ui-monospace,monospace">F3</span><span style="font-size:12px;font-weight:700">平台佣金結算・回沖</span></div>
+        <div data-screen-label="F3 佣金" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / finance / commissions · 平台A 2026-06</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;gap:4px;font-family:ui-monospace,monospace;font-size:9px">
+              <div style="display:flex;justify-content:space-between"><span>成交 GMV（1,204 單）</span><b>NT$4,821,300</b></div>
+              <div style="display:flex;justify-content:space-between"><span>佣金 12%</span><b>NT$578,556</b></div>
+              <div style="display:flex;justify-content:space-between;color:#B4483E"><span>回沖 clawback（退貨 31 單 + 取消 18 單）</span><b>−NT$21,140</b></div>
+              <div style="display:flex;justify-content:space-between;border-top:1px dashed #E2DFD4;padding-top:4px"><span>應付平台A</span><b>NT$557,416</b></div>
+            </div>
+            <div style="display:flex;gap:6px;margin-top:7px"><span style="background:#B45309;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:3px 12px">產生對帳單 PDF</span><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#55524A">回沖明細 49 筆</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">各平台佣金對帳單，含退貨／取消的回沖。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#B45309;font-family:ui-monospace,monospace">F4</span><span style="font-size:12px;font-weight:700">退款帳本（多原因）</span></div>
+        <div data-screen-label="F4 退款帳本" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / finance / refunds</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:flex;gap:5px;font-size:8.5px;font-weight:700;font-family:ui-monospace,monospace;flex-wrap:wrap"><span style="background:#FDF0D5;color:#8A5A0B;border-radius:4px;padding:2px 8px">DUTY_DELTA 214</span><span style="background:#E3EEF1;color:#0F6E84;border-radius:4px;padding:2px 8px">SOLD_OUT 31</span><span style="background:#ECE8F6;color:#5B4B9E;border-radius:4px;padding:2px 8px">RETURN 28</span><span style="background:#FBF3F2;color:#B4483E;border-radius:4px;padding:2px 8px">GOODWILL 6</span></div>
+            <div style="display:grid;grid-template-columns:110px 1fr 80px 90px;gap:6px;padding:6px 0;font-size:8.5px;font-weight:900;color:#55524A;border-bottom:1px solid #EFEDE6;margin-top:6px"><span>退款單</span><span>原因</span><span>金額</span><span>狀態</span></div>
+            <div style="display:grid;grid-template-columns:110px 1fr 80px 90px;gap:6px;padding:6px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace"><span>rf-8817</span><span>SOLD_OUT 部分取消</span><span>420</span><span style="color:#2E7D4F;font-weight:900">SETTLED</span></div>
+            <div style="display:grid;grid-template-columns:110px 1fr 80px 90px;gap:6px;padding:6px 0;font-family:ui-monospace,monospace"><span>rf-8912</span><span>DUTY_DELTA 對帳退款</span><span>30</span><span style="color:#B45309;font-weight:900">QUEUED</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">退款帳本按原因分類（關稅差額／售罄／退貨／商譽補償）。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#B45309;font-family:ui-monospace,monospace">F5</span><span style="font-size:12px;font-weight:700">爭議款工作台・證據包</span></div>
+        <div data-screen-label="F5 爭議款" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / chargebacks / cb-0442</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:flex;justify-content:space-between"><b>cb-0442 · NT$3,710 · 理由：未收到商品</b><span style="background:#FDF0D5;color:#8A5A0B;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px;font-family:ui-monospace,monospace">回覆期限 5 天</span></div>
+            <div style="margin-top:7px;border:1px solid #CFE5D6;background:#F4FAF6;border-radius:8px;padding:7px 10px;font-size:8.5px;line-height:1.7"><b style="font-size:9px">自動證據包 ✓</b><br>□ 3DS 驗證紀錄 · □ EZ Way 本人委任確認 12/14 · □ X2 報單（本人名義）· □ 7-11 取件紀錄（證件核對）12/19 · □ 追蹤事件流 6 筆</div>
+            <div style="display:flex;gap:6px;margin-top:7px"><span style="background:#B45309;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:3px 12px">提交抗辯</span><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#55524A">接受爭議（沖銷）</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">爭議款工作台：實名通關與取件紀錄自動組成有力證據包。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#B45309;font-family:ui-monospace,monospace">F6</span><span style="font-size:12px;font-weight:700">毛利差異報表（估 vs 實）</span></div>
+        <div data-screen-label="F6 毛利差異" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#8A8578;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">P2</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / finance / margin-variance · 2026-06</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:1fr 90px 90px 90px;gap:6px;padding:6px 0;font-size:8.5px;font-weight:900;color:#55524A;border-bottom:1px solid #EFEDE6"><span>成本項</span><span>估算</span><span>實際</span><span>差異</span></div>
+            <div style="display:grid;grid-template-columns:1fr 90px 90px 90px;gap:6px;padding:5px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace"><span>國際運費/kg</span><span>310</span><span>334</span><span style="color:#B4483E;font-weight:900">+7.7%</span></div>
+            <div style="display:grid;grid-template-columns:1fr 90px 90px 90px;gap:6px;padding:5px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace"><span>關稅（吸收部分）</span><span>0</span><span>4,120</span><span style="color:#B4483E;font-weight:900">new</span></div>
+            <div style="display:grid;grid-template-columns:1fr 90px 90px 90px;gap:6px;padding:5px 0;font-family:ui-monospace,monospace"><span>FX 損益</span><span>0</span><span>+11,300</span><span style="color:#2E7D4F;font-weight:900">gain</span></div>
+            <div style="margin-top:6px;font-size:8.5px;color:#8A8578">結論：運費級距表低估輕小件 → 回饋 PR1 定價規則。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">各成本項毛利差異（估算對比實際）；結論回饋定價規則。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#B45309;font-family:ui-monospace,monospace">F7</span><span style="font-size:12px;font-weight:700">購買證明／折讓單瀏覽器</span></div>
+        <div data-screen-label="F7 證明瀏覽" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / receipts?order=SM-2512-08841</span></div>
+          <div style="padding:10px 12px;display:grid;gap:6px;font-size:9.5px">
+            <div style="display:flex;justify-content:space-between;border:1px solid #E2DFD4;border-radius:8px;padding:7px 10px;align-items:center"><span><b>POP-08841-v1</b> 原始購買證明 · 12/09</span><span style="color:#8A8578;font-size:8.5px;font-family:ui-monospace,monospace">superseded</span></div>
+            <div style="display:flex;justify-content:space-between;border:1px solid #E2DFD4;border-radius:8px;padding:7px 10px;align-items:center"><span><b>CN-0031</b> 折讓單（關稅退款 −30）· 12/17</span><span style="color:#2E7D4F;font-size:8.5px;font-weight:900;font-family:ui-monospace,monospace">issued</span></div>
+            <div style="display:flex;justify-content:space-between;border:2px solid #0F6E84;border-radius:8px;padding:7px 10px;align-items:center"><span><b>POP-08841-v2</b> 現行版（含折讓）· 12/17</span><span style="color:#0F6E84;font-size:8.5px;font-weight:900;font-family:ui-monospace,monospace">current ↗</span></div>
+            <div style="font-size:8.5px;color:#8A8578">文件不可刪除，只能以新版取代；全部可稽核下載。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">購買證明／折讓單瀏覽器：版本化文件、僅可取代不可刪除、可稽核下載。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROUP: Post-sale ===== -->
+  <div style="margin-bottom:40px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#0F6E84;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">PS</span><span style="font-size:16px;font-weight:900">售後 Post-Sale</span></div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#0F6E84;font-family:ui-monospace,monospace">PS1</span><span style="font-size:12px;font-weight:700">客服案件佇列</span></div>
+        <div data-screen-label="PS1 案件佇列" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / cases</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:100px 1fr 90px 100px;gap:6px;padding:6px 0;font-size:8.5px;font-weight:900;color:#55524A;border-bottom:1px solid #EFEDE6"><span>案件</span><span>主旨</span><span>來源</span><span>SLA</span></div>
+            <div style="display:grid;grid-template-columns:100px 1fr 90px 100px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;align-items:center"><span style="font-family:ui-monospace,monospace;font-weight:700">CS-26-04412</span><span>包裹進度查詢</span><span>平台A 表單</span><span style="color:#2E7D4F;font-weight:900;font-family:ui-monospace,monospace">32:10 ⏱</span></div>
+            <div style="display:grid;grid-template-columns:100px 1fr 90px 100px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;align-items:center;background:#FBF3F2"><span style="font-family:ui-monospace,monospace;font-weight:700">CS-26-04398</span><span>成色不符爭議</span><span>平台B 表單</span><span style="color:#B4483E;font-weight:900;font-family:ui-monospace,monospace">-02:41 ✕</span></div>
+            <div style="display:grid;grid-template-columns:100px 1fr 90px 100px;gap:6px;padding:7px 0;align-items:center"><span style="font-family:ui-monospace,monospace;font-weight:700">CS-26-04401</span><span>退款未入帳</span><span>0800 電話</span><span style="color:#B45309;font-weight:900;font-family:ui-monospace,monospace">04:52 ⏱</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">案件佇列：來自平台客服表單與電話，含首次回應 SLA 時鐘。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#0F6E84;font-family:ui-monospace,monospace">PS2</span><span style="font-size:12px;font-weight:700">案件詳情（RACI・平台範圍）</span></div>
+        <div data-screen-label="PS2 案件詳情" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / cases / CS-26-04398</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:flex;align-items:center;gap:7px"><b>成色不符爭議 · SM-…-08790</b><span style="background:#FBF3F2;color:#B4483E;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px;font-family:ui-monospace,monospace">SLA 逾時</span><span style="margin-left:auto;background:#ECE8F6;color:#5B4B9E;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px">平台B 可見範圍</span></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:5px;margin-top:7px;font-size:8.5px;text-align:center">
+              <div style="background:#F6F5F0;border-radius:6px;padding:5px">R 責任<br><b>CS 林</b></div>
+              <div style="background:#F6F5F0;border-radius:6px;padding:5px">A 當責<br><b>CS 主管</b></div>
+              <div style="background:#F6F5F0;border-radius:6px;padding:5px">C 諮詢<br><b>日本倉 QC</b></div>
+              <div style="background:#F6F5F0;border-radius:6px;padding:5px">I 知會<br><b>平台B 窗口</b></div>
+            </div>
+            <div style="margin-top:7px;border:1px solid #E2DFD4;border-radius:8px;padding:7px 10px;font-size:8.5px;color:#55524A">關聯證據：QC 開箱照 4 張（12/12）· 刊登快照 v3 成色描述 · 消費者上傳照 2 張 → 併列比對</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">案件詳情：RACI、SLA 時鐘、平台範圍可見性、QC 照片證據比對。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#0F6E84;font-family:ui-monospace,monospace">PS3</span><span style="font-size:12px;font-weight:700">退貨管理・解方選擇器</span></div>
+        <div data-screen-label="PS3 退貨管理" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / returns / RT-2612-0031</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div><b>RT-2612-0031 · 成色不符 · NT$3,280</b></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:7px;font-size:9px">
+              <div style="border:2px solid #0F6E84;background:#F0F6F8;border-radius:8px;padding:8px 10px"><b style="color:#0F6E84">RWR 退款不退貨</b><div style="color:#55524A;margin-top:3px;font-size:8.5px">物流成本 NT$180 &gt; 殘值回收 NT$120 → 建議 ✓<br>濫用檢查：該用戶 RWR 12 個月 0 次 ✓</div></div>
+              <div style="border:1px solid #DDD9CE;border-radius:8px;padding:8px 10px"><b>退回台灣據點</b><div style="color:#8A8578;margin-top:3px;font-size:8.5px">適用高殘值品；入 RMA 流程分級處置。</div></div>
+            </div>
+            <div style="margin-top:7px;display:flex;gap:6px"><span style="background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:3px 12px">核定 RWR 並退款</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">退貨管理：解方選擇器（退款不退貨／退回據點），內建成本邏輯。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#0F6E84;font-family:ui-monospace,monospace">PS4</span><span style="font-size:12px;font-weight:700">RWR 濫用帳本</span></div>
+        <div data-screen-label="PS4 RWR濫用" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#8A8578;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">P2</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / rwr-abuse</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:1fr 90px 110px 90px;gap:6px;padding:6px 0;font-size:8.5px;font-weight:900;color:#55524A;border-bottom:1px solid #EFEDE6"><span>用戶（跨平台指紋）</span><span>12月 RWR</span><span>金額</span><span>狀態</span></div>
+            <div style="display:grid;grid-template-columns:1fr 90px 110px 90px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace;background:#FBF3F2"><span>u-88(平台A)+u-31(平台B)</span><span style="color:#B4483E;font-weight:900">5 次</span><span>NT$9,840</span><span style="color:#B4483E;font-weight:900">已封鎖</span></div>
+            <div style="display:grid;grid-template-columns:1fr 90px 110px 90px;gap:6px;padding:7px 0;font-family:ui-monospace,monospace"><span>u-102(平台A)</span><span style="color:#B45309;font-weight:900">3 次</span><span>NT$4,120</span><span style="color:#B45309;font-weight:900">觀察中</span></div>
+            <div style="margin-top:6px;font-size:8.5px;color:#8A8578">封鎖後該用戶退貨一律要求退回據點；閾值：12 個月 ≥3 次或 ≥NT$5,000。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">RWR 濫用帳本：跨平台身分比對＋政策閾值。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#0F6E84;font-family:ui-monospace,monospace">PS5</span><span style="font-size:12px;font-weight:700">消保官申訴追蹤（15 天法定）</span></div>
+        <div data-screen-label="PS5 消保官" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / ombudsman</span></div>
+          <div style="padding:10px 12px;display:grid;gap:6px;font-size:9.5px">
+            <div style="border:1px solid #F3D9D6;background:#FBF3F2;border-radius:8px;padding:8px 10px">
+              <div style="display:flex;justify-content:space-between"><b>OM-26-007 · 台北市消保官 · 退款爭議</b><span style="color:#B4483E;font-weight:900;font-family:ui-monospace,monospace;font-size:9px">剩 4 天 / 15 天</span></div>
+              <div style="margin-top:4px;height:7px;border-radius:999px;background:#F6C9C4;overflow:hidden"><div style="width:73%;height:100%;background:#B4483E"></div></div>
+              <div style="font-size:8.5px;color:#8A8578;margin-top:4px">法定 15 日內須具體回覆。已指派法務＋CS 主管；回覆稿審核中。</div>
+            </div>
+            <div style="display:flex;gap:6px"><span style="background:#B4483E;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:3px 12px">提交正式回覆</span><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#55524A">附和解方案</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">消保官申訴追蹤，含法定 15 日回覆倒數。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROUP: Admin ===== -->
+  <div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#22242A;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">A</span><span style="font-size:16px;font-weight:900">系統管理 Admin</span></div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#22242A;font-family:ui-monospace,monospace">A1</span><span style="font-size:12px;font-weight:700">RBAC 角色・PII 遮罩</span></div>
+        <div data-screen-label="A1 RBAC" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / admin / roles / cs-agent</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div><b>角色：cs-agent</b> · 12 位成員 · 平台範圍限定</div>
+            <div style="margin-top:7px;border:1px solid #E2DFD4;border-radius:8px;padding:7px 10px">
+              <div style="font-size:8.5px;font-weight:900;color:#55524A">PII 遮罩預覽（此角色所見）</div>
+              <div style="display:grid;gap:3px;margin-top:4px;font-size:9px;font-family:ui-monospace,monospace"><div style="display:flex;justify-content:space-between"><span style="color:#8A8578">身分證字號</span><span>A12*****89 🔒</span></div><div style="display:flex;justify-content:space-between"><span style="color:#8A8578">手機</span><span>0912-***-678 🔒</span></div><div style="display:flex;justify-content:space-between"><span style="color:#8A8578">地址</span><span>桃園市***（區級以下遮罩）</span></div></div>
+            </div>
+            <div style="margin-top:6px;background:#FDF6E8;border:1px solid #EAD9AC;border-radius:8px;padding:7px 10px;font-size:8.5px;color:#8A5A0B"><b>Break-glass 解遮罩</b>：需輸入事由＋案件編號，限時 15 分鐘，全程記錄稽核日誌並通知資安。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">RBAC 角色與 PII 遮罩預覽＋break-glass 解遮罩（事由、限時、稽核、資安通知）。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#22242A;font-family:ui-monospace,monospace">A2</span><span style="font-size:12px;font-weight:700">使用者管理</span></div>
+        <div data-screen-label="A2 使用者" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / admin / users</span></div>
+          <div style="padding:10px 12px;font-size:9.5px">
+            <div style="display:grid;grid-template-columns:1fr 120px 100px 80px;gap:6px;padding:6px 0;font-size:8.5px;font-weight:900;color:#55524A;border-bottom:1px solid #EFEDE6"><span>使用者</span><span>角色</span><span>最近登入</span><span>MFA</span></div>
+            <div style="display:grid;grid-template-columns:1fr 120px 100px 80px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace"><span>chen@shopmore.hk</span><span>ops-lead</span><span>今日 12:40</span><span style="color:#2E7D4F;font-weight:900">✓</span></div>
+            <div style="display:grid;grid-template-columns:1fr 120px 100px 80px;gap:6px;padding:7px 0;border-bottom:1px solid #EFEDE6;font-family:ui-monospace,monospace;background:#FDF6E8"><span>tanaka@jp-3pl.co.jp</span><span>wh-jp（外部）</span><span style="color:#B45309;font-weight:900">34 天前 ⚠</span><span style="color:#2E7D4F;font-weight:900">✓</span></div>
+            <div style="margin-top:6px;font-size:8.5px;color:#8A8578">外部帳號 90 天未用自動停權；季度存取覆核待辦 3 筆。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">使用者管理：外部 3PL 帳號、MFA、閒置自動停權、存取覆核。</div>
+      </div>
+
+      <div style="width:480px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#22242A;font-family:ui-monospace,monospace">A3</span><span style="font-size:12px;font-weight:700">API 憑證管理</span></div>
+        <div data-screen-label="A3 API憑證" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:12px;overflow:hidden">
+          <span style="position:absolute;top:5px;right:8px;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace;z-index:2">MVP</span>
+          <div style="display:flex;align-items:center;gap:6px;background:#22242A;padding:6px 10px"><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="width:7px;height:7px;border-radius:50%;background:#4A4D55"></span><span style="font-size:9px;color:#9BA0A8;font-family:ui-monospace,monospace;padding-left:5px">ops.shopmore.internal / admin / credentials</span></div>
+          <div style="padding:10px 12px;display:grid;gap:6px;font-size:9.5px">
+            <div style="border:1px solid #E2DFD4;border-radius:8px;padding:7px 10px;display:flex;justify-content:space-between;align-items:center"><span><b>平台A prod key</b> <span style="font-family:ui-monospace,monospace;color:#8A8578;font-size:8.5px">sk_live_a1…9f</span></span><span style="color:#2E7D4F;font-size:8.5px;font-weight:900;font-family:ui-monospace,monospace">輪替 12 天前 ✓</span></div>
+            <div style="border:1px solid #EAD9AC;background:#FDF6E8;border-radius:8px;padding:7px 10px;display:flex;justify-content:space-between;align-items:center"><span><b>代購夥伴 API key</b> <span style="font-family:ui-monospace,monospace;color:#8A8578;font-size:8.5px">pk_prx_77…21</span></span><span style="color:#B45309;font-size:8.5px;font-weight:900;font-family:ui-monospace,monospace">88 天未輪替 ⚠</span></div>
+            <div style="display:flex;gap:6px"><span style="background:#22242A;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:3px 12px">輪替（雙鑰重疊 24h）</span><span style="border:1px solid #DDD9CE;font-size:8.5px;border-radius:5px;padding:3px 12px;color:#B4483E;font-weight:700">立即撤銷</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">API 憑證管理：雙鑰重疊輪替、撤銷、逾期未輪替警示。</div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;顯示註解&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { annoDisplay: (this.props['顯示註解'] ?? true) ? 'block' : 'none' };
+  }
+}
+</script>
+</body>
+</html>

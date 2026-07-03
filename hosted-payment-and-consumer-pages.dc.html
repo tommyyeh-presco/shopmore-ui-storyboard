@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./gate.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F4F3EE;font-family:'Noto Sans TC','PingFang TC',sans-serif;color:#22242A;}</style>
+</helmet>
+
+<div style="padding:48px 56px 80px;min-width:2400px">
+
+  <!-- ===== FILE HEADER ===== -->
+  <div style="margin-bottom:10px;display:flex;align-items:center;gap:12px">
+    <div style="width:34px;height:34px;border-radius:9px;background:#0F6E84;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px">2</div>
+    <div>
+      <div style="font-size:26px;font-weight:900">SHOPMORE 消費者接觸點（託管付款）— Hosted Payment &amp; Consumer Pages</div>
+      <div style="font-size:12px;color:#6E6A5E;font-family:ui-monospace,monospace">FILE 2/6 · SHOPMORE-owned consumer touchpoints · mobile-web width · payment, receipts, utility pages, notifications</div>
+    </div>
+  </div>
+  <div style="display:flex;gap:8px;margin-bottom:30px;font-size:11px;font-weight:700;flex-wrap:wrap">
+    <a href="partner-storefront-reference.dc.html" style="color:#55524A;text-decoration:none;border:1px solid #DDD9CE;border-radius:999px;padding:4px 12px;background:#fff">1 合作平台前台</a>
+    <span style="background:#0F6E84;color:#fff;border-radius:999px;padding:4px 12px">2 託管付款頁</span>
+    <a href="ops-console.dc.html" style="color:#55524A;text-decoration:none;border:1px solid #DDD9CE;border-radius:999px;padding:4px 12px;background:#fff">3 營運後台</a>
+    <a href="supplier-portal.dc.html" style="color:#55524A;text-decoration:none;border:1px solid #DDD9CE;border-radius:999px;padding:4px 12px;background:#fff">4 供應商入口</a>
+    <a href="warehouse-apps.dc.html" style="color:#55524A;text-decoration:none;border:1px solid #DDD9CE;border-radius:999px;padding:4px 12px;background:#fff">5 倉庫作業</a>
+    <a href="partner-developer-sandbox.dc.html" style="color:#55524A;text-decoration:none;border:1px solid #DDD9CE;border-radius:999px;padding:4px 12px;background:#fff">6 開發者沙盒</a>
+  </div>
+
+  <!-- ===== MAIN FLOW LANE ===== -->
+  <div data-screen-label="MAIN FLOW" style="background:#E7F0F3;border:1px solid #CBDEE4;border-radius:18px;padding:22px 24px;margin-bottom:44px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+      <span style="background:#0F6E84;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">MAIN FLOW</span>
+      <span style="font-size:14px;font-weight:900">主流程頁面（步驟 4 付款 · 步驟 11 購買證明）</span>
+    </div>
+    <div style="display:flex;gap:26px;align-items:flex-start">
+
+      <!-- MF 4a payment -->
+      <div style="width:264px;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="width:22px;height:20px;border-radius:10px;background:#0F6E84;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700">4a</span><span style="font-size:12px;font-weight:700">付款頁</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="MF4a 付款頁" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;box-shadow:0 6px 18px rgba(32,33,36,0.07);overflow:hidden">
+          
+          <div style="background:#0F6E84;color:#fff;padding:9px 12px;display:flex;align-items:center;gap:7px"><div style="width:20px;height:20px;border-radius:6px;background:rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900">S</div><div><div style="font-size:11px;font-weight:900">SHOPMORE 安全付款</div><div style="font-size:8px;opacity:0.75">SHOPMORE (HK) Limited</div></div></div>
+          <div style="padding:11px 12px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:9px;color:#8A8578">SM-2512-08841</span><span style="font-size:15px;font-weight:900">NT$3,710</span></div>
+            <div style="margin-top:3px;font-size:8.5px;color:#8A8578">商品 3,280 + 國際運費 250 + 預收關稅 180</div>
+            <div style="margin-top:9px;display:grid;gap:6px">
+              <div style="border:1px solid #DDD9CE;border-radius:7px;padding:7px 9px"><div style="font-size:8px;color:#8A8578">卡號</div><div style="font-size:11px;font-weight:700;letter-spacing:1px;font-family:ui-monospace,monospace">4556 12•• •••• 8841</div></div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+                <div style="border:1px solid #DDD9CE;border-radius:7px;padding:7px 9px"><div style="font-size:8px;color:#8A8578">有效期</div><div style="font-size:11px;font-weight:700">08 / 28</div></div>
+                <div style="border:1px solid #DDD9CE;border-radius:7px;padding:7px 9px"><div style="font-size:8px;color:#8A8578">CVC</div><div style="font-size:11px;font-weight:700">•••</div></div>
+              </div>
+            </div>
+            <div style="margin-top:8px;display:flex;align-items:center;gap:6px;background:#F6F5F0;border-radius:7px;padding:6px 9px"><span style="background:#1D3A6E;color:#fff;font-size:7.5px;font-weight:900;border-radius:4px;padding:2px 6px;font-family:ui-monospace,monospace">LianLian 連連支付</span><span style="font-size:8px;color:#8A8578">金流由連連國際處理 · PCI-DSS</span></div>
+            <div style="margin-top:9px;background:#0F6E84;color:#fff;border-radius:8px;padding:8px 0;text-align:center;font-size:11px;font-weight:900">確認付款 NT$3,710</div>
+            <div style="margin-top:6px;text-align:center;font-size:8px;color:#8A8578">按下後將導向發卡行 3D 驗證</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">刷卡表單含台幣金額明細、連連支付標示與 3DS 導向說明。</div>
+      </div>
+
+      <!-- MF 4b processing -->
+      <div style="width:264px;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="width:22px;height:20px;border-radius:10px;background:#0F6E84;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700">4b</span><span style="font-size:12px;font-weight:700">處理中</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="MF4b 處理中" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;box-shadow:0 6px 18px rgba(32,33,36,0.07);overflow:hidden">
+          
+          <div style="padding:38px 16px;text-align:center">
+            <div style="width:36px;height:36px;border-radius:50%;border:3.5px solid #E3EEF1;border-top-color:#0F6E84;margin:0 auto"></div>
+            <div style="font-size:12px;font-weight:900;margin-top:14px">正在確認您的付款…</div>
+            <div style="font-size:9px;color:#8A8578;margin-top:5px;line-height:1.6">3D 驗證完成，正在向發卡行請求授權。<br><b>請勿關閉或重新整理此頁面。</b></div>
+            <div style="margin-top:14px;font-size:8px;color:#B0AB9E;font-family:ui-monospace,monospace">txn 7f3a-9921 · 逾時 60s 自動回原頁</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">3DS 後處理中狀態；防止重複送出與返回鍵誤操作。</div>
+      </div>
+
+      <!-- MF 4c success -->
+      <div style="width:264px;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="width:22px;height:20px;border-radius:10px;background:#0F6E84;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700">4c</span><span style="font-size:12px;font-weight:700">付款成功・自動返回</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="MF4c 成功返回" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;box-shadow:0 6px 18px rgba(32,33,36,0.07);overflow:hidden">
+          
+          <div style="padding:28px 16px;text-align:center">
+            <div style="width:38px;height:38px;border-radius:50%;background:#E6F3EA;color:#2E7D4F;font-size:17px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto">✓</div>
+            <div style="font-size:12.5px;font-weight:900;margin-top:10px">付款成功 NT$3,710</div>
+            <div style="font-size:9px;color:#8A8578;margin-top:4px;font-family:ui-monospace,monospace">授權碼 A88213 · SM-2512-08841</div>
+            <div style="margin-top:12px;background:#F6F5F0;border-radius:8px;padding:8px 10px;font-size:9px;color:#55524A"><b>3 秒後</b>自動返回合作平台訂單完成頁…</div>
+            <div style="margin-top:8px;font-size:9px;color:#0F6E84;font-weight:700">立即返回 →</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">成功過場頁，倒數自動返回合作平台訂單完成頁。</div>
+      </div>
+
+      <!-- MF 11a receipt -->
+      <div style="width:264px;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="width:26px;height:20px;border-radius:10px;background:#B45309;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700">11a</span><span style="font-size:12px;font-weight:700">購買證明頁（版本化）★</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="MF11a 購買證明" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;box-shadow:0 6px 18px rgba(32,33,36,0.07);overflow:hidden">
+          
+          <div style="background:#0F6E84;color:#fff;padding:9px 12px;font-size:11px;font-weight:900">購買證明 Proof of Purchase</div>
+          <div style="padding:10px 12px">
+            <div style="display:flex;gap:5px;margin-bottom:8px"><span style="background:#E3EEF1;color:#0F6E84;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 8px">v2 現行版</span><span style="border:1px solid #DDD9CE;color:#8A8578;font-size:8.5px;border-radius:5px;padding:2px 8px">v1 原始版</span></div>
+            <div style="border:1px solid #E2DFD4;border-radius:9px;padding:9px 11px;display:grid;gap:4px;font-size:9px">
+              <div style="display:flex;justify-content:space-between"><span style="color:#8A8578">出賣人</span><b>SHOPMORE (HK) Limited</b></div>
+              <div style="display:flex;justify-content:space-between"><span style="color:#8A8578">買受人</span><b>王曉明</b></div>
+              <div style="display:flex;justify-content:space-between"><span style="color:#8A8578">商品</span><b>SONY 隨身聽 WM-EX921 ×1</b></div>
+              <div style="display:flex;justify-content:space-between"><span style="color:#8A8578">商品+運費</span><b>NT$3,530</b></div>
+              <div style="display:flex;justify-content:space-between"><span style="color:#8A8578">關稅（核定）</span><b>NT$150</b></div>
+            </div>
+            <div style="margin-top:7px;border:1px solid #EAD9AC;background:#FDF6E8;border-radius:9px;padding:8px 11px;font-size:9px;color:#8A5A0B"><b>折讓單 Credit Note CN-0031</b><div style="display:flex;justify-content:space-between;margin-top:3px"><span>關稅退款（預收 180 − 核定 150）</span><b>−NT$30</b></div></div>
+            <div style="margin-top:9px;display:flex;gap:6px"><div style="flex:1;border:1px solid #0F6E84;color:#0F6E84;border-radius:8px;padding:7px 0;text-align:center;font-size:9.5px;font-weight:700">下載 PDF ↓</div><div style="flex:1;border:1px solid #DDD9CE;color:#55524A;border-radius:8px;padding:7px 0;text-align:center;font-size:9.5px">寄送 Email</div></div>
+            <div style="margin-top:7px;font-size:8px;color:#8A8578;text-align:center;line-height:1.5">境外銷售不開立統一發票；本證明含退款後最終金額。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">★ 版本化託管購買證明：原始版＋關稅退款後附加折讓單。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROUP: Payment edge states ===== -->
+  <div style="margin-bottom:40px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#0F6E84;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">E</span><span style="font-size:16px;font-weight:900">付款邊界狀態 Payment Edge States</span></div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#0F6E84;font-family:ui-monospace,monospace">E1</span><span style="font-size:12px;font-weight:700">付款失敗・重試</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="E1 付款失敗" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;overflow:hidden">
+          
+          <div style="padding:24px 16px;text-align:center">
+            <div style="width:38px;height:38px;border-radius:50%;background:#FBF3F2;color:#B4483E;font-size:17px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto">✕</div>
+            <div style="font-size:12.5px;font-weight:900;margin-top:10px">付款未完成</div>
+            <div style="font-size:9px;color:#8A8578;margin-top:4px;line-height:1.6">發卡行拒絕授權（代碼 05）。<br>您的商品保留至 <b>14:32</b>（剩餘 09:41）。</div>
+            <div style="margin-top:12px;display:grid;gap:6px"><div style="background:#0F6E84;color:#fff;border-radius:8px;padding:8px 0;font-size:10.5px;font-weight:900">重試付款</div><div style="border:1px solid #DDD9CE;border-radius:8px;padding:8px 0;font-size:10.5px;color:#55524A">改用其他卡片</div></div>
+            <div style="margin-top:8px;font-size:8px;color:#8A8578">未扣款；如有疑問請洽發卡行或客服。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">拒絕授權附代碼、一点物保留倒數、可重試或改用他卡。</div>
+      </div>
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#0F6E84;font-family:ui-monospace,monospace">E2</span><span style="font-size:12px;font-weight:700">工作階段逾時</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="E2 逾時" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;overflow:hidden">
+          
+          <div style="padding:28px 16px;text-align:center">
+            <div style="width:38px;height:38px;border-radius:50%;background:#F1EFE8;color:#8A8578;font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto">⏱</div>
+            <div style="font-size:12.5px;font-weight:900;margin-top:10px">付款連結已逾時</div>
+            <div style="font-size:9px;color:#8A8578;margin-top:4px;line-height:1.6">為保障交易安全，付款頁 15 分鐘未完成即失效。請回到合作平台重新結帳。</div>
+            <div style="margin-top:12px;background:#0F6E84;color:#fff;border-radius:8px;padding:8px 0;font-size:10.5px;font-weight:900">返回合作平台重新結帳</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">逾時工作階段：不留死路 — 導回平台結帳重新建立。</div>
+      </div>
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#0F6E84;font-family:ui-monospace,monospace">E3</span><span style="font-size:12px;font-weight:700">重複交易防護</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="E3 重複交易" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;overflow:hidden">
+          
+          <div style="padding:24px 16px;text-align:center">
+            <div style="width:38px;height:38px;border-radius:50%;background:#FDF6E8;color:#B45309;font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto">!</div>
+            <div style="font-size:12.5px;font-weight:900;margin-top:10px">此訂單已在付款中</div>
+            <div style="font-size:9px;color:#8A8578;margin-top:4px;line-height:1.6">偵測到另一個進行中的付款流程（可能在其他分頁）。為避免重複扣款，此頁已鎖定。</div>
+            <div style="margin-top:12px;display:grid;gap:6px"><div style="border:1px solid #0F6E84;color:#0F6E84;border-radius:8px;padding:8px 0;font-size:10.5px;font-weight:700">查看該筆付款狀態</div><div style="border:1px solid #DDD9CE;border-radius:8px;padding:8px 0;font-size:10.5px;color:#55524A">取消並重新開始</div></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">重複交易防護，避免多分頁造成重複扣款。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROUP: Public utility pages ===== -->
+  <div style="margin-bottom:40px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#0F6E84;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">U</span><span style="font-size:16px;font-weight:900">公開工具頁 Public Utility Pages</span></div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#0F6E84;font-family:ui-monospace,monospace">U1</span><span style="font-size:12px;font-weight:700">「這筆刷卡是什麼？」查詢頁</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="U1 刷卡查詢" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;overflow:hidden">
+          
+          <div style="background:#0F6E84;color:#fff;padding:9px 12px;font-size:11px;font-weight:900">這筆「SHOPMORE HK」刷卡是什麼？</div>
+          <div style="padding:10px 12px 12px">
+            <div style="font-size:9px;color:#55524A;line-height:1.6">若您的信用卡帳單出現 <b style="font-family:ui-monospace,monospace">SHOPMORE*HK</b>，代表您曾於合作平台跨境專區購物。輸入資料查詢對應訂單：</div>
+            <div style="display:grid;gap:6px;margin-top:8px;font-size:9.5px">
+              <div style="border:1px solid #DDD9CE;border-radius:7px;padding:7px 9px;display:flex;justify-content:space-between"><span style="color:#8A8578">卡號末四碼</span><b>8841</b></div>
+              <div style="border:1px solid #DDD9CE;border-radius:7px;padding:7px 9px;display:flex;justify-content:space-between"><span style="color:#8A8578">交易日期</span><b>2026/12/09</b></div>
+            </div>
+            <div style="margin-top:8px;background:#0F6E84;color:#fff;border-radius:8px;padding:8px 0;text-align:center;font-size:10.5px;font-weight:900">查詢</div>
+            <div style="margin-top:8px;border:1px solid #CFE5D6;background:#F4FAF6;border-radius:8px;padding:8px 10px;font-size:9px"><b>找到 1 筆</b>：SM-2512-08841 · SONY 隨身聽 · NT$3,710 · 合作平台A 跨境專區</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">刷卡查詢頁（末四碼＋日期 → 訂單摘要），降低「不明扣款」爭議。</div>
+      </div>
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#0F6E84;font-family:ui-monospace,monospace">U2</span><span style="font-size:12px;font-weight:700">EZ Way 教學頁</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="U2 EZWay教學" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;overflow:hidden">
+          
+          <div style="background:#1D3A6E;color:#fff;padding:9px 12px;font-size:11px;font-weight:900">EZ Way 易利委 實名認證教學</div>
+          <div style="padding:10px 12px 12px;display:grid;gap:7px">
+            <div style="display:flex;gap:8px;align-items:flex-start"><span style="width:16px;height:16px;border-radius:50%;background:#1D3A6E;color:#fff;font-size:9px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">1</span><div style="font-size:9.5px;line-height:1.5">至 App Store / Google Play 下載「<b>EZ Way 易利委</b>」</div></div>
+            <div style="display:flex;gap:8px;align-items:flex-start"><span style="width:16px;height:16px;border-radius:50%;background:#1D3A6E;color:#fff;font-size:9px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">2</span><div style="font-size:9.5px;line-height:1.5">以<b>收件人本人</b>手機號碼註冊並完成身分證驗證</div></div>
+            <div style="display:flex;gap:8px;align-items:flex-start"><span style="width:16px;height:16px;border-radius:50%;background:#1D3A6E;color:#fff;font-size:9px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">3</span><div style="font-size:9.5px;line-height:1.5">收到推播後，於「委任確認」點選<b>確認委任 ✓</b></div></div>
+            <div style="background:#FDF6E8;border:1px solid #EAD9AC;border-radius:8px;padding:7px 9px;font-size:8.5px;color:#8A5A0B;line-height:1.5">常見問題：手機號碼與訂單不符 → 請先於合作平台更新收件人手機再重試。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">EZ Way 分步教學，所有催辦通知與平台橫幅皆連結至此。</div>
+      </div>
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#0F6E84;font-family:ui-monospace,monospace">U3</span><span style="font-size:12px;font-weight:700">物流追蹤固定連結頁</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="U3 追蹤頁" style="position:relative;background:#fff;border:1px solid #DDD9CE;border-radius:14px;overflow:hidden">
+          
+          <div style="background:#0F6E84;color:#fff;padding:9px 12px;font-size:10px;font-weight:900;font-family:ui-monospace,monospace">track.shopmore.hk/t/SM-2512-08841</div>
+          <div style="padding:12px 14px">
+            <div style="display:flex;gap:8px"><div style="display:flex;flex-direction:column;align-items:center"><div style="width:12px;height:12px;border-radius:50%;background:#2E7D4F;color:#fff;font-size:7px;display:flex;align-items:center;justify-content:center">✓</div><div style="width:2px;flex:1;background:#CFE5D6"></div></div><div style="padding-bottom:8px;font-size:9.5px"><b>日本倉出貨（併櫃 TPE-1215）</b> <span style="color:#8A8578">12/15</span></div></div>
+            <div style="display:flex;gap:8px"><div style="display:flex;flex-direction:column;align-items:center"><div style="width:12px;height:12px;border-radius:50%;background:#2E7D4F;color:#fff;font-size:7px;display:flex;align-items:center;justify-content:center">✓</div><div style="width:2px;flex:1;background:#CFE5D6"></div></div><div style="padding-bottom:8px;font-size:9.5px"><b>抵台・清關完成</b> <span style="color:#8A8578">12/16</span></div></div>
+            <div style="display:flex;gap:8px"><div style="display:flex;flex-direction:column;align-items:center"><div style="width:12px;height:12px;border-radius:50%;border:2.5px solid #0F6E84;background:#fff"></div><div style="width:2px;flex:1;background:#E2DFD4"></div></div><div style="padding-bottom:8px;font-size:9.5px"><b style="color:#0F6E84">配送中（7-11 大智通）</b> <span style="color:#8A8578">12/17</span></div></div>
+            <div style="display:flex;gap:8px"><div style="width:12px;height:12px;border-radius:50%;border:2px solid #E2DFD4"></div><div style="font-size:9.5px;color:#B0AB9E">到店可取</div></div>
+            <div style="margin-top:8px;font-size:8px;color:#8A8578;line-height:1.5">免登入頁面：連結附於各通知；只顯示里程碑，不含個資。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">免登入追蹤固定連結，附於各通知；僅顯示里程碑，不含個資。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROUP: Notifications ===== -->
+  <div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#0F6E84;color:#fff;font-size:11px;font-weight:900;border-radius:6px;padding:3px 10px;font-family:ui-monospace,monospace">N</span><span style="font-size:16px;font-weight:900">通知 Notifications（推播／簡訊／Email）</span></div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#0F6E84;font-family:ui-monospace,monospace">N1</span><span style="font-size:12px;font-weight:700">付款收據通知</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="N1 付款收據" style="position:relative;background:#F6F5F0;border:1px solid #E2DFD4;border-radius:14px;padding:10px">
+          
+          <div style="background:#fff;border:1px solid #E2DFD4;border-radius:11px;padding:9px 11px">
+            <div style="display:flex;align-items:center;gap:7px"><div style="width:22px;height:22px;border-radius:6px;background:#0F6E84;color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900">S</div><div style="font-size:9.5px;font-weight:700">SHOPMORE 付款通知</div><span style="margin-left:auto;font-size:8px;color:#8A8578">12/09 13:41</span></div>
+            <div style="font-size:9.5px;margin-top:6px;line-height:1.55">已成功收款 <b>NT$3,710</b>（訂單 SM-2512-08841）。含預收關稅 NT$180，通關後多退少補。收據：<span style="color:#0F6E84;font-weight:700">pay.shopmore.hk/r/8841</span></div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">付款收據，含預收關稅說明與收據連結。</div>
+      </div>
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#0F6E84;font-family:ui-monospace,monospace">N2</span><span style="font-size:12px;font-weight:700">EZ Way 催辦序列（D+1 / D+3）★</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="N2 EZWay催辦" style="position:relative;background:#F6F5F0;border:1px solid #E2DFD4;border-radius:14px;padding:10px;display:grid;gap:8px">
+          
+          <div style="background:#fff;border:1px solid #E2DFD4;border-radius:11px;padding:9px 11px">
+            <div style="display:flex;align-items:center;gap:7px"><span style="background:#E3EEF1;color:#0F6E84;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px;font-family:ui-monospace,monospace">D+1</span><div style="font-size:9.5px;font-weight:700">提醒：完成 EZ Way 實名認證</div></div>
+            <div style="font-size:9px;color:#55524A;margin-top:5px;line-height:1.5">您的包裹已在日本倉待出貨，完成認證即可安排國際運送。</div>
+          </div>
+          <div style="background:#fff;border:1.5px solid #E5B968;border-radius:11px;padding:9px 11px">
+            <div style="display:flex;align-items:center;gap:7px"><span style="background:#FDF0D5;color:#B45309;font-size:8px;font-weight:900;border-radius:4px;padding:1px 6px;font-family:ui-monospace,monospace">D+3</span><div style="font-size:9.5px;font-weight:900;color:#8A5A0B">重要：包裹已暫停出貨</div></div>
+            <div style="font-size:9px;color:#8A5A0B;margin-top:5px;line-height:1.5">已等待 3 天。<b>7 天內未完成認證</b>，訂單將依約定取消並退款（扣除已發生費用）。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">★ 升級式催辦序列（D+1 溫和提醒 → D+3 說明後果與取消期限）。</div>
+      </div>
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#0F6E84;font-family:ui-monospace,monospace">N3</span><span style="font-size:12px;font-weight:700">7-11 取貨碼</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="N3 取貨碼" style="position:relative;background:#F6F5F0;border:1px solid #E2DFD4;border-radius:14px;padding:10px">
+          
+          <div style="background:#fff;border:1px solid #E2DFD4;border-radius:11px;padding:9px 11px">
+            <div style="display:flex;align-items:center;gap:7px"><div style="width:22px;height:22px;border-radius:6px;background:#2E7D4F;color:#fff;display:flex;align-items:center;justify-content:center;font-size:8.5px;font-weight:900">711</div><div style="font-size:9.5px;font-weight:700">包裹已到店</div><span style="margin-left:auto;font-size:8px;color:#8A8578">12/18 17:55</span></div>
+            <div style="margin-top:7px;background:#F6F5F0;border:1px dashed #C9C5B8;border-radius:8px;padding:8px 10px;text-align:center"><div style="font-size:8.5px;color:#8A8578">7-ELEVEN 光復門市 · 取貨編號</div><div style="font-size:16px;font-weight:900;letter-spacing:2px;font-family:ui-monospace,monospace">A7-3921</div></div>
+            <div style="font-size:8.5px;color:#8A8578;margin-top:6px">請攜帶與實名認證一致之證件，12/24 前取貨。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">取貨碼通知；末端再次強調證件須與實名收件人一致。</div>
+      </div>
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#0F6E84;font-family:ui-monospace,monospace">N4</span><span style="font-size:12px;font-weight:700">關稅退款通知 ★</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="N4 退款通知" style="position:relative;background:#F6F5F0;border:1px solid #E2DFD4;border-radius:14px;padding:10px">
+          
+          <div style="background:#fff;border:1px solid #EAD9AC;border-radius:11px;padding:9px 11px">
+            <div style="display:flex;align-items:center;gap:7px"><div style="width:22px;height:22px;border-radius:6px;background:#B45309;color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900">$</div><div style="font-size:9.5px;font-weight:900;color:#8A5A0B">關稅退款已發出</div><span style="margin-left:auto;font-size:8px;color:#8A8578">12/17 09:00</span></div>
+            <div style="font-size:9px;color:#55524A;margin-top:6px;line-height:1.6">清關完成，實際稅額 <b>NT$150</b> 低於預收 <b>NT$180</b>，差額 <b style="color:#B45309">NT$30</b> 已退回您的信用卡（3–5 個工作天入帳）。購買證明已更新為 v2。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">★ 關稅退款通知 — 建立信任的關鍵時刻；連結更新後的 v2 購買證明。</div>
+      </div>
+
+      <div style="width:264px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><span style="font-size:10px;font-weight:900;color:#0F6E84;font-family:ui-monospace,monospace">N5</span><span style="font-size:12px;font-weight:700">取貨即將逾期</span><span style="margin-left:auto;background:#0F6E84;color:#fff;font-size:8.5px;font-weight:900;border-radius:5px;padding:2px 7px;font-family:ui-monospace,monospace">MVP</span></div>
+        <div data-screen-label="N5 取貨逾期" style="position:relative;background:#F6F5F0;border:1px solid #E2DFD4;border-radius:14px;padding:10px">
+          
+          <div style="background:#fff;border:1.5px solid #E5B968;border-radius:11px;padding:9px 11px">
+            <div style="display:flex;align-items:center;gap:7px"><span style="width:18px;height:18px;border-radius:50%;background:#B45309;color:#fff;font-size:10px;font-weight:900;display:inline-flex;align-items:center;justify-content:center">!</span><div style="font-size:9.5px;font-weight:900;color:#8A5A0B">包裹保留只剩 2 天</div><span style="margin-left:auto;font-size:8px;color:#8A8578">12/22 10:00</span></div>
+            <div style="font-size:9px;color:#8A5A0B;margin-top:6px;line-height:1.6">您的包裹（A7-3921）將於 <b>12/24</b> 退出門市。逾期未取將退回倉庫，跨境商品<b>無法重新配送</b>，將依退貨規則處理。</div>
+          </div>
+        </div>
+        <div style="display:{{ annoDisplay }};margin-top:7px;font-size:10px;line-height:1.5;color:#8A8578;font-family:ui-monospace,monospace">取貨逾期警示；說明跨境包裹無法重新配送的後果。</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;顯示註解&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { annoDisplay: (this.props['顯示註解'] ?? true) ? 'block' : 'none' };
+  }
+}
+</script>
+</body>
+</html>
