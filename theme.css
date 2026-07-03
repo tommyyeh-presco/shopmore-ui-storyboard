@@ -1,0 +1,29 @@
+/* SHOPMORE storyboard site — shared theme overrides */
+
+/* 1) Navigation pills: fixed to the top-right on every page.
+   Matches the one container whose direct children link to the system pages.
+   transform:none neutralizes the storyboard's data-stick-x translateX. */
+div:has(> a[href$=".dc.html"]) {
+  position: fixed !important;
+  top: 12px;
+  right: 16px;
+  left: auto !important;
+  margin: 0 !important;
+  z-index: 1000 !important;
+  transform: none !important;
+  max-width: min(780px, 74vw);
+  justify-content: flex-end;
+  background: rgba(244, 243, 238, 0.94);
+  border: 1px solid #DDD9CE;
+  border-radius: 14px;
+  padding: 8px 10px;
+  box-shadow: 0 4px 14px rgba(32, 33, 36, 0.10);
+  backdrop-filter: blur(2px);
+}
+
+/* 2) Storyboard only: widen the lane-label track (190px -> 230px) so the
+   泳道 column and the first step column get breathing room. */
+[data-flow-root] div[style*=sticky],
+[data-flow-root] div[data-screen-label] {
+  grid-template-columns: 230px repeat(20, 400px) !important;
+}
