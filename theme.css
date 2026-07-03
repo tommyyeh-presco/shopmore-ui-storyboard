@@ -2,8 +2,10 @@
 
 /* 1) Navigation pills: fixed to the top-right on every page.
    Matches the one container whose direct children link to the system pages.
-   transform:none neutralizes the storyboard's data-stick-x translateX. */
-div:has(> a[href$=".dc.html"]) {
+   The second selector re-asserts fixed on the storyboard (where the nav also
+   carries data-stick-x) with enough specificity to beat the sticky rule below. */
+div:has(> a[href$=".dc.html"]),
+[data-flow-root] div:has(> a[href$=".dc.html"]) {
   position: fixed !important;
   top: 12px;
   right: 16px;
@@ -21,9 +23,21 @@ div:has(> a[href$=".dc.html"]) {
   backdrop-filter: blur(2px);
 }
 
-/* 2) Storyboard only: lane-label track sized to 200px; the label block no
-   longer paints over the 28px column gap, leaving a clear breathing strip
-   between the 泳道 column and the first step column. */
+/* 2) Storyboard: replace the JS translateX(scrollX) horizontal-stick hack with
+   real CSS position:sticky. The JS runs in a scroll listener, so the left bar
+   visibly lags and snaps back on fast right-scroll; sticky is compositor-driven
+   and pins instantly. transform:none (stylesheet !important) neutralizes the
+   JS-set inline transform. The nav rule above is more specific, so nav stays
+   fixed and is not caught by this. */
+[data-flow-root] [data-stick-x] {
+  position: sticky !important;
+  left: 0 !important;
+  transform: none !important;
+}
+
+/* 3) Storyboard: lane-label track sized to 200px; the label block no longer
+   paints over the 28px column gap, leaving a clear breathing strip between the
+   泳道 column and the first step column. */
 [data-flow-root] div[style*=sticky],
 [data-flow-root] div[data-screen-label] {
   grid-template-columns: 200px repeat(20, 400px) !important;
