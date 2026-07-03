@@ -21,9 +21,10 @@ div:has(> a[href$=".dc.html"]) {
   backdrop-filter: blur(2px);
 }
 
-/* 2) Storyboard only: widen the lane-label track (190px -> 230px) so the
-   泳道 column and the first step column get breathing room. */
+/* 2) Storyboard only: lane-label track sized to 200px; the label block no
+   longer paints over the 28px column gap, leaving a clear breathing strip
+   between the 泳道 column and the first step column. */
 [data-flow-root] div[style*=sticky],
 [data-flow-root] div[data-screen-label] {
-  grid-template-columns: 230px repeat(20, 400px) !important;
+  grid-template-columns: 200px repeat(20, 400px) !important;
 }
