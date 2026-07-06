@@ -35,7 +35,38 @@ div:has(> a[href$=".dc.html"]),
   transform: none !important;
 }
 
-/* 3) Storyboard: lane-label track sized to 200px; the label block no longer
+/* 4) Ownership colour-coding (storyboard). Applied by ownership.js via classes
+   so each screen's owner is unmistakable. */
+[data-flow-root] .sm-own-shopmore { background: #DCE8EC !important; }
+[data-flow-root] .sm-own-payment  { background: #FFFFFF !important; }
+[data-flow-root] .sm-own-platform { background: #FFFFFF !important; }
+.sm-urlbar {
+  font: 600 11px ui-monospace, monospace; color: #55524A;
+  background: #EFEDE6; border: 1px solid #E0DCD0; border-radius: 7px;
+  padding: 5px 9px; margin-bottom: 10px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.sm-embed {
+  border: 2px solid #E7B008; background: #FDF3D0;
+  border-radius: 10px; padding: 8px; margin-top: 8px;
+}
+.sm-embed-cap {
+  font: 700 10px ui-monospace, monospace; color: #8A6D00;
+  margin-bottom: 6px; letter-spacing: .3px;
+}
+#sm-legend {
+  display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+  margin: 0 0 20px; position: relative; z-index: 30; max-width: 1400px;
+}
+#sm-legend .sm-lg {
+  display: inline-flex; align-items: center; gap: 7px;
+  font: 600 12px 'Noto Sans TC', sans-serif; color: #55524A;
+}
+#sm-legend .sw {
+  width: 16px; height: 16px; border-radius: 4px; display: inline-block;
+}
+
+/* 5) Storyboard: lane-label track sized to 200px; the label block no longer
    paints over the 28px column gap, leaving a clear breathing strip between the
    泳道 column and the first step column. */
 [data-flow-root] div[style*=sticky],
