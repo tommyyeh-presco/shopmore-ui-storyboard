@@ -54,6 +54,20 @@ div:has(> a[href$=".dc.html"]),
   font: 700 10px ui-monospace, monospace; color: #8A6D00;
   margin-bottom: 6px; letter-spacing: .3px;
 }
+/* Platform (Yahoo) checkout header shown above an embedded payment */
+.sm-plat-head {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 11px; background: #fff; border-bottom: 1px solid #ECE9E0;
+}
+.sm-yh {
+  background: #6001D2; color: #fff; font-style: italic; font-weight: 900;
+  font-size: 12px; padding: 2px 7px; border-radius: 5px; letter-spacing: -.3px;
+}
+.sm-plat-title { font-size: 12px; font-weight: 900; color: #22242A; }
+.sm-zone {
+  margin-left: 2px; background: #0F6E84; color: #fff;
+  font-size: 9px; font-weight: 700; border-radius: 5px; padding: 2px 7px;
+}
 #sm-legend {
   display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
   margin: 0 0 20px; position: relative; z-index: 30; max-width: 1400px;

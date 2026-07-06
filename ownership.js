@@ -25,6 +25,37 @@
     })();
   }
 
+  // Partner = Yahoo奇摩購物 (logo + tw.buy.yahoo.com address)
+  var YH = { dom: 'tw.buy.yahoo.com', purple: '#6001D2' };
+  function addr(path) { return YH.dom + (path ? '/' + path : ''); }
+  function yahooize(scope) {
+    if (!scope || scope.dataset.yhDone) return;
+    var w = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT, null), nodes = [];
+    while (w.nextNode()) nodes.push(w.currentNode);
+    nodes.forEach(function (n) {
+      var t = n.nodeValue;
+      if (t.indexOf('partner-shop.tw') >= 0) t = t.split('partner-shop.tw').join(YH.dom);
+      if (t.indexOf('合作平台購物網') >= 0) t = t.split('合作平台購物網').join('Yahoo!奇摩');
+      if (t !== n.nodeValue) n.nodeValue = t;
+    });
+    [].forEach.call(scope.querySelectorAll('*'), function (n) {
+      if (n.children.length === 0 && (n.textContent || '').trim() === '購' && !n.dataset.yh) {
+        n.dataset.yh = '1'; n.textContent = 'Yahoo!';
+        var s = n.style;
+        s.background = YH.purple; s.width = 'auto'; s.height = 'auto';
+        s.padding = '2px 6px'; s.fontStyle = 'italic'; s.fontSize = '10px';
+        s.borderRadius = '5px'; s.letterSpacing = '-.3px';
+      }
+    });
+    scope.dataset.yhDone = '1';
+  }
+  function platformHeader() {
+    var h = document.createElement('div');
+    h.className = 'sm-plat-head';
+    h.innerHTML = '<span class="sm-yh">Yahoo!</span><span class="sm-plat-title">跨境結帳</span><span class="sm-zone">跨境專區</span>';
+    return h;
+  }
+
   function label(el) { return (el.getAttribute('data-screen-label') || '').trim(); }
   function isCard(el) { return label(el) !== 'MAIN FLOW' && el.getBoundingClientRect().width < 700; }
   function untagged() {
@@ -40,26 +71,29 @@
     c.classList.add('sm-own-payment');
     [].forEach.call(c.querySelectorAll('*'), function (n) {
       if (n.children.length === 0 && /pay\.shopmore\.hk/.test(n.textContent))
-        n.textContent = '🔒 partner-shop.tw/crossborder/pay';
+        n.textContent = '🔒 ' + addr('checkout');
     });
     var kids = [].slice.call(c.children), urlIdx = -1;
     kids.forEach(function (k, i) {
-      if (urlIdx < 0 && /partner-shop\.tw/.test(k.textContent) && k.getBoundingClientRect().height < 44) urlIdx = i;
+      if (urlIdx < 0 && (/partner-shop\.tw/.test(k.textContent) || RegExp(YH.dom).test(k.textContent)) && k.getBoundingClientRect().height < 44) urlIdx = i;
     });
     if (urlIdx < 0) {
       var start = (kids[0] && /5G|100%|:\d\d/.test(kids[0].textContent) && kids[0].getBoundingClientRect().height < 40) ? 1 : 0;
-      c.insertBefore(makeBar('partner-shop.tw/crossborder/pay'), kids[start] || null);
+      c.insertBefore(makeBar(addr('checkout')), kids[start] || null);
       urlIdx = start;
     }
+    // platform (Yahoo) checkout header sits above the embedded SHOPMORE payment
+    c.insertBefore(platformHeader(), c.children[urlIdx + 1] || null);
     var embed = document.createElement('div'); embed.className = 'sm-embed';
     var cap = document.createElement('div'); cap.className = 'sm-embed-cap';
     cap.textContent = 'SHOPMORE 付款（嵌入 iframe）'; embed.appendChild(cap);
-    [].slice.call(c.children).slice(urlIdx + 1).forEach(function (k) { embed.appendChild(k); });
+    [].slice.call(c.children).slice(urlIdx + 2).forEach(function (k) { embed.appendChild(k); });
     c.appendChild(embed);
+    yahooize(c);
     c.dataset.smTagged = '1';
   }
   function legendItems() {
-    return '<span class="sm-lg"><i class="sw" style="background:#fff;border:1px solid #D9D5C8"></i>平台網站 (partner-shop.tw)</span>' +
+    return '<span class="sm-lg"><i class="sw" style="background:#fff;border:1px solid #D9D5C8"></i>Yahoo奇摩購物 (tw.buy.yahoo.com)</span>' +
            '<span class="sm-lg"><i class="sw" style="background:#DCE8EC"></i>SHOPMORE 系統</span>' +
            '<span class="sm-lg"><i class="sw" style="background:#FDF3D0;border:1px solid #E7B008"></i>SHOPMORE 付款（平台內嵌）</span>';
   }
@@ -77,8 +111,8 @@
 
   function runStoryboard() {
     var PLATFORM_URL = {
-      'S2 跨境購物車': 'partner-shop.tw/cart', 'S3 結帳': 'partner-shop.tw/checkout',
-      'S4 訂單完成': 'partner-shop.tw/order/complete', 'S11 訂單歷程': 'partner-shop.tw/orders/SM-2512-08841'
+      'S2 跨境購物車': addr('cart'), 'S3 結帳': addr('checkout'),
+      'S4 訂單完成': addr('order/complete'), 'S11 訂單歷程': addr('orders/SM-2512-08841')
     };
     var HASURL = ['S1 平台首頁', 'S1 跨境專區首頁', 'S1 商品頁'];
     var SHOPMORE = ['S5 代購事件', 'S5 後台訂單', 'S9 關稅對帳', 'S11 後台結案', 'S6 入庫QC', 'S7 重包裝', 'S10 越庫事件'];
@@ -95,8 +129,8 @@
         var L = label(c);
         if (SHOPMORE.indexOf(L) >= 0) c.classList.add('sm-own-shopmore');
         else if (L === 'S4 付款頁') { tagPayment(c); return; }
-        else if (PLATFORM_URL[L]) { c.classList.add('sm-own-platform'); c.insertBefore(makeBar(PLATFORM_URL[L]), c.firstChild); }
-        else if (HASURL.indexOf(L) >= 0) c.classList.add('sm-own-platform');
+        else if (PLATFORM_URL[L]) { c.classList.add('sm-own-platform'); c.insertBefore(makeBar(PLATFORM_URL[L]), c.firstChild); yahooize(c); }
+        else if (HASURL.indexOf(L) >= 0) { c.classList.add('sm-own-platform'); yahooize(c); }
         else return;
         c.dataset.smTagged = '1';
       });
@@ -120,11 +154,11 @@
     persist(function () {
       untagged().forEach(function (c) {
         c.classList.add('sm-own-platform');
-        var path = MAP[label(c)] || '';
-        c.insertBefore(makeBar('partner-shop.tw' + (path ? '/' + path : '')), c.firstChild);
+        c.insertBefore(makeBar(addr(MAP[label(c)] || '')), c.firstChild);
+        yahooize(c);
         c.dataset.smTagged = '1';
       });
-      var ok = banner('<i class="dot" style="background:#fff;border:1px solid #C9C4B4"></i>此頁：合作平台網站 · partner-shop.tw');
+      var ok = banner('<i class="dot" style="background:#fff;border:1px solid #C9C4B4"></i>此頁：Yahoo奇摩購物 · tw.buy.yahoo.com');
       return ok && untagged().length === 0 && document.querySelector('.sm-urlbar');
     });
   }
